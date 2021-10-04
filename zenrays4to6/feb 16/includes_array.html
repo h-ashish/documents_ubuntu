@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Includes array</title>
+</head>
+<body>
+	<script >
+		let students = ["Saswati" , "pooja", "Vaishali", "Sania", "Yogesh"];
+		let result = students.includes("pooja");
+		console.log(result);
+
+		let resultFromIndex = students.includes("Sania",2);
+		console.log(result);
+
+		delete students[2];
+		console.log(students);
+
+		students.filter(function(val){
+			if (val == "")
+				return  false;
+			return true;
+		});
+		console.log(students);
+	</script>
+
+</body>
+</html>

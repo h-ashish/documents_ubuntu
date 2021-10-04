@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>trigonometric value calculator</title>
+</head>
+<body>
+	<input type="number" id="value" placeholder="Enter a number">
+	<button onclick="sinresult()">Sin</button>
+	<button onclick="cosresult()">Cos</button>
+	<button onclick="tanresult()">Tan</button>
+	<div id = "mydiv"> </div>
+	<script>
+
+		function sinresult() {
+			let func = document.getElementById("value")
+			let fn = func.value;
+  			document.getElementById("mydiv").innerHTML = Math.sin(fn);
+		}
+		function cosresult() {
+			let func = document.getElementById("value")
+			let fn = func.value;
+  			document.getElementById("mydiv").innerHTML = Math.cos(fn);
+		}
+		function tanresult() {
+			let func = document.getElementById("value")
+			let fn = func.value;
+  			document.getElementById("mydiv").innerHTML = Math.tan(fn);
+		}
+		
+	</script>
+</body>
+</html>

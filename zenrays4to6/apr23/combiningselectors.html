@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>combining selectors</title>
+    <style>
+        .burger p {
+            background: brown;
+            padding: 20px;
+        }
+        p.cheese{
+            background: yellow;
+            padding: 20px;
+        }
+        p#cheese{
+            background: green;
+            padding: 20px;
+        }
+        div#cheese div{
+            background: blue;
+            padding: 20px;
+        }
+        div#cheese p{
+            background: magenta;
+            padding: 20px;
+        }
+        div#cheese #childspan{
+            background: grey;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="burger">
+        <p>i am a child of burger! i am vadapao</p>
+        <p>i am a child of burger! i am sandoichi</p>
+    </div>
+    <p class="cheese"> i am a combination of para selector and a class selector</p>
+    <p id="cheese"> i am a combination of para selector and a class selector</p>
+    <div id="cheese">
+        <span id="childspan"> i am child span element</span>
+        <div>i am div child of div element with id cheese</div>
+        <p>will i be selected? i am a child element of div element with id cheese</p>
+    </div>
+</body>
+</html>

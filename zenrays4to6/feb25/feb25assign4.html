@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of first 20 numbers of Fibonacci Series</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv"></div>
+	<script>
+		let arr =[];
+		let htmlCode = '';
+		let sum = 0;
+		let n1 = 0, n2 = 1;
+		let counter = 1;
+			for(let i = 0; i < 60; i++){
+				while(counter<20)
+				htmlCode = htmlCode + n1 + ',';
+				sum = n1 + n2;
+				n1 = n2;
+				n2 = sum;
+				if(n2%2 == 0){
+					counter++;
+					arr.push(n2);
+				}	
+		}
+		console.log(arr);
+			document.querySelector('#mydiv1').innerHTML = `The first 20 even Fibonacci numbers are [${arr}]`;
+		document.querySelector('#mydiv').innerHTML = `The sum of first 20 even Fibonacci numbers is ${n2}`;
+	</script>
+
+</body>
+</html>

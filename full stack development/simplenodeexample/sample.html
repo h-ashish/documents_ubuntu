@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration form</title>
+</head>
+<script src="frontendui.js"> </script>
+<body>
+	<form id="myform" action="/frontendui.js" onsubmit="addTodo(event)">
+		<textarea rows="10" cols="19" id = "thingstodo" name="thingstodo" placeholder="Enter things to do"></textarea><br>
+		<input type="date" name="tododate" id="date"><br>
+		<input type="time" name="todotime" id="time"><br>
+		<button>Add ToDo</button> 
+	</form>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</body>
+</html>

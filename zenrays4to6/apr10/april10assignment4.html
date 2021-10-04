@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object destructuring</title>
+</head>
+<body>
+    <table id="mytable" border="|"></table>
+    <script>
+        let Obj = {
+		name:"Jatin",
+		loc:"chennai",
+		hobbies:["reading","Writing"],
+		personalInfo:{
+			age:22,
+			bankacc:12312,
+			pan:"asfas12",
+			abouthome:{
+				native:"Bangalore",
+				state:"Karnataka"
+			}	
+		}
+ }
+ const {name, loc, hobbies: hobbies = [], personalInfo:{age, bankacc,pan,abouthome:{native,state}}} = Obj;
+ console.log(name, loc, hobbies, age, bankacc, pan, native, state);
+
+ let divObj = ``;
+ divObj = `<tr>
+            <th> Name </th>
+            <th> Location </th>
+            <th> Hobbies </th>
+            <th> Personal Info </th>
+            </tr>
+            <tr> 
+            <td> ${name} </td> 
+            <td> ${loc} </td> 
+            <td> ${hobbies} </td> 
+            <td> 
+            <li> age: ${age} </li>
+            <li> Bank Account:${bankacc} </li>
+            <li> Pan: ${pan} </li>
+            <li> About Home: ${native}, ${state} </li>
+            </td>
+            </tr>`
+            document.getElementById('mytable').innerHTML = divObj;
+    </script>
+</body>
+</html>

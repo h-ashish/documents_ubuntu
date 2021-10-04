@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Search App</title>
+	<style >
+		body{
+			text-align: center;
+			font-family: arial;
+		}
+		#searchbox{
+			width: 50%;
+			height: 40px;
+			border: 3px solid teal;
+			border-radius: 50px;
+			text-align: center;
+			box-shadow: 3px 5px #D8D8D8;
+			margin: auto;
+		}
+		#logo{
+			width: 10%;
+			height: 10%;
+			margin-top: 40px;
+		}
+		#title{
+			font-size: 70px;
+			color: #0E255E;
+			margin: 30px;
+			font-weight: bold;
+		}
+		button{
+			width: 15%;
+			height: 40px;
+			margin: 40px;
+			text-align: center;
+			background-color:  teal;
+			border:2px solid teal;
+			border-radius: 30px;
+			font-size: 18px;
+			box-shadow: 3px 5px #D8D8D8;
+		}
+		#output{
+			border:2px solid teal;
+			border-radius: 30px;
+			margin: 20px;
+		}
+		h1{
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	<img id ="logo" src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v527-bb-34-logo_1.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=65&usm=15&vib=3&w=600&s=5f160571146078a80963e2d9383ce2e7">
+	</div>
+	<div id = "title">Google</div>
+	<input type="Search" id="searchbox" onkeypress="search(event)" placeholder="Enter text to search"><br>
+	<button onclick="doSearch()">Search</button>
+	<div id="output"></div>
+	<script>
+		function search(event){
+			if(event.key == "Enter"){
+			searchText = document.getElementById("searchbox").value;
+			return doSearch();
+		}
+		}
+		function doSearch(){
+			let searchResult = '';
+			let searchText = '';
+			let outputDiv = document.getElementById("output");
+			searchText = document.getElementById("searchbox").value;
+			/*searchText = event.target.value;*/
+			searchText = searchText.toLowerCase();
+			if(searchText == "zenrays"){
+				searchResult= " Zenrays is a year old company in training and consulting.We offer 20 + Programming languages Training in Bangalore - Koramangala, BTM Layout and Marathahalli. We also offer fast track Coding Bootcamps in Bangalore on Angular 2, JavaScript, ReactJS, AI and Spring and Hibernate. Our Trainers are 10+ years of experienced industry experts, and presently consulting many MNCs and Corporate organisations. All our classroom based courses also include students participating via Online facilities from various parts of India and across the Globe. ";
+			}
+			if(searchText =="react"){
+				searchResult = " React is a javascript framework to create awesome web applications. React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. ";
+			}outputDiv.innerHTML ="<h1>" + searchResult + "</h1>";
+		}
+	</script>
+
+</body>
+</html>

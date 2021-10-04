@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy within function</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let array1 = ['a','b','c','d','e'];
+		document.querySelector('#mydiv1').innerHTML = `The Array is [ ${array1} ]`;
+		let copyArray = array1.copyWithin(1, 0 , 3);
+		document.querySelector("#mydiv2").innerHTML = `The Array after copyWithin function is [ ${copyArray} ]`;
+	</script>
+
+</body>
+</html>

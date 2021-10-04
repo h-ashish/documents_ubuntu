@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 3</title>
+</head>
+<body>
+<form id="myForm" onsubmit="submitVals(event)">
+	<input type="text" name="bookname" placeholder="Enter Book name"><br>
+	<input type="text" name="author" placeholder="Enter name of Author"><br>
+	<input type="date" name="dateofpublish"><br>
+	<input type="color" name="color"><br>
+	<input type="number" name="noofpages" placeholder="Enter no of pages"><br>
+	<input type="number" name="price" placeholder="Enter price of the book"><br>
+	<button>Submit</button>
+</form>
+<button onclick="showProperties()">Show all properties</button>
+<script >
+	let array = [];
+	function submitVals(e){
+		e.preventDefault();
+		let obj = {
+			bookname: e.target.bookname.value,
+			autorname : e.target.author.value,
+			dateofpublish : e.target.dateofpublish.value,
+			color: e.target.color.value,
+			numberofpages: e.target.noofpages.value,
+			price: e.target.price.value,
+		}
+		array.push(obj);
+		console.log(array);
+	}
+	function showProperties(){
+		array.forEach(function(val){
+			for(i in val){
+				alert(i + " : " + val[i]);
+			}
+		})
+	}
+</script>
+</body>
+</html>

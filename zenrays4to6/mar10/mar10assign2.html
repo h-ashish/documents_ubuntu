@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>showing a video dynamically</title>
+</head>
+<style>
+	body{
+			text-align: center;
+			font-family: tahoma;
+			background-image: linear-gradient(to right, #D38312, #A83279);
+			background-repeat: no-repeat;
+  			background-size: cover;
+		}
+		input{
+			width: 20%;
+			height: 30px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		button{
+			width: 10%;
+			height: 30px;
+			margin: 10px;
+			text-align: center;
+			color: white;
+			background-image: linear-gradient(to right, #2b5876, #090711);
+			border: 2px solid #090711;
+			border-radius: 20px;
+			font-size: 18px;
+			outline: none;         
+		
+		}
+		video{
+			margin: 20px;
+			width:450px;
+			height:250px;
+			outline: none;
+	}
+</style>
+<body>
+	<p>Enter Url as "720.mp4"</p>
+	
+		<input type="text"  id="userurl" placeholder="Enter url to search video">
+		<button onclick="showVid()">play</button>
+	
+	<div id="mydiv"></div>
+<script>
+	
+	let divHtml = document.querySelector('#mydiv');
+	divHtml.innerHTML = `<video id="myvid" controls poster="image.jpg" >
+	<source id="mysrc" src="video.mp4" type="video/mp4">
+			<track kind="subtitles" src="zenrays-en.vtt" default>
+	</video>`;
+	function showVid(){
+	let val = document.querySelector('#userurl').value;
+	let divOb = document.querySelector('#mydiv');
+
+	divOb.innerHTML = `<video id="myvid" controls poster="image1.jpg" >
+	<source id="mysrc" src="${val}" type="video/mp4">
+			<track kind="subtitles" src="zenrays-en.vtt" default>
+	</video>`;
+}
+</script>
+</body>
+</html>

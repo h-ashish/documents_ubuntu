@@ -1,0 +1,194 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Reversing a number using loop</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+	let no = 874732;
+	document.querySelector('#mydiv').innerHTML = `The given number ${no}`;
+	let rvs = ' ';
+	let n = no.toString().split('');
+
+	for(let i = n.length - 1; i>=0; i--){
+		rvs = rvs + n[i];	
+	}
+	document.querySelector('#mydiv1').innerHTML = `The reverse of given number is ${Number(rvs)}.`;
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>finding charater that appears the most</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+<script>
+	let str = "the quick brown fox jumped on lazy fox";
+	let arrstr = str.split('').sort();
+	let samplearr = [];
+	let freq = 1;
+	let highest = 1;
+	let char='';
+	console.log(arrstr);
+	arrstr.filter(function(val){
+		if(val !== " "){
+			samplearr.push(val);
+		}	
+	})
+	console.log(samplearr);
+	for(let i = 0; i < samplearr.length; i++){
+		if(samplearr[i + 1] == samplearr[i]){
+			freq = freq + 1;
+		}else{
+			freq = 1;
+		}
+
+		if(freq>highest){
+			char = samplearr[i];
+			highest = freq;
+		}
+	}
+	document.querySelector('#mydiv').innerHTML = `The character that appears the most is ${char}. The frequency is ${highest}`
+	console.log(highest);
+	console.log(char);
+</script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Vowels in given </title>
+</head>
+<body>
+	<div id="mydiv"></div><br>
+	<button onclick="countVowel()">find vowels</button><br>
+	<div id="mydiv1"></div>
+<script>
+	let str = "the quick brown fox jumped on lazy fox";
+	document.querySelector('#mydiv').innerHTML = `The given string is ${str}`;
+	function countVowel(){
+		let res = str.match(/[aeiou]/g).length;
+		document.querySelector('#mydiv1').innerHTML = `The number of vowels are ${res}`;
+		return res;
+	}
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>reversing words in a string</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+	let str = "I am a lazy cat";
+	document.querySelector('#mydiv').innerHTML = `The given string is "${str}"`;
+	let result = str.split(' ').reverse().join(' ');
+	document.querySelector('#mydiv1').innerHTML = `The string after reversing is "${result}"`;
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Mean, Median and Mode</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<button onclick ="mean()">mean</button><br>
+	<button onclick="median()">median</button><br>
+	<button onclick="mode()">mode</button><br>
+	<div id="mydiv"></div>
+<script>
+	let arr = [1, 2, 3, 4, 4, 5, 5];
+	document.querySelector('#mydiv1').innerHTML = `The given values are [${arr}]`;
+	function mean(){
+		let sum = 0;
+		for(let i = 0; i <arr.length; i++){
+			sum = sum + arr[i];
+		}
+		let mean  = sum/arr.length;
+		document.querySelector('#mydiv').innerHTML = `The Mean is ${mean}`;
+	}
+
+	function median(){
+		let sortarr = arr.sort();
+		let half = Math.floor(sortarr.length/2);
+		if(sortarr.length%2 !==0){
+			document.querySelector('#mydiv').innerHTML = `The Median is ${sortarr[half]}`;
+				return sortarr[half];
+		}
+		document.querySelector('#mydiv').innerHTML =`The Median is ${(sortarr[half-1]+sortarr[half])/2.0}`
+			return (sortarr[half-1]+sortarr[half])/2.0;
+	}
+
+		function mode(){
+  let freq = 0, freqNum, list = []
+
+  arr.forEach(function(num){
+    let foundNum = list.find(function(el){ return el.num == num })
+
+    if(foundNum){
+      foundNum.count++
+      if(foundNum.count > freq){
+      	freqNum = num
+        freq = foundNum
+      }
+      document.querySelector('#mydiv').innerHTML = `The Mode is ${freqNum}`;
+    }
+
+    else
+      list.push({num: num, count: 1})
+  })
+	
+  return freqNum
+}
+	
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Checking for Anagrams</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<div id="mydiv3"></div>
+<script>
+        let a = "hello world";
+		let b = "world hello";
+
+        function isAnagram(){
+        
+        document.querySelector('#mydiv1').innerHTML = `The first word is "${a}"`;
+        document.querySelector('#mydiv2').innerHTML = `The second word is "${b}"`;
+        a = a.toLowerCase().split('').sort().join('').trim();
+        b = b.toLowerCase().split('').sort().join('').trim();
+        console.log(a);
+        console.log(b);
+       
+    }isAnagram();
+
+    if(a === b){
+    	 document.querySelector('#mydiv3').textContent = `The given words are anagrams? true`;
+    } else {
+    	document.querySelector('#mydiv3').textContent = `The given words are anagrams? false`;
+    }
+</script>
+</body>
+</html> -->

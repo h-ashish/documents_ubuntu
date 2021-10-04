@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime numbers in simpler form</title>
+</head>
+<body>
+	<input type="number" id="input" placeholder="Enter a number">
+	<button onclick="isPrime()">check prime</button>
+	<div id="mydiv"></div>
+<script>
+	
+	function isPrime(){
+		let n = document.querySelector("#input").value;
+		let divisor = 3;
+		limit = Math.sqrt(n);
+		if(n==2 || n==3){
+			return true;
+		}if(n%2 == 0){
+			document.querySelector('#mydiv').innerHTML = `the number is not prime`;
+			return false;
+		}
+		while(divisor <= limit){
+			if(limit%divisor == 0){
+				document.querySelector('#mydiv').innerHTML = `the number is not prime`;
+				return false;
+			}
+				divisor +=2;
+		}
+		document.querySelector('#mydiv').innerHTML = `the number is prime`;
+		return true;
+		
+		}
+</script>
+</body>
+</html>

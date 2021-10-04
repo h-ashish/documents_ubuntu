@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inner Html Paragraph</title>
+	<style>
+		p{
+			border: 3px solid;
+			padding-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<p id= "head">Welcome to Zenrays</p>
+<textarea rows="4" cols="22" id = "input" placeholder="Enter Text"></textarea> 
+<button onclick = "output()">Submit</button>
+<script>
+	function output(){
+	let newContent = document.getElementById("input").value;
+	let headObject = document.getElementById("head").innerHTML ="<h1>" + newContent + "</h1>";
+	document.getElementById("head").style.borderColor = "blue";
+}
+</script>
+</body>
+</html>

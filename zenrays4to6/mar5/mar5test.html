@@ -1,0 +1,108 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>reverse string without reverse function</title>
+</head>
+<body>
+	<input type="text" id="input" placeholder="Enter some text">
+	<button onclick="reverse()">reverse string</button>
+	<div id="mydiv"></div>
+<script type="text/javascript">
+	function reverse(){
+		let str = document.querySelector('#input').value;
+		let reverseStr = '';
+		for(let i = str.length-1; i>=0; i--){
+			reverseStr +=str[i];
+		}
+		document.querySelector('#mydiv').innerHTML = `The reverese of the string is '${reverseStr}'`;
+		return reverseStr;
+	}
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>result of subtraction of first 5 numbers</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+	function subtraction(){
+		let num = [];
+		for(let i = 5; i>0; i--){
+			num.push(i);
+		}
+		document.querySelector('#mydiv').innerHTML = `The first 5 numbers are ${num}`;
+		let subs = num.reduce(function(pre, post){
+			return pre - post;
+		})
+		document.querySelector('#mydiv1').innerHTML = `The subtraction result of first five numbers are ${subs}`;
+	}
+	subtraction();
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>common divisor of 3 numbers</title>
+</head>
+<body>
+	<input type="number" id="input1" placeholder="Enter first number">
+	<input type="number" id="input2" placeholder="Enter second number">
+	<input type="number" id="input3" placeholder="Enter third number">
+	<button onclick="gcd()">get gcd</button>
+	<div id="mydiv"></div>
+<script>
+	function gcd(){
+		let a = document.querySelector("#input1").value;
+		let b = document.querySelector("#input2").value;
+		let c = document.querySelector("#input3").value;
+		let divisor = 2;
+		let greatestDiv = 1;
+		if(a<2 || b<2 || c<2){
+			return 1;
+		}
+		while(a>=divisor && b>=divisor && c>=divisor){
+			if(a%divisor ==0 && b%divisor ==0 && c%divisor ==0){
+				greatestDiv = divisor;
+			}
+			divisor ++;
+		}
+		document.querySelector('#mydiv').innerHTML = `The Greatest Common divisor of ${a},${b} and ${c} is ${greatestDiv}`;
+		return greatestDiv;
+	}
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validating Email</title>
+</head>
+<body>
+	<form name="myForm" onsubmit="validate(event)">
+		<input type="text" name="email" placeholder="Enter email" >
+
+		<button>Submit</button>
+	</form>
+<script>
+	function validate(e){
+		e.preventDefault();
+		let email = e.target.email.value;
+		if(email.includes("@") && email.includes(".")){
+			alert("Valid Email!");
+		}else{
+			alert("Invalid Email!");
+			return false;
+		}
+		console.log(email);
+	}
+</script>
+</body>
+</html>

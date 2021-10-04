@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>World clock</title>
+</head>
+<body>
+	<select name= "city" onchange="myFunction(this)">
+	<option  onselect ="localTime()">Local time</option>
+	<option  onselect ="sriLankaTime()">Sri Lanka</option> 
+	<option >USA</option>
+	<option >UK</option>
+	<option >Japan</option>
+	</select>
+	<script>
+	function myFunction(){
+		function localTime(){
+			let dt = new Date();
+			dt = Number(19800000) + (dt.getTime());
+			console.log(dt);
+			let dt1 = new Date(dt).toUTCString(); 
+			console.log(dt1);
+	}
+		function sriLankaTime(){
+			let dt = new Date();
+			dt = Number(19800000) + (dt.getTime());
+			console.log(dt);
+			let dt1 = new Date(dt).toUTCString(); 
+			console.log(dt1);
+	}
+		function newYorkTime(){
+			let dt = new Date();
+			dt = Number(-18000000) + (dt.getTime());
+			console.log(dt);
+			let dt1 = new Date(dt).toUTCString(); 
+			console.log(dt1);
+	}
+		function UKTime(){
+			let dt = new Date();
+			dt = Number(+0) + (dt.getTime());
+			console.log(dt);
+			let dt1 = new Date(dt).toUTCString(); 
+			console.log(dt1);
+	}
+		function japanTime(){
+			let dt = new Date();
+			dt = Number(32400000) + (dt.getTime());
+			console.log(dt);
+			let dt1 = new Date(dt).toUTCString(); 
+			console.log(dt1);
+	}
+}
+	</script>
+
+</body>
+</html>

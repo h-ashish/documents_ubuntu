@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMA 6 basic class</title>
+</head>
+<body>
+    <script>
+        class Hero{
+            name;
+            planet;
+            constructor(name, planet){
+                this.name = name;
+                this.planet = planet;
+            }
+            showDetails(){
+                alert(`the hero is ${this.name} and he is from the planet ${this.planet}`);
+            }
+        }
+        let spiderman = new Hero('spiderman','earth');
+        spiderman.showDetails();
+        let superman = new Hero('superman','Krypton');
+        superman.showDetails();
+    </script>
+</body>
+</html>

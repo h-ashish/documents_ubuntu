@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Showing range value</title>
+</head>
+<body>
+<input type="range" name="rangeinput" id="range" oninput="showRangeVal(this)">
+<output id="output"></output>
+<script>
+	function showRangeVal(rangeReference){
+		document.getElementById('output').value = rangeReference.value;
+	}
+</script>
+</body>
+</html>

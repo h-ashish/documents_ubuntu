@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar 24 assif=gnment 3</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        let array = [1,2,4,7,9,12,15,19];
+        document.querySelector('#mydiv').innerHTML = `The given array is [${array}]`;
+        let sum =0;
+        let res = array.reduce(function(next,prev){
+            if(prev < 12){
+                return ;
+            }
+            return sum = sum + prev;
+        })
+        document.querySelector('#mydiv1').innerHTML = `The sum of numbers after 9 is ${res}`;
+    </script>
+</body>
+</html>

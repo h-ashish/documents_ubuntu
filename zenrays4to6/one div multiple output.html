@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>One Div Output</title>
+	<style>
+		div{
+			border: 3px solid teal;
+			padding:10px;
+			border-radius: 10px;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+<div id="output"></div>
+<input type="text" id="username">
+<input type="number" id="usernumber">
+<button onclick="addUser()">Submit</button>
+<script>
+	function addUser(){
+		let usernameDomObject = document.getElementById("username");
+		let usernumberDomObject = document.getElementById("usernumber");
+		let divDomObject = document.getElementById("output");
+		let htmlCode = "<div> Result = <br>" + usernameDomObject.value + "<br>" + usernumberDomObject.value + "</div>";
+		divDomObject.innerHTML = htmlCode;
+	}
+
+</script>
+</body>
+</html>

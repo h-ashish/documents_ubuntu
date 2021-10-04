@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Swapping numbers without number</title>
+</head>
+<body>
+	<input type="number" id="input1" placeholder="Enter first number">
+	<input type="number" id="input2" placeholder="Enter second number">
+	<button onclick="swap()">swap</button>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+	function swap(){
+		let a = Number(document.querySelector('#input1').value);
+		let b = Number(document.querySelector('#input2').value);
+		document.querySelector('#mydiv').innerHTML = `The numbers before swap are a: ${a} b: ${b}`;
+		
+		b = b -a;
+		a = a +b;
+		b = a -b;
+
+		document.querySelector('#mydiv1').innerHTML = `The numbers after swap are a: ${a} b: ${b}`;
+	}
+</script>
+</body>
+</html>

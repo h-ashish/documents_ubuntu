@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moving even to left and odd to right</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        let array = [11,17,3,4,7,19,12,10,100,98,55,1,2];
+        document.getElementById("mydiv").innerHTML = `The given array is [${array}]`
+        let array1 = [];
+        let array2 =[];
+        array.forEach(function(val){
+            if(val%2 == 0){
+                array1.push(val);
+            }else {
+                array2.push(val);
+            }
+        })
+        console.log(array1);
+        console.log(array2);
+        let res = array1.concat(array2);
+        document.getElementById("mydiv1").innerHTML = `The array after sorting even to left and odd to right is [${res}]`;
+    </script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding nth largest and nth smallest term</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <input type="number" id="input" placeholder="Enter number">
+    <button onclick="findNth()">find nth largest and smallest</button>
+    <div id="mydiv1"></div>
+    <div id="mydiv2"></div>
+    <script>
+        let array = [11,17,3,4,7,19,12,10,100,98,55,1,2];
+            document.getElementById("mydiv").innerHTML = `The given array is [${array}]`;
+        function findNth(){
+            let n = document.getElementById('input').value;
+            let res = array.sort((a,b)=>a-b);
+            console.log(res);
+            let thirdSmallest = res[n-1];
+            let thirdLargest= res[res.length - (n)];
+            document.getElementById("mydiv1").innerHTML = `The ${n}th largest number is ${thirdLargest}`;
+            document.getElementById("mydiv2").innerHTML = `The ${n}th smallest number is ${thirdSmallest}`;
+            }
+        
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count of 4</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        let array = [11,17,3,4,7,19,12,10,100,4,98,55,1,2,4];
+        document.getElementById("mydiv").innerHTML = `The given array is [${array}]`;
+        let count = 0;
+        let res = array.forEach(function(val){
+            if(val == 4){
+                count = count + 1;
+            }
+        })
+        document.getElementById("mydiv1").innerHTML = `The count of "4" is ${count}`
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding third largest and third smallest element in array</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <div id="mydiv2"></div>
+    <script>
+        let array = [11,17,3,4,7,19,12,10,100,98,55,1,2];
+        document.getElementById("mydiv").innerHTML = `The given array is [${array}]`
+        let res = array.sort((a,b)=>a-b);
+        console.log(res);
+        let thirdSmallest = res[2];
+        let thirdLargest= res[res.length - 3];
+        document.getElementById("mydiv1").innerHTML = `The third largest number is ${thirdLargest}`;
+        document.getElementById("mydiv2").innerHTML = `The third smallest number is ${thirdSmallest}`;
+        
+    </script>
+</body>
+</html> -->

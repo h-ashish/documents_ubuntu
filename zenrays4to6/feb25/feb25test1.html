@@ -1,0 +1,249 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table id="table" border="2"></table>
+<script>
+var details = {students:[{ name:"Vignesh", hobbies:[ {name:"playing",minutesInDay:30},
+													{name:"reading",minutesInDay:45}],},
+						{name:"Rony", hobbies:[ {name:"playing",minutesInDay:60},
+												{name:"reading",minutesInDay:85}],},
+
+						{ name:"Pooja", hobbies:[ {name:"playing",minutesInDay:90},
+												{name:"travelling",minutesInDay:75}],},],
+	
+	aboutZenrays:{ faculties:[ {name:"sumit",hobbies:[ {name:"playing",minutesInDay:90},
+														{name:"travelling",minutesInDay:75}]}, 
+								{name:"Ayush",hobbies:[ {name:"cricket",minutesInDay:90},
+														{name:"travelling",minutesInDay:75}]}, ], 
+					courses:[ {name:"Full Stack Development",technologies:["react","node","mongodb","Express"]}, 
+							{name:"UI Development",technologies:["react","HTML5","Boostrap","Javascript"]}, 
+							{name:"React",technologies:["react","Javascript"]} ]}};
+
+
+let detailsArr = [];
+detailsArr.push(details);
+// console.log(detailsArr);
+// console.log(detailsArr[0].aboutZenrays['courses'][0]['name']);
+// console.log(detailsArr[0].students[0]['hobbies'][0]['minutesInDay']);	
+
+let htmlCode ='';
+htmlCode = `<tr> <th> Name </th> <th> Technologies </th> </tr>`;
+
+detailsArr.forEach(function(val){
+	htmlCode = htmlCode + `<tr> <td> ${val.aboutZenrays['courses'][0]['name']} </td> <td> ${val.aboutZenrays['courses'][0]['technologies']} </td> </tr> <tr> <td> ${val.aboutZenrays['courses'][1]['name']} </td> <td> ${val.aboutZenrays['courses'][1]['technologies']} </td> </tr><tr> <td> ${val.aboutZenrays['courses'][2]['name']} </td> <td> ${val.aboutZenrays['courses'][2]['technologies']} </td> </tr>`;
+})
+document.querySelector('#table').innerHTML = htmlCode;
+</script>
+</body>
+</html>
+
+ -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table id="table" border="2"></table>
+<script>
+var details = {students:[{ name:"Vignesh", hobbies:[ {name:"playing",minutesInDay:30},
+													{name:"reading",minutesInDay:45}],},
+						{name:"Rony", hobbies:[ {name:"playing",minutesInDay:60},
+												{name:"reading",minutesInDay:85}],},
+
+						{ name:"Pooja", hobbies:[ {name:"playing",minutesInDay:90},
+												{name:"travelling",minutesInDay:75}],},],
+	
+	aboutZenrays:{ faculties:[ {name:"sumit",hobbies:[ {name:"playing",minutesInDay:90},
+														{name:"travelling",minutesInDay:75}]}, 
+								{name:"Ayush",hobbies:[ {name:"cricket",minutesInDay:90},
+														{name:"travelling",minutesInDay:75}]}, ], 
+					courses:[ {name:"Full Stack Development",technologies:["react","node","mongodb","Express"]}, 
+							{name:"UI Development",technologies:["react","HTML5","Boostrap","Javascript"]}, 
+							{name:"React",technologies:["react","Javascript"]} ]}};
+let detailsArr = [];
+detailsArr.push(details);
+// console.log(detailsArr);
+// console.log(detailsArr[0].aboutZenrays['courses'][0]['name']);
+// console.log(detailsArr[0].students[0]['hobbies'][0]['minutesInDay']);	
+
+      let htmlCode = '';
+
+      htmlCode = '<tr><th>Name</th><th>Hobbies</th></tr>';
+      detailsArr.forEach(function (val) {
+        htmlCode += `<tr><td>${val.students[0]['name']}</td><td>${val.students[0]['hobbies'][0]['name']}  upto ${val.students[0]['hobbies'][0]['minutesInDay']} min, ${val.students[0]['hobbies'][1]['name']}  upto ${val.students[0]['hobbies'][1]['minutesInDay']} min</td></tr>
+                      <tr><td>${val.students[1]['name']}</td><td>${val.students[1]['hobbies'][0]['name']} upto ${val.students[1]['hobbies'][0]['minutesInDay']} min, ${val.students[1]['hobbies'][1]['name']}  upto ${val.students[1]['hobbies'][1]['minutesInDay']} min</td></tr>
+                      <tr><td>${val.students[2]['name']}</td><td>${val.students[2]['hobbies'][0]['name']} upto ${val.students[2]['hobbies'][0]['minutesInDay']} min, ${val.students[2]['hobbies'][1]['name']}  upto ${val.students[2]['hobbies'][1]['minutesInDay']} min</td></tr>`
+      })
+      document.getElementById('table').innerHTML = htmlCode;
+    
+</script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+var details = {students:[{ name:"Vignesh", hobbies:[ {name:"playing",minutesInDay:30},
+													{name:"reading",minutesInDay:45}],},
+						{name:"Rony", hobbies:[ {name:"playing",minutesInDay:60},
+												{name:"reading",minutesInDay:85}],},
+
+						{ name:"Pooja", hobbies:[ {name:"playing",minutesInDay:90},
+												{name:"travelling",minutesInDay:75}],},],
+	
+	aboutZenrays:{ faculties:[ {name:"sumit",hobbies:[ {name:"playing",minutesInDay:90},
+														{name:"travelling",minutesInDay:75}]}, 
+								{name:"Ayush",hobbies:[ {name:"cricket",minutesInDay:90},
+														{name:"travelling",minutesInDay:75}]}, ], 
+					courses:[ {name:"Full Stack Development",technologies:["react","node","mongodb","Express"]}, 
+							{name:"UI Development",technologies:["react","HTML5","Boostrap","Javascript"]}, 
+							{name:"React",technologies:["react","Javascript"]} ]}};	
+
+let divHtml =0;
+
+details.students.forEach(function(val){
+	val.hobbies.forEach(function(val){
+		console.log(val.minutesInDay);
+		divHtml = divHtml + val.minutesInDay;
+		
+	})
+})
+console.log(divHtml)
+let hrs = Math.floor(divHtml/60);
+let mins = divHtml%60;
+document.querySelector('#mydiv').innerHTML = `The total no of hours of all students ${hrs} hours ${mins} minutes`;
+
+let divHtml1 =0;
+
+details.aboutZenrays.faculties.forEach(function(val){
+	val.hobbies.forEach(function(val){
+		console.log(val.minutesInDay);
+		divHtml1 = divHtml1 + val.minutesInDay;
+		
+	})
+})
+console.log(divHtml1)
+let hrs1 = Math.floor(divHtml1/60);
+let mins1 = divHtml1%60;
+document.querySelector('#mydiv1').innerHTML = `The total no of hours of all faculties ${hrs1} hours ${mins1} minutes`;
+</script>
+</body>
+</html>
+ -->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Search</title>
+    <style>
+        table,th,td{
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+  
+    <button onclick="showCourses()">Courses Details</button>
+    <hr>
+
+    <table id="op">
+      <tr><th>Name</th><th>Technologies</th></tr>
+      
+    </table>
+<script>
+    var details = [{students:[{ name:"Vignesh", hobbies:[ {name:"playing",minutesInDay:30},{name:"reading",minutesInDay:45}],},
+                            { name:"Rony", hobbies:[ {name:"playing",minutesInDay:60},{name:"reading",minutesInDay:85}],},
+                            { name:"Pooja", hobbies:[ {name:"playing",minutesInDay:90},{name:"travelling",minutesInDay:75}],},] ,
+
+                  aboutZenrays:{ faculties:[ {name:"sumit",hobbies:[ {name:"playing",minutesInDay:90},{name:"travelling",minutesInDay:75}]} , 
+                                            {name:"Ayush",hobbies:[ {name:"cricket",minutesInDay:90},{name:"travelling",minutesInDay:75}]}, ], 
+                                  courses:[ {name:"Full Stack Development",technologies:["react","node","mongodb","Express"]}, 
+                                            {name:"UI Development",technologies:["react","HTML5","Boostrap","Javascript"]}, 
+                                            {name:"React",technologies:["react","Javascript"]} ]}}]
+    
+    
+    // console.log(details[0].aboutZenrays['courses'][0]['name']);
+    // console.log(details[0].aboutZenrays['courses'][0]['technologies']);
+
+    function showCourses() {
+      let htmlCode = '';
+
+      htmlCode = '<tr><th>Name</th><th>Technologies</th></tr>';
+      details.forEach(function (val) {
+          htmlCode += `<tr><td>${val.aboutZenrays['courses'][0]['name']}</td><td>${details[0].aboutZenrays['courses'][0]['technologies']}</td></tr>
+                      <tr><td>${val.aboutZenrays['courses'][1]['name']}</td><td>${details[0].aboutZenrays['courses'][1]['technologies']}</td></tr>
+                      <tr><td>${val.aboutZenrays['courses'][2]['name']}</td><td>${details[0].aboutZenrays['courses'][2]['technologies']}</td></tr>`
+          console.log()
+      })
+      document.getElementById('op').innerHTML = htmlCode;
+    }
+    
+</script>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table id="table" border="2"></table>
+<script>
+var details = {students:[{ name:"Vignesh", hobbies:[ {name:"playing",minutesInDay:30},
+													{name:"reading",minutesInDay:45}],},
+						{name:"Rony", hobbies:[ {name:"playing",minutesInDay:60},
+												{name:"reading",minutesInDay:85}],},
+
+						{ name:"Pooja", hobbies:[ {name:"playing",minutesInDay:90},
+												{name:"travelling",minutesInDay:75}],},],
+	
+	aboutZenrays:{ faculties:[ {name:"sumit",hobbies:[ {name:"playing",minutesInDay:90},
+														{name:"travelling",minutesInDay:75}]}, 
+								{name:"Ayush",hobbies:[ {name:"cricket",minutesInDay:90},
+														{name:"travelling",minutesInDay:75}]}, ], 
+					courses:[ {name:"Full Stack Development",technologies:["react","node","mongodb","Express"]}, 
+							{name:"UI Development",technologies:["react","HTML5","Boostrap","Javascript"]}, 
+							{name:"React",technologies:["react","Javascript"]} ]}};
+let detailsArr = [];
+detailsArr.push(details);
+// console.log(detailsArr);
+	
+
+      let htmlCode = '';
+
+      htmlCode = '<tr><th>Name</th><th>Hobbies</th></tr>';
+      detailsArr.forEach(function (val) {
+        htmlCode += `<tr><td>${val.aboutZenrays['faculties'][0]['name']}</td><td>${val.aboutZenrays['faculties'][0]['hobbies'][0]['name']}  upto ${val.aboutZenrays['faculties'][0]['hobbies'][0]['minutesInDay']} min, ${val.aboutZenrays['faculties'][0]['hobbies'][1]['name']}  upto ${val.aboutZenrays['faculties'][0]['hobbies'][1]['minutesInDay']} min</td></tr>
+
+                      <tr><td>${val.aboutZenrays['faculties'][1]['name']}</td><td>${val.aboutZenrays['faculties'][1]['hobbies'][0]['name']}  upto ${val.aboutZenrays['faculties'][0]['hobbies'][1]['minutesInDay']} min, ${val.aboutZenrays['faculties'][1]['hobbies'][1]['name']}  upto ${val.aboutZenrays['faculties'][1]['hobbies'][1]['minutesInDay']} min</td></tr>`;
+      })
+      document.getElementById('table').innerHTML = htmlCode;
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Search App</title>
+	<style >
+		a{text-decoration: none;}
+		body{
+			text-align: center;
+			font-family: arial;
+		}
+		#searchbox{
+			width: 50%;
+			height: 40px;
+			border: 3px solid teal;
+			border-radius: 50px;
+			text-align: center;
+			box-shadow: 3px 5px #D8D8D8;
+			margin: auto;
+		}
+		#logo{
+			width: 20%;
+			height: 20%;
+			margin-top: 50px;
+		}
+		button{
+			width: 15%;
+			height: 40px;
+			margin: 40px;
+			text-align: center;
+			background-color:  teal;
+			border:2px solid teal;
+			border-radius: 30px;
+			font-size: 18px;
+			box-shadow: 3px 5px #D8D8D8;
+		}
+		#output{
+			/*border:2px solid teal;
+			border-radius: 30px;*/
+			padding-left: 5px;
+			margin: 20px;
+		}
+		#content{
+			text-align:left;
+			padding: 20px 250px 3px 150px;
+			margin: auto;
+			color: purple;
+			font-size: 20px;
+		}	
+		p{
+			text-align: left;
+			padding-bottom: 10px;
+			color: black;
+			margin: auto;
+			font-size: 15px;
+		}
+		#mp{
+			padding-bottom:10px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img id ="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrBx-JD3jI_tBv6in3oa2gx1O_c391q_L3Ag&usqp=CAU">
+	</div>
+	<input type="Search" id="searchbox" onkeypress="search(event)" placeholder="Enter text to search"><br>
+	<button onclick="doSearch()">Search</button>
+	<div id="output"></div>
+	<script>
+		function search(event){
+			if(event.key == "Enter"){
+				searchText = document.getElementById("searchbox").value;
+				return doSearch();
+			}
+		}
+		function doSearch(){
+			let searchResult = '';
+			let searchResult1 = '';
+			let searchText = '';
+			let searchContent = '';
+			let searchContent1 ='';
+			let outputDiv = document.getElementById("output");
+			searchText = document.getElementById("searchbox").value;
+			/*searchText = event.target.value;*/
+			searchText = searchText.toLowerCase();
+			if(searchText == "zenrays"){
+				searchResult= " Zenrays is a year old company in training and consulting.";
+				searchContent = "We offer 20 + Programming languages Training in Bangalore - Koramangala, BTM Layout and Marathahalli. We also offer fast track Coding Bootcamps in Bangalore on Angular 2, JavaScript, ReactJS, AI and Spring and Hibernate. Our Trainers are 10+ years of experienced industry experts, and presently consulting many MNCs and Corporate organisations. All our classroom based courses also include students participating via Online facilities from various parts of India and across the Globe. ";
+				searchResult1 = "ZenRays Technologies Pvt. Ltd. | LinkedIn";
+				searchContent1 = "About us. For more info: Call or WhatsApp Us -> +91 6362454616 Visit -> https://zenrays.com/ ZenRays Technologies is an IT Product Company and Training. ZenRays Technologies Pvt Ltd., #393, 1st floor, 8th Main, 7th Cross, BTM 2nd Stage, Bengaluru-76, Karnataka"
+			}
+			if(searchText =="react"){
+				searchResult = " React is a javascript framework to create awesome web applications.";
+				searchContent = " React is an open-source, front end, JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. ";
+				searchResult1 = "React – A JavaScript library for building user interfaces";
+				searchContent1 = "React is a JavaScript library for building user interfaces. React is used to build single page applications. React allows us to create reusable UI components.";
+			}outputDiv.innerHTML =" <div id = 'content'>"+"<p id ='myp'> About 59,10,000 results (0.54 seconds)<br> </p>"+'<a href="https://zenrays.com/webform-enquiry">' + searchResult + "</a>" +"<br>" +"<p>" + searchContent + "</p>" + "</div>" +"<div id = 'content'>"+'<a href="#">' + searchResult1 + "</a>" +"<br>" +"<p>" + searchContent1 + "</p>" + "</div>"+"<div id = 'content'>"+'<a href="#">' + searchResult + "</a>" +"<br>" +"<p>" + searchContent + "</p>" + "</div>" +"<div id = 'content'>"+'<a href="#">' + searchResult1 + "</a>" +"<br>" +"<p>" + searchContent1 + "</p>" + "</div>"+" <div id = 'content'>"+'<a href="#">' + searchResult + "</a>" +"<br>" +"<p>" + searchContent + "</p>" + "</div>" +"<div id = 'content'>"+'<a href="#">' + searchResult1 + "</a>" +"<br>" +"<p>" + searchContent1 + "</p>" + "</div>"+"<div id = 'content'>"+'<a href="#">' + searchResult + "</a>" +"<br>" +"<p>" + searchContent + "</p>" + "</div>" +"<div id = 'content'>"+'<a href="#">' + searchResult1 + "</a>" +"<br>" +"<p>" + searchContent1 + "</p>" + "</div>";
+		}
+	</script>
+
+</body>
+</html>
+

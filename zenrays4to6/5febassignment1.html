@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inner Html Heading</title>
+</head>
+<body>
+	<h1 id= "head">Welcome to Zenrays</h1>
+<input type="text" id="name">
+<button onclick = "output()">Submit</button>
+<script>
+	function output(){
+	let newContent = document.getElementById("name").value;
+	let headObject = document.getElementById("head").innerHTML ="<h1>" + newContent + "</h1>"; 
+}
+</script>
+</body>
+</html>

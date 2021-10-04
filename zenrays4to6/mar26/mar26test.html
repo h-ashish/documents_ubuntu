@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classes with secret variables</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        class User{
+            name;
+            location;
+            #secret;
+            #password;
+            constructor(name,location){
+                this.name = name;
+                this.location = location;
+                this.#secret = "This is a secret";
+                this.#password = "This is password";
+            }
+            showName(){
+                return this.name;
+            }
+            showSecret(){
+                return this.#secret;
+            }
+        }
+        let userOb = new User("Ashish","Bangalore");
+        document.querySelector('#mydiv').innerHTML = `The name is "${userOb.showName()}"`;
+        document.querySelector('#mydiv1').innerHTML = `The secret is "${userOb.showSecret()}"`;
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding log of a number</title>
+</head>
+<body>
+    <input type="number" id="input" placeholder="enter number">
+    <button onclick="findBin()">find binary value </button>
+    <div id="mydiv"></div>
+    <script>
+        function findBin(){
+            let inp = document.querySelector('#input').value;
+            let res = (inp >>> 0).toString(2);
+            document.querySelector('#mydiv').innerHTML = `The binary value of ${inp} is "${res}"`;
+        }    
+    </script>
+</body>
+</html>

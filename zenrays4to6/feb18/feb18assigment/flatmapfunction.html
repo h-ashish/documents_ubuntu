@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FlatMap Function</title>
+</head>
+<body>
+<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		// let array1 = [1,2,5,3,6,8];
+		// document.querySelector('#mydiv1').innerHTML = `The  Array is [ ${array1} ]`;
+		// let flatMapArray = array1.flatMap(x => [[[x*3]]] );
+		// console.log(flatMapArray);
+		// document.querySelector("#mydiv2").innerHTML =`The Array after flat map function is [ ${flatMapArray} ]`;
+
+		var arr =[1,2,3,7,8,9];
+		var returnArrMap = arr.map(function(val){
+			return [val *2];
+		})
+		returnArrMap;
+
+		var arr =[1,2,3,7,8,9];
+		var returnArrFlatMap = arr.flatMap(function(val){
+			return [val *2];
+		})
+		returnArrFlatMap;
+
+	</script>
+</body>
+</html>

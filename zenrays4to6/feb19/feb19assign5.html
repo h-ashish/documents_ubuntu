@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Searching Hobbies table</title>
+	<style>
+		table, td, th{
+			border-collapse: collapse;
+			border: 2px solid teal;
+			padding: 10px;
+			margin: 20px; 
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="name" placeholder="Enter Name">
+	<input type="number" id="age" placeholder="Enter age">
+	<input type="text" id="hobby" placeholder="Enter Hobby"><br>
+	<button onclick="add()">Add</button>
+	<button onclick="display()">Display Table</button><br>
+	<input type="search" id="search" placeholder="Search for a hobby">
+	<button onclick="search()"> search </button>
+	<table id="mydiv" border="2"></table>
+	<script>
+		let array =[];
+		function add(){
+			let arrayOb ={};
+			arrayOb.name = document.querySelector('#name').value;
+			arrayOb.age = document.querySelector('#age').value;
+			arrayOb.hobby = document.querySelector('#hobby').value.split(',');
+			array.push(arrayOb);
+			console.log(array);
+		}
+		function display(){
+			let divObj = '';
+			array.forEach(function(val){
+				divObj = divObj + ` <tr> <td> ${val.name} </td> <td> ${val.age} </td> <td> ${val.hobby} </td> </tr>  `
+			})
+			document.querySelector('#mydiv').innerHTML = ` <tr> <th> Name </th> <th> Age </th> <th> Hobbies </th> </tr> ${divObj} `;
+		}
+		function search(){
+			let input = document.querySelector('#search').value;
+			input.toLowerCase();
+			let result ='';
+			result = result + `<tr> <th> Name </th> <th> Age </th> <th> Hobbies </th>  </tr> `;
+			array.filter(function(val){
+				if(val.hobby.includes(input)){
+					result = result + `<tr> <td> ${val.name} </td> <td> ${val.age} </td> <td> ${val.hobby} </td> </tr> `;
+					document.querySelector('#mydiv').innerHTML = result;
+				}
+			});
+		}
+	</script>
+</body>
+</html>

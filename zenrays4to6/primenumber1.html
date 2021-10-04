@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime Number or not</title>
+</head>
+<body>
+	<!-- <input type="number" id="input" placeholder="Enter a number">
+	<button onclick="isPrime()">Check</button> -->
+	<script>
+		let j = 2;
+		let counter = 1;
+		sum = 0;
+		while(counter <=10){
+			if(isPrime(j)==true){
+				counter ++;
+				sum = sum + j;
+				console.log(j);
+			}j++;
+		}
+		function isPrime(n){
+			let i;
+			let flag = true;
+			for(i = 2; i<=n/2 ; i++){
+				if(n%i == 0){
+					flag = false;
+					break;
+				}
+			}
+			if(flag == true){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		console.log(sum);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FieldTag Example</title>
+</head>
+<body>
+<form onsubmit="submitForm(event)" >
+	<fieldset name="personaldetails" id="personaldetailsId">
+		<label>Enter details below</label>
+		<input type="number" name="age" placeholder="Enter Age" value="18">
+		<input type="text" name="name" placeholder="Enter name">
+		<textarea name="hobbies" placeholder="Enter hobbies"></textarea>
+	</fieldset>
+	<button>Submit</button>
+</form>
+<script>
+	function submitForm(e){
+		e.preventDefault();
+		//prevent default behaviour which in the case is submitting the form to a itself
+		let formOb = e.target;
+		let name = formOb.name.value;
+		alert(name);
+		console.log(e);
+	}
+</script>
+</body>
+</html>

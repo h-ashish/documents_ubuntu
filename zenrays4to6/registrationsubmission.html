@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration form</title>
+</head>
+<body>
+	<input type="name" id="userfirstname" placeholder="Enter First name">
+	<input type="name" id="userlastname" placeholder="Enter Last name">
+	<input type="email" id="useremail" placeholder="Enter Email">
+	<input type="number" id="usernumber" placeholder="Enter Phone Number">
+	<input type="text" id="userfavcolor" placeholder="Enter your favorite color">
+	<button onclick="display()"> Submit </button>
+	<script>
+		function display(){
+		let fname = document.getElementById("userfirstname")
+		let lname = document.getElementById("userlastname")
+		let email = document.getElementById("useremail")
+		let number = document.getElementById("usernumber")
+		let favcolor = document.getElementById("userfavcolor")
+		let fn = fname.value;
+		let ln = lname.value;
+		let em = email.value;
+		let num = number.value;
+		let fav = favcolor.value;
+		let details =  fn +' '+ ln +' '+ em + ' ' + num + ' ' + fav + ' '; 
+		alert(details);
+	}
+	</script>
+
+</body>
+</html>

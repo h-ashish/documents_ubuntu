@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of first 10 numbers</title>
+</head>
+<body>
+	<button onclick="result()">Show sum of first 10 numbers</button>
+	<div id="mydiv"></div>
+	<script>
+		function result(){
+		let array = [1,2,3,4,5,6,7,8,9,10];
+		let sumValue = array.reduce(function(previousnumber, currentnumber){
+			return previousnumber + currentnumber;
+		})
+		document.querySelector('#mydiv').innerHTML = sumValue;
+	}
+	</script>
+
+</body>
+</html>

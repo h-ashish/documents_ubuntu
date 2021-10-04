@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact function</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<div id="mydiv3"></div>
+	<script >
+		let array1 = [1, 2 ,3];
+		document.querySelector('#mydiv1').innerHTML = `The First Array is [ ${array1} ]`;
+		let array2 = [4, 5, 6];
+		document.querySelector('#mydiv2').innerHTML = `The Second Array is [ ${array2} ]`;
+		let concatArray = array1.concat(array2);
+
+		document.querySelector('#mydiv3').innerHTML = `The Concatinated Array is [ ${concatArray} ]`;
+	</script>
+
+</body>
+</html>

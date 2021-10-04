@@ -1,0 +1,40 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Getter</title>
+    </head>
+    <body>
+        <button onclick="getEpoch()">get epoch</button>
+        <script>
+            class User {
+                username;
+                password;
+                constructor(username,password,epochMilliseconds){
+                    this.username= username;
+                    this.password = password; 
+                    this.epochMilliseconds = epochMilliseconds;
+                }
+                //getter returns the property name as the function name when u try to access the property.
+                get hobby(){
+                    return "Reading";
+                }
+                get interest(){
+                    return "coding";
+                }
+                get Ep(){
+                    return (new Date()).getTime();
+                }
+            }
+            let userOb = new User("user1", "user1",(new Date().getTime()));
+            // alert(userOb.hobby);
+            // alert(userOb.interest)
+            function getEpoch(){
+                alert(userOb.epochMilliseconds);
+                alert(userOb.Ep)
+            }
+        </script>
+    </body>
+    </html>

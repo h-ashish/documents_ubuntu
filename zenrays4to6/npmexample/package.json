@@ -1,0 +1,21 @@
+{
+  "name": "zenpackage",
+  "version": "1.1.0",
+  "description": "testing what is npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "live-server ./"
+  },
+  "keywords": [
+    "learningnpm",
+    "workingsunday",
+    "bored"
+  ],
+  "author": "ashish h",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "moment": "^2.29.1"
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Convertor</title>
+	<style >
+		body{
+			padding: 50px;
+			font-family: tahoma;
+			text-align: center;
+		}
+		h1{
+			font-family: tahoma;
+		}
+		input{
+			text-align: center;
+			padding: 10px;
+			margin: 20px;
+			border: 3px solid brown;
+			border-radius: 50px;
+			width: 20%;
+		}
+		button{
+			padding: 5px;
+			margin: 20px;
+			background-color: brown;
+			border: 3px solid brown;
+			border-radius: 50px;
+			width: 15%;
+			color: white;
+		}
+		div{
+			font-weight: bold;
+			font-size: 30px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1> Currency Convertor</h1>
+	<input type="number" id="pound" placeholder="Enter Currency in Pounds">
+	<button onclick="poundCalc()">Calculate in INR</button><br>
+	<input type="number" id="euro" placeholder="Enter Currency in Euros">
+	<button onclick="euroCalc()">Calculate in INR</button><br>
+	<input type="number" id="dollar" placeholder="Enter Currency in Dollars">
+	<button onclick="dollarCalc()">Calculate in INR</button><br>
+	<div id="output">
+	<script >
+		let divObject = document.getElementById("output");
+		function poundCalc(){
+			let poundVal = document.getElementById("pound");
+			divObject.textContent = Number(poundVal.value) * 100.44 +" ₹";
+		}
+		function euroCalc(){
+			let euroVal = document.getElementById("euro");
+			divObject.textContent = Number(euroVal.value) * 88.24 + " ₹";
+		}
+		function dollarCalc(){
+			let dollarVal = document.getElementById("dollar");
+			divObject.textContent = Number(dollarVal.value) * 72.90 + " ₹";
+		}
+	</script>
+
+</body>
+</html>

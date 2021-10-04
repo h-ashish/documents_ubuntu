@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Removing duplicate values from array</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+<script>
+	let array = [1,2,4,5,7,8,10,22,45,6,99,1,4,6,7,3,7];
+	document.querySelector('#mydiv1').innerHTML = `The given array is [${array}]`;
+
+	let filteredArray = array.filter(function(val,index){
+		return array.indexOf(val) == index;
+	})
+	document.querySelector('#mydiv2').innerHTML = `The array after removing duplicate values is [${filteredArray}]`;
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Intersection of two arrays</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<div id="mydiv3"></div>
+	<div id="mydiv4"></div>
+<script>
+	let a = [1,2,4,6,8,9,12,4,2];
+	let b = [4,3,5,6,7,8,];
+	document.querySelector('#mydiv1').innerHTML = `The first array is [${a}]`;
+	document.querySelector('#mydiv2').innerHTML = `The second array is [${b}]`;
+
+	let Intersection = b.filter(function(val){
+		return a.includes(val);
+		 
+	})
+	document.querySelector('#mydiv3').innerHTML = `The intersection of a and b is [${Intersection}]`;
+	document.querySelector('#mydiv4').innerHTML = `The intersection of b and a is [${Intersection}]`;
+	
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Union of two arrays</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<div id="mydiv3"></div>
+<script>
+	let a = [1,2,4,6,8,9,12,4,2];
+	let b = [4,3,5,6,7,8,];
+	document.querySelector('#mydiv1').innerHTML = `The first array is [${a}]`;
+	document.querySelector('#mydiv2').innerHTML = `The second array is [${b}]`;
+	let concatArr = a.concat(b);
+	console.log(concatArr);
+
+	let unionArr = concatArr.filter(function(val,index){
+		return concatArr.indexOf(val) == index;
+	})
+	document.querySelector('#mydiv3').innerHTML = `The Union of the two arrays is [${unionArr}]`;
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>toLocalString </title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+<script>
+	let dateOb = new Date();
+	document.querySelector('#mydiv1').innerHTML = `This is the output given by the normal Date() function "${dateOb}"`;
+	let india = dateOb.toLocaleString('en-US',{timeZone:'IST'});
+	document.querySelector('#mydiv2').innerHTML = `This is the output given by the  toLocaleString() function "${india}"`;
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Closure functions</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+<script>
+	function outerFunc(birthyear){
+		let age = 2021 - birthyear;
+		document.querySelector('#mydiv1').innerHTML = `This is  birthyear is ${birthyear}`;
+		document.querySelector('#mydiv2').innerHTML = `This is age is ${age}`;
+		function innerFunc(){
+			return (age>21)? alert("Eligible to Drink") : alert("Not Eligible to drink"); 
+		} 
+		return innerFunc;
+	}
+	let result = outerFunc(2005);
+	result();
+</script>
+</body>
+</html> -->
+

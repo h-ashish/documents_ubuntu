@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local storage app</title>
+	<style>
+		body{
+			border: 4px solid #400080;
+			border-radius: 10px;
+			padding: 20px;
+			font-family: Calibri;
+			font-size: 20px;
+			text-align: center;
+			background-color: #bf80ff;
+		}
+		#container{
+			border: 4px solid #400080;
+			border-radius: 10px;
+			padding: 20px;
+			text-align: center;
+		}
+		input{
+			width: 30%;
+			height: 40px;
+			margin: 10px;
+			text-align: center;
+			background-color: #f3e6ff;
+			border:2px solid #400080 ;
+			border-radius: 30px;
+		}
+		button{
+			width: 15%;
+			height: 40px;
+			margin: 10px;
+			background-color: #400080;
+			border:2px solid #400080;
+			border-radius: 30px;
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+<h1>Please enter below details to register</h1>
+<div id="container">
+	<input type="text" id="username" placeholder="Enter your name"><br>
+	<input type="password" name="userpassword" placeholder="Enter password"><br>
+	<input type="email" id="useremail" placeholder="Enter your mail ID" ><br>
+	<input type="number" id="userage" placeholder="Enter your age"><br>
+	<input type="date" id="userbirthday" max="2021-01-28"><br>
+	<button onclick="storeValue()" style = "color: white">Register</button>
+</div>
+<script>
+	function storeValue(){
+		
+	let name = document.getElementById("username"); 
+	let password = document.getElementById("userpassword")
+	let email = document.getElementById("useremail");
+	let age = document.getElementById("userage");
+	let birthday = document.getElementById("userbirthday");
+	let username = name.value;
+	let userpassword = password.value; 
+	let useremail = email.value;
+	let userage = age.value; m
+	let userbirthday = birthday.value;
+	localStorage.setItem('username',username);
+	localStorage.setItem('userpassword',userpassword)
+	localStorage.setItem('useremail',useremail);
+	localStorage.setItem('userage',userage);
+	localStorage.setItem('userDOB',userbirthday);
+}	
+</script>
+</body>
+</html>

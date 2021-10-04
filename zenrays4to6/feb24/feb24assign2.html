@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo list</title>
+	<style>
+		body{
+			text-align: center;
+			font-family: tahoma;
+			background-color: teal;
+		}
+		h1{
+			color: #e6e6ff;
+			font-size: 45px;
+			margin-bottom: 10px;
+		}input{
+			width: 20%;
+			height: 40px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		textarea{
+			width: 20%;
+			height: 100px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		button{
+			width: 17%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			color: white;
+			background-color:#090711;
+			border:2px solid #090711;
+			border-radius: 10px;
+			font-size: 18px;
+			outline: none;
+		}
+		table,th,td{
+			width: 20%;
+			border-radius: 5px;
+			color: #e6e6ff;
+			background-color: #29282D;
+			border: 2px solid #e6e6ff;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>ToDo List</h1>
+	<input type="text" id="title" placeholder="Enter Title"><br>
+	<textarea rows="15" cols="22" placeholder="Enter things ToDo" id="todo"></textarea><br>
+	<input type="date" id="date"><br>
+	<input type="time" id="time"><br>
+	<button onclick="add()">Create List</button>
+	<button onclick="showTodo()">Show List</button><br>
+	<input type="search" id="search" placeholder="Enter Title to search"><br>
+	<button onclick="searchTitle()">Search ToDo</button>
+	<div id="mydiv"></div>
+	<table id="table" border="2"></table>
+	<script>
+		let arr =[];
+		function add(){
+			let arrOb ={
+				title: document.querySelector('#title').value,
+				thingstodo: document.querySelector('#todo').value,
+				date:document.querySelector('#date').value,
+				time:document.querySelector('#time').value
+			};
+			arr.push(arrOb);
+			console.log(arr);
+		}
+		function showTodo(){
+			divOb ='';
+			arr.forEach(function(val){
+				divOb = divOb + `<tr> <td> ${val.title} </td> <td> ${val.thingstodo} </td> <td> ${val.date}</td> <td> ${val.time} </td> </tr> `
+			})
+			document.querySelector('#table').innerHTML = `<tr> <th> Title </th> <th> Things To Do </th> <th> Date </th> <th> Time </th> </tr> ${divOb}`;
+		}
+		function searchTitle(){
+			let input = document.querySelector('#search').value;
+			input.toLowerCase();
+			let result ='';
+			result = result + `<tr> <th> Title </th> <th> Things To Do </th> <th> Date </th> <th> Time </th> </tr> `;
+			arr.filter(function(val){
+				if(val.title == input){
+					result = result + `<tr> <td> ${val.title} </td> <td> ${val.thingstodo} </td> <td> ${val.date}</td> <td> ${val.time} </td> </tr> `;
+					document.querySelector('#table').innerHTML = result;
+					return true;
+				}
+			})
+			if(result==undefined){
+				document.querySelector('#mydiv').innerHTML = `Wrong Title `;
+			}
+
+		}
+	</script>
+
+</body>
+</html>

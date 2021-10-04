@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dividing two numbers</title>
+
+</head>
+<body>
+	 <input type="number" id="no1">
+	 <input type="number" id="no2">
+	 <button onclick="result()">Divide</button>
+	 <script>
+	 	function divide(){
+	 		let n1;
+	 		let n2;
+	 		input1 = document.getElementById("no1");
+	 		n1 = Number(input1.value);
+	 		input2 = document.getElementById("no2");
+	 		n2 = Number(input2.value);
+	 		let remainder = n1 % n2;
+	 		return remainder;
+	 		} 		
+	 </script>
+	 <div id= "mydiv"></div>
+	 <script> 
+	 	function result(){
+			let divObject = document.getElementById("mydiv")
+			divObject.textContent = divide();
+			divObject.style.border="5px solid pink";
+		}
+	</script>
+</body>
+</html>

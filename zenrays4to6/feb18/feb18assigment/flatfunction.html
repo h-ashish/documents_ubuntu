@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flat function</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let array1 = [1,2,5,[[[3,6]]],8];
+		document.querySelector('#mydiv1').innerHTML = `The  Array is [ ${array1} ]`;
+		let flatArray = array1.flat(0);
+		console.log(flatArray);
+		document.querySelector("#mydiv2").innerHTML =`The Array after flat function is [ ${flatArray} ]`;
+	</script>
+
+</body>
+</html>

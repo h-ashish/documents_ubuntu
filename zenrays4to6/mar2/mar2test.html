@@ -1,0 +1,187 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>sum of cube of first 10 prime numbers</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+	function main(){
+		let arr= [];
+		let i = 2;
+		function isPrime(no){
+			let i = 1;
+			for(i=2; i<=no/2; i++){
+				if(no%i == 0)
+					return false;
+			}
+			return true;
+		}
+			while(arr.length < 10){
+				if(isPrime(i)){
+					arr.push(i);
+				}
+				i++;
+				document.querySelector('#mydiv').innerHTML = `The first 10 prime numbers are [${arr}]`;
+			}
+			function getSum(){
+				let sum =0;
+				arr1 = [];
+				arr.forEach(function(val){
+					sum = sum + val*val*val;
+				})
+				arr1.push(sum);
+				document.querySelector('#mydiv1').innerHTML = `The sum of first 10 prime numbers is ${arr1}`;
+				return sum;
+			}
+			return getSum;
+		
+	}
+	let callMain = main();
+	callMain()
+	console.log(callMain())
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>first 20 fibonacci series</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<script>
+		let n1=0, n2 = 1, nextTerm = 0;
+		let arr =[];
+		let arr1 =[];
+		let htmlCode = '';
+		let i;
+		for( i = 0; i <20; i++){
+			htmlCode = htmlCode + n1 + ',';
+			nextTerm = n1 + n2;
+			arr.push(n1);
+			n1 = n2;
+			n2 = nextTerm;
+			if(n1%2 == 0){
+				arr1.push(n1);
+			}
+			
+		} 
+		document.querySelector('#mydiv').innerHTML = `The first 20 Fibonacci numbers are [${arr}]`;
+		document.querySelector('#mydiv1').innerHTML = `The even Fibonacci numbers are [${arr1}]`;
+
+	</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>first 20 fibonacci series</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<script>
+		let n1=0, n2 = 1, nextTerm = 0;
+		let arr =[];
+		let arr1 =[];
+		let htmlCode = '';
+		let i;
+		for( i = 0; i <20; i++){
+			htmlCode = htmlCode + n1 + ',';
+			nextTerm = n1 + n2;
+			arr.push(n1);
+			n1 = n2;
+			n2 = nextTerm;
+			if(n1%2 == 0){
+				arr1.push(n1);
+			}
+			
+		} 
+		document.querySelector('#mydiv').innerHTML = `The first 20 Fibonacci numbers are [${arr}]`;
+		document.querySelector('#mydiv1').innerHTML = `The even Fibonacci numbers are [${arr1}]`;
+
+	</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time zone using Moment JS</title>
+</head>
+<style>
+		body{
+			text-align: center;
+			font-family: tahoma;
+			background-color: DodgerBlue;
+		}
+		div{
+			width: 60%;
+			text-align: center;
+			background-color: Lavender;
+			border:3px solid Maroon;
+			border-radius: 20px;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		input, datalist, option{
+			text-align: center;
+			width: 20%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:3px solid Maroon ;
+			border-radius: 5px;
+		}
+	</style>
+<body>
+	<input list="city" name="cities" id="cities">
+	<datalist id= "city">
+	<option value="india">
+	<option value="srilanka">
+	<option value="USA">
+	<option value="UK">
+	<option value="japan" onclick="show()">
+	</datalist><br>
+	<input type="submit" id="input" >
+	<div id="mydiv"></div>
+<script src="moment.js"></script>
+<script src="momenttimezone.js"></script>
+<script>
+		let selectId = document.querySelector('#cities');
+		let input = document.querySelector('#input');
+		
+		input.addEventListener('click',function(){
+			if(selectId.value == "india"){	
+				let india = moment().tz("Asia/Kolkata").format('LLL');
+					document.querySelector('#mydiv').innerHTML = `<h2> Timezone: Asia/India </h2> <br> <h2> City: Kolkata/ India </h2> <br> <h1> Date and time: ${india} </h1>`;
+			}
+
+			if(selectId.value == "srilanka"){
+				let srilanka = moment().tz("Asia/Colombo").format('LLL');
+					document.querySelector('#mydiv').innerHTML = `<h2> Timezone: Asia/Srilanka </h2> <br> <h2> City: Colombo/Sri Lanka </h2> <br> <h1> Date and time: ${srilanka}</h1>`;
+			}
+			if(selectId.value == "USA"){
+				let USA = moment().tz("America/New_York").format('LLL');
+					document.querySelector('#mydiv').innerHTML = `<h2> Timezone: USA/ NewYork </h2> <br> <h2> City: NewYork/ USA </h2> <br> <h1> Date and time: ${USA}</h1>`;
+			}
+			if(selectId.value == "UK"){
+				let UK = moment().tz("Europe/London").format('LLL');
+					document.querySelector('#mydiv').innerHTML = `<h2> Timezone: Europe/United Kingdom </h2> <br> <h2> City: London/ Europe </h2> <br> <h1> Date and time: ${UK}</h1>`;
+			}
+			if(selectId.value == "japan"){
+				let japan = moment().tz("Asia/Tokyo").format('LLL');
+					document.querySelector('#mydiv').innerHTML = `<h2> Timezone: Asia/Japan </h2> <br> <h2> City: Tokyo/ Japan </h2> <br> <h1> Date and time: ${japan} </h1>`;
+			}
+		})
+</script>
+</body>
+</html>

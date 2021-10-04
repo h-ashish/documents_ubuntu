@@ -1,0 +1,132 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>sum of squares of first 7 fibonacci numbers</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let array = [];
+		let array1 = [];
+		let divHtml;
+		let n1=0,n2=1, nextTerm;
+		let res;
+		let sqr;
+		for(let i = 0;i<7;i++){
+			divHtml = n1;
+			nextTerm = n1 + n2;
+			n1 = n2;
+			n2 = nextTerm;
+			array1.push(divHtml)
+			document.querySelector('#mydiv').innerHTML = `The first seven fibonacci numbers are [${array1}]`;
+			sqr = divHtml * divHtml;
+			array.push(sqr);
+			document.querySelector('#mydiv1').innerHTML = `The squares of first seven fibonacci numbers are [${array}]`;
+			console.log(array);
+			res = array.reduce(function(a,b){
+				return a + b;
+			});
+			
+		}
+		document.querySelector('#mydiv2').innerHTML = `The sum of squares of first seven fibonacci numbers are ${res}`;
+	</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>creating object from Object.create()</title>
+</head>
+<body>
+	<h1>See result in Console</h1>
+<script>
+	let students = {
+		name: "Ashish H",
+		age: 23,
+		sex: "male",
+	}
+	let studentLocation = Object.create(students);
+		studentLocation.location = "bangalore";
+		console.log(studentLocation);
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>for in loop</title>
+</head>
+<body>
+<script>
+	let book = {
+		name:'Fountain Head',
+		pages:500, 
+		genre:'Social'
+	};
+	for(i in book){
+		console.log(i + ":" + book[i]);
+		alert(i + " : " + book[i])
+	}
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Difference between Object.create() and new Object </title>
+</head>
+<body>
+	<h1>see the difference in console</h1>
+<script>
+	let employee = new Object();
+		employee.name = "Ashish H";
+		employee.age = 23;
+		employee.gender = "male";
+
+	let employeeLocation = Object.create(employee);
+		employeeLocation.location = "bangalore";
+		console.log(employee)
+		console.log(employeeLocation);
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>showing different ways to create an object</title>
+</head>
+<body>
+	<h1>See the different ways of declaring a function in the console</h1>
+<script>
+	let employee = new Object();
+		employee.name = "Ashish H";
+		employee.age = 23;
+		employee.gender = "male";
+
+	let employeeLocation = Object.create(employee);
+		employeeLocation.location = "bangalore";
+		console.log(employee)
+		console.log(employeeLocation);
+
+	let students = {
+		name: "Ashish H",
+		age: 23,
+		gender: "male"
+	}
+	console.log( students);
+
+	let familyMembers = {};
+	familyMembers.father = "Harish";
+	familyMembers.mother = "anitha";
+	familyMembers.sister = "vaishnavi";
+	console.log(familyMembers);
+</script>
+</body>
+</html>

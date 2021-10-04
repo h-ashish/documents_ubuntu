@@ -1,0 +1,59 @@
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding number of vowels</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <table id="mytable" border="2"></table>
+    <script>
+        let str = "Zenrays Technologies,Place to learn Handson Coding in Full Stack and React";
+        document.querySelector('#mydiv').innerHTML = `The given string is "${str}"`;
+        let res = str.match(/[aeiou]/g).length;
+        document.querySelector('#mydiv1').innerHTML = `The number of vowels in the given string is "${res}"`;
+        let str1 = str.split('');
+        let divHtml = '';
+        str1.forEach(function(val,index){
+            if(val.match(/[aeiou]/g)){
+                divHtml += `<tr> <td> ${val} </td> <td> ${index} </td> </tr>`;
+            }
+        })
+        document.querySelector('#mytable').innerHTML = `<tr> <th> Vowel </th> <th> Index of vowel </th> </tr> ${divHtml}`;
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter url as "https://www.zenrays.com"</p>
+    <input type="url" id="input" placeholder="enter url">
+    <button onclick="showWeb()">show</button>
+    <div id="mydiv"></div>
+    <script>
+        function showWeb(){
+            let website = "https://www.zenrays.com";
+            let url = document.querySelector('#input').value;
+            if(url == website){
+                document.querySelector('#mydiv').innerHTML = `<a href="#" >zenrays.com</a>`;
+            } else {
+                document.querySelector('#mydiv').innerHTML = `Wrong url!`;
+            }
+        }
+    </script>
+</body>
+</html>

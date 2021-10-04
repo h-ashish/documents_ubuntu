@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mar20 Assignment 4</title>
+</head>
+<body>
+    <h1>Scientific calculator</h1>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <button onclick="result.sin()"> Sin</button>
+	<button onclick="result.cos()"> Cos</button>
+	<button onclick="result.tan()"> Tan</button>
+    <button onclick="result.cot()"> Cos </button>
+    <div id="mydiv"></div>
+    <script>
+        
+       function ScientificCalculator(){
+
+            this.sin = function(){
+                let a= Number(document.querySelector('#num1').value);
+                document.querySelector('#mydiv').innerHTML = `The Sine of ${a} = ${Math.sin(a*(Math.PI/180))}`;
+            },
+            this.cos = function(){
+                let a= Number(document.querySelector('#num1').value);
+                document.querySelector('#mydiv').innerHTML = `The Cos of ${a} = ${Math.cos(a*(Math.PI/180))}`;
+            },
+            this.tan = function(){
+                let a= Number(document.querySelector('#num1').value);
+                document.querySelector('#mydiv').innerHTML = `The Tan of ${a} = ${Math.tan(a*(Math.PI/180))}`;
+            },
+            this.cot = function(){
+                let a= Number(document.querySelector('#num1').value);
+                document.querySelector('#mydiv').innerHTML = `The Cot of ${a} = ${1/(Math.tan(a*(Math.PI/180)))}`;
+            }
+        }
+        let result = new ScientificCalculator();
+    </script>
+</body>
+</html>

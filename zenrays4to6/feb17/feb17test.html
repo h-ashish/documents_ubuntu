@@ -1,0 +1,134 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Reduce Function</title>
+</head>
+<body>
+	<script>
+		let array =[1,3,5,6,9,7,8,12,41,15,16,25,67];
+		let reducedReturnValue = array.reduce(function(previousVal ,currentVal, index){
+			console.log(index);
+			console.log(previousVal);
+			return previousVal + currentVal;
+		},0)
+		console.log(reducedReturnValue);
+	</script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Splice Function</title>
+</head>
+<body>
+	<script >
+		let nos = [1,2,3,5,8,4,7,12,45,71];
+		console.log(nos);
+		let returnValue = nos.splice(3,3);
+		console.log(nos);
+		console.log(returnValue); 
+
+		let nosOne = [12,45,13,8,12,2,5];
+		nosOne.splice(3,3, 100, 200, 500);
+		console.log(nosOne);
+	</script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Adding and removing names</title>
+</head>
+<body>
+	<div id= "mydiv"></div> 
+	<div id= "mydiv1"></div>
+	<div id= "mydiv2"></div>
+	<script >
+		let names = ["rony","vignesh","saswati","vaishali","Ashish"]
+		document.querySelector('#mydiv').innerHTML = "The array is [" + names + "]";
+		let returnValue = names.splice(1,2);
+		document.querySelector('#mydiv1').innerHTML = "The array after removing vignesh and saswati is [" + names + "]";
+		console.log(returnValue); 
+
+		names.splice(3,0, "Sania" , "Prajwal" );
+		document.querySelector('#mydiv2').innerHTML = "The array after adding Sania and Prajwal is [" + names + "]";
+	</script>
+
+</body>
+</html>
+ -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Factorial using recursive function</title>
+</head>
+<body>
+	
+	<script>
+		let n = prompt("Enter Number to find factorial")
+		function factByRecursive(n){
+			if(n==1){
+				return 1;
+			}else{
+				return n * factByRecursive(n-1);
+			}
+		}	
+
+		let result = factByRecursive(n);
+		alert(result);
+		
+	</script>
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Sort Table</title>
+</head>
+<body>
+	<button onclick= "sortedArr()">Sort</button>
+	<table id ="details" border= "2"></table>
+	<script>
+		let array = [1,3,5,6,3,2,1,6];
+		function sortedArr(){
+			sortedRes = array.sort(function(a, b) {return a -b})
+			console.log(sortedRes);
+			document.querySelector('#details').innerHTML = "<tr> <th>  Array </th> </tr> <tr> <td> [" + array + "] </td> </tr> ";
+		}
+		document.querySelector('#details').innerHTML = "<tr> <th>  Array </th> </tr> <tr> <td> [" + array + "] </td> </tr> ";
+
+	</script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sort Table</title>
+</head>
+<body>
+	<button onclick= "sortedArr()">Sort</button>
+	<table id ="details" border= "2"></table>
+	<script>
+		let names = ["rony","vignesh","saswati","vaishali","Ashish"];
+		function sortedArr(){
+			sortedRes = names.sort()
+			sortedRes = names.reverse()
+			console.log(sortedRes);
+			document.querySelector('#details').innerHTML = "<tr> <th>  Array </th> </tr> <tr> <td> [" + names + "] </td> </tr> ";
+		}
+		document.querySelector('#details').innerHTML = "<tr> <th>  Array </th> </tr> <tr> <td> [" + names + "] </td> </tr> ";
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local var vs Global var</title>
+</head>
+<body>
+	<script>
+		var name ="zenrays";
+		var city = " Bangalore";
+		var testvar = "Testvarglobal";
+		alert(window.name);
+		alert(window.city);
+		alert(window.testvar);
+		function localVarFunc(){
+			var a = "Ashish";
+			var b = "Yogesh";
+			alert(a);
+			alert(name);
+			return "cake";
+		}
+		let functionreturnvalue = localVarFunc();
+		alert(functionreturnvalue);		
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block vs inline</title>
+    <style>
+        div, span{
+            border: 4px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+        #div-one{
+            visibility: hidden;
+        }
+        #span-one{
+            display: block;
+        }
+        #div-two{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="clearfix">
+        <div id="div-one">div one</div>
+        <span id="span-one"> i am a span and i dont take entire space</span>
+        <span> i am a span and i dont take entire space</span>
+        <span> i am a span and i dont take entire space</span>
+        <a href="#">link1</a>
+        <a href="#">link1</a>
+        <a href="#">link1</a>
+        <div id="div-two">div two</div>
+        <div id="div-three">div three</div>
+    </div>
+</body>
+</html>

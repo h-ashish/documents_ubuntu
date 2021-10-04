@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>12 Feb Assignment</title>
+	<style >
+		body{
+			text-align: center;
+			background-image: linear-gradient(to right, #eecda3 , #ef629f); 
+			font-family: Tahoma;
+			color: black;
+		}
+		h1{
+			font-size: 45px;
+			margin: 30px;
+		}
+		button{
+			width: 15%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			color: white;
+			background-color: #001433;
+			border:2px solid #001433;
+			border-radius: 5px;
+			font-size: 18px;
+			outline: none;
+		}
+		input{
+			width: 20%;
+			height: 40px;
+			margin: 15px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		textarea{
+			width: 20%;
+			height: 70x;
+			margin: 15px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		table,th,td{
+			border: 3px solid black;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+		p{
+			text-align: left;
+			padding-bottom: 10px;
+			color: black;
+			margin-left: 100px;
+			margin-right:100px;
+			font-size: 17px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1 id="head"> Welcome to Zenrays </h1>
+	<button onclick="home()">Home</button>
+	<button onclick="about()">About</button>
+	<button onclick="contact()">Contacts</button>
+	<button onclick="clients()">Clients</button><br>
+	<div id="myDiv"></div>
+	<script>
+		function home(){
+			document.querySelector('#myDiv').innerHTML = "<h1> Welcome To Homepage </h1> <br> <p> ZenRays offers the best Corporate software training conducted by industry experts and experienced trainers. We provide hands-on corporate training in Bangalore, US, Europe and Singapore on the lastest top demanding technologies such as Artificial Intelligence, Machine Learning, Angular, React & Redux, MEAN Stack, Python and many more. Schedule an online / on-premise training. Employee skill upgradation to new technologies is a challenging process. As per study and research, it takes 6 months for employees to catch up and be productive in new technology if they learn from their own and through videos. </p> ";
+		}
+		function about(){
+			document.querySelector('#myDiv').innerHTML = "<h1> Welcome to About us Page </h1> <br> <p> ZenRays offers the best Corporate software training conducted by industry experts and experienced trainers. We provide hands-on corporate training in Bangalore, US, Europe and Singapore on the lastest top demanding technologies such as Artificial Intelligence, Machine Learning, Angular, React & Redux, MEAN Stack, Python and many more. Schedule an online / on-premise training. <br> <li> Employee skill upgradation to new technologies is a challenging process. As per study and research, it takes 6 months for employees to catch up and be productive in new technology if they learn from their own and through videos.</li> <li>Quality of work and code is of poor quality if employees work on a new technology without a proper training and walk through. This results in less productivity in terms of time and code quality.</li> <li> Resultant project is buggy and gets regression bugs regularly. This results in bad client feedback and delayed project delivery. </li></p>";
+		}
+		function contact(){
+			document.querySelector('#myDiv').innerHTML = "<form><label> Full Name: </label> <br> <input type= 'text' placeholder='Enter Full Name'><br> <label> Email: </label> <br> <input type ='email'placeholder='Enter Email'> <br> <label> Description: </label> <br> <textarea rows = 10 cols = 22 > </textarea>  </form> <br> <button> Submit </button>"
+		}
+		function clients(){
+			document.querySelector('#myDiv').innerHTML = "<table> <tr> <th> Cleint Name </th> <th> Cleint Address </th> </tr> <tr> <td> Ashish H </td> <td> Malleshwaram </td></tr> <tr> <td> Prajwal </td> <td> Chickmangaluru </td></tr><tr> <td> Munna</td> <td> Madikeri </td></tr> </table>"
+		}
+	</script>
+</body>
+</html>

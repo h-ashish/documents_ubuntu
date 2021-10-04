@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Printing even numbers between range</title>
+</head>
+<body>
+	<input type="number" id="minnumber" placeholder="Enter minimum number">
+	<input type="number" id="maxnumber" placeholder="Enter Maximum number">
+	<button onclick="printEven()">Print numbers</button>
+	<script>		
+		
+function printEven() {
+		let input1 = document.getElementById("minnumber");
+		let n1 = Number(input1.value);	
+		let input2 = document.getElementById("maxnumber");
+		let n2 = Number(input2.value);
+    for(let i=n1; i<=n2; i++)
+       {
+       	if(i%2 == 0)
+       		console.log(i);
+       }
+    } 
+	</script>
+</body>
+</html>

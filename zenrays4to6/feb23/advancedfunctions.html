@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced javascript</title>
+</head>
+<body>
+	<script>
+		function sum(a,b){
+			return a+ b;
+		}
+		console.log(sum(1,5));
+
+		var sum = new Function('a','b','return a+b');
+		console.log(sum(1,2));
+
+		//anonymous function
+		setTimeout(function(){console.log("Task done");},2000);
+
+		//passing function by a function
+		function invokeSum(a,b){
+			return a() + b();
+		}
+		function returnOne(){
+			return 1;
+		}
+		function returnTwo(){
+			return 2;
+		}
+		console.log(invokeSum(returnOne, returnTwo));
+		
+		//function with code call
+		function invokeSum(a,b){
+			return a() + b();
+		}
+		console.log(invokeSum(
+			function(){return 7 + 4},
+			function(){return 8 + 6}
+		));
+
+		//immediate function
+		(function(msg){
+			alert(msg)
+		})("hello, i will be executed immediately");
+
+	</script>
+
+</body>
+</html>

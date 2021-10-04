@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Available products</title>
+</head>
+<body>
+	<table id="table" border=""></table>
+<script>
+	let retItem = localStorage.getItem('array');
+		let myObj = JSON.parse(retItem);
+	let divObj ='';
+		let result = myObj.forEach(function(val,index){
+			if(val.productAvailability == true){
+			divObj = divObj + `<tr>  <td> ${val.productName} </td> <td> ${val.productPrice} </td> <td> ${val.productBrand} </td> <td> ${val.productDesc} </td> <td> ${val.productAvailability} </td> </tr>`;
+		}
+		})
+		document.querySelector('#table').innerHTML = 
+		`<tr> <th> Product Name </th> 
+		<th> Product Price </th> 
+		<th> Brand </th> 
+		<th> Product Description </th> 
+		<th> Availability </th> </tr> ${divObj}`;
+</script>
+</body>
+</html>

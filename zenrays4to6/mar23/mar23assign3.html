@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar 23 assignment 3</title>
+</head>
+<body>
+    <p>enter email and password as entered in the mar 23 assignment 2 to login succesfully</p>
+    <input type="email" id="email" placeholder="enter email">
+    <input type="password" id="password" placeholder="enter password">
+    <button onclick="login()">Login</button>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        
+        function login(){
+            let email = document.querySelector('#email').value;
+            let password = document.querySelector('#password').value;
+            let extractedVal = JSON.parse(localStorage.getItem('details'));
+            console.log(extractedVal);
+
+            extractedVal.forEach(function(val){
+                if(email == val.email && password == val.password){
+                    alert("Welcome to your login page");
+                    document.querySelector('#mydiv').innerHTML = 
+                    `<img src="image.jpg" style="width:500px;height:200px;">`
+                }else{
+                    document.querySelector('#mydiv').innerHTML = `Sorry! Login incorrect`;
+                }
+            })
+        }
+    </script>
+</body>
+</html>

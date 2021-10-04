@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adding 100 to every element of Array</title>
+</head>
+<body>
+	<button onclick="result()">Add 100 to array values</button>
+	<div id="mydiv"></div>
+	<script>
+		let array1 =[];
+		let array =[1,2,4,5,6,8,9,112];
+		function result(){		
+		let filteredArray = array.filter(function(val){
+			val = val + 100;
+			array1.push(val);
+			
+		});
+		console.log(array1);
+		document.querySelector('#mydiv').innerHTML = "[" + array1 + "]";
+	}
+	</script>
+
+</body>
+</html>

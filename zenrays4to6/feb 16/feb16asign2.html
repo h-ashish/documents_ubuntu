@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Showing Array in table</title>
+	<style>
+		body{
+			text-align: center;
+			background-image: linear-gradient(to right, #00d2ff , #928DAB); 
+			font-family: Tahoma;
+			color: black;
+		}
+		input{
+			width: 20%;
+			height: 40px;
+			margin: 15px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		button,#mybtn  {
+			width: 20%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			color: white;
+			background-color: #001433;
+			border:2px solid #001433;
+			border-radius: 30px;
+			font-size: 18px;
+			outline: none;
+		}
+		table,th,td{
+			background-color: #928DAB;
+			border: 3px solid black;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}	
+	</style>
+</head>
+<body>
+<input type="text" id="name" placeholder="Enter Name"><br>
+<input type="number" id="age" placeholder="Enter age"><br>
+<input type="text" id="hobby" placeholder="Enter Hobby"><br>
+<button onclick="addStudent()">Add Student</button>
+<button onclick="showRes()">Show Result</button>
+<table id="details" border="2">	
+</table>
+<script>
+	let array =[];
+	function addStudent(){
+		let arrayObj ={};
+		arrayObj.name = document.querySelector('#name').value;
+		arrayObj.age = document.querySelector('#age').value;
+		arrayObj.hobby = document.querySelector('#hobby').value;
+		array.push(arrayObj);
+		// console.log(array);
+	}
+	// function deleteRow(r) {
+ // 			var i = r.parentNode.parentNode.rowIndex;
+ //  			document.getElementById("details").deleteRow(i);
+	// 	}
+	function deleteRow(index){
+		delete array[index];
+		array.filter(function(val){
+			if (val == "")
+				return  false
+			return true;
+			
+		});
+		showRes();
+		console.log(array);
+	}
+	function showRes(){
+		let divObj ='';
+		array.forEach(function(arrayObj, index){
+			divObj = divObj + " <tr> <td> " + arrayObj.name + "</td> <td> " + arrayObj.age + " <td> " + arrayObj.hobby + " </td> <td> <button id ='mybtn' type ='button' value ='Delete' onclick='deleteRow(" + index +" )' > Delete </button> </td></tr> ";	
+		})
+		document.querySelector('#details').innerHTML ="<tr> <th>  Name </th> <th> Age </th> <th> Hobby </th><th> Delete Student </th> </tr> " + divObj;
+	}
+</script>
+</body>
+</html>

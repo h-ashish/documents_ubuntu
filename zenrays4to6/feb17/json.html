@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Array to Javascript Array </title>
+</head>
+<body>
+	<script>
+		let jsonStringArr = '["Ashish" , "Prajwal"]';
+		alert(typeof(jsonStringArr))
+		//to convert json string to javascript variable you have to use JSON,parse(jsonstring)
+		let studentArr = JSON.parse(jsonStringArr);
+		alert(typeof(studentArr));
+		console.log(studentArr);
+
+		let jsonStringOb ='{"name":"Ashish", "Hobby": "Reading"}';
+		alert(typeof(jsonStringOb));
+		let studentOb = JSON.parse(jsonStringOb);
+		alert(typeof(studentOb));
+		console.log(studentOb);
+
+		let convertedJsonStringStudentOb = JSON.stringify(studentOb);
+		alert(typeof(convertedJsonStringStudentOb));
+		console.log(convertedJsonStringStudentOb);
+
+		let convertedJsonStringStudentArr = JSON.stringify(studentArr);
+		alert(typeof(convertedJsonStringStudentArr));
+		console.log(convertedJsonStringStudentArr);
+	</script>
+</body>
+</html>

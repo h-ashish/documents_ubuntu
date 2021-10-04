@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance in ECMA 6
+    </title>
+</head>
+<body>
+    <script>
+        class User{
+            constructor(){}
+            sayHello(){
+                console.log('Hello')
+            }
+        }
+
+        class Admin extends User{
+            constructor(name,age){
+                super();
+                this.name= name;
+                this.age = age;
+                
+            }
+            showName(){
+                console.log(this.name);
+            }
+        }
+        let newOb = new Admin('ashish',23);
+        newOb.showName();
+        newOb.sayHello();
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>age in days</title>
+</head>
+<input type ="date" onchange="storeDate()" id = "dateid">
+<button onclick="ShowDate()">Show Date</button>
+<div id = "output"></div>
+<body>
+<script>
+function storeDate(){
+	console.log("you changed date");
+	localStorage.setItem('dob',document.getElementById('dateid').value);
+}
+function ShowDate()
+{
+ 	let htmlToInsert = "";
+ 	let todayDate = new Date();
+ 	let birthDate = new Date(localStorage.getItem('dob'));
+ 	console.log(birthDate);
+ 	console.log(todayDate);
+ 	let todayMonth = todayDate.getMonth();
+ 	let birthMonth = birthDate.getMonth();
+ 	console.log(`todayMonth = ${todayMonth}`);
+ 	console.log(`todayMonth = ${birthMonth}`);
+
+ 	let ageYear;
+ 	let tempDate = new Date(birthDate);
+
+ 	if(todayMonth -birthMonth>0)
+ 	{
+ 		ageYear = todayDate.getFullYear() -birthDate.getFullYear();
+ 		tempDate.setFullYear(todayDate.getFullYear());
+ 	}else{
+ 		if(todayDate.getDate() - birthDate.getDate()>0)
+ 		{
+ 				ageYear = todayDate.getFullYear() -birthDate.getFullYear();
+ 				tempDate.setFullYear(todayDate.getFullYear())
+ 		}else{
+ 		ageYear = todayDate.getFullYear() -birthDate.getFullYear() -1;
+ 		tempDate.setFullYear(todayDate.getFullYear()-1)
+	}
+	console.log(ageYear);
+
+let milliSecondsdiff =todayDate.getTime() -tempDate.getTime();
+let daydiff = Math.floor(milliSecondsdiff/86400000);
+console.log(daydiff);
+document.getElementById("output").innerHTML = `<h3> age = ${ageYear} years and ${daydiff}</h3>`;
+
+}
+}
+</script>
+</body>
+</html>

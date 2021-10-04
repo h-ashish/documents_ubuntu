@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Single Page Website</title>
+	<style>
+		body{
+			text-align: center;
+			font-family: Tahoma;
+		}
+		#head{
+			margin-top: 50px;
+		}
+		button{
+			width: 15%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			background-color:teal;
+			border:2px solid teal;
+			border-radius: 30px;
+			font-size: 18px;
+			outline: none;
+			color: white;
+		}
+		#output1{
+			margin-top: 30px;
+			padding: 20px;
+			width: 50%;
+			margin: auto;
+		}
+		#output2{
+			margin-top: 30px;
+			padding: 20px;
+			width: 50%;
+			margin: auto;
+		}
+		#mydiv1{
+			border: 3px solid gold;
+			border-radius: 20px;
+			padding: 20px;
+		}
+		#mydiv2{
+			border: 3px solid gold;
+			border-radius: 20px;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="head">Welcome to Zenrays</h1>
+	<button onclick="about()">About Us</button>
+	<button onclick="contact()">Contact</button>
+	<div id="output1"></div>
+	<div id="output2"></div>
+	<script>
+		function about(){
+			document.getElementById("output1").innerHTML = "<div id = 'mydiv2'><h1> About Us </h1> <br> <div>  We are a group of IItians working to train people in real coding. ZenRays offers Best Training in Bangalore with Live Project in RPA, Machine Learning, Angular2, AI, Java, Web Development, Python, MEAN Stack, ReactJS  </div></div>";
+		}
+		function contact(){
+			document.getElementById("output2").innerHTML = "<div id = 'mydiv2'><h1> Our contact details are below </h1> <br> <div>   Address: No 393, 1st Floor, Guru Krupa 7th Cross Road, 8th Main Rd, Mico Layout, BTM 2nd Stage, Bengaluru, Karnataka 560076 </div> </div>";
+		}
+	</script>
+</body>
+</html>

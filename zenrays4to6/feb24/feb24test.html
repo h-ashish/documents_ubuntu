@@ -1,0 +1,158 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Which day it is</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script>
+		let date = new Date();
+		newDate = date.getDay();
+		if(newDate == '0'){
+			document.querySelector('#mydiv').innerHTML =`Today is Sunday`;
+		}
+		if(newDate == '1'){
+			document.querySelector('#mydiv').innerHTML =`Today is Monday`;
+		}
+		if(newDate == '2'){
+			document.querySelector('#mydiv').innerHTML =`Today is Tuesday`;
+		}
+		if(newDate == '3'){
+			document.querySelector('#mydiv').innerHTML =`Today is Wednesday`;
+		}
+		if(newDate == '4'){
+			document.querySelector('#mydiv').innerHTML =`Today is Thursday`;
+		}
+		if(newDate == '5'){
+			document.querySelector('#mydiv').innerHTML =`Today is Friday`;
+		}
+		if(newDate == '6'){
+			document.querySelector('#mydiv').innerHTML =`Today is Saturday`;
+		}
+	</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Unix Time Stamp</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script>
+		let date =new Date();
+		let newDate = date.getTime();
+		document.querySelector('#mydiv').innerHTML = `The Unix Time Stamp is ${newDate}`
+	</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of Cubes of first 10 even numbers</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+<script>
+	let sum =0;
+	for(let i =1; i <= 20; i++){
+		if(i%2 == 0){
+			sum = sum + i*i*i;
+		}
+	}
+	document.querySelector('#mydiv').innerHTML = `The Sum of Cube of first 10 even numbers is ${sum}`;
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Printing first 10 prime numbers</title>
+</head>
+<body>
+	<div id = "print"></div>
+	<script>
+		let sum = 0;
+		let i=2,counter =1;
+		let htmlCode = '';
+		for (i=2;i<=10;i++){
+		  while(counter<=10)
+		  {
+		  	if(findPrime(i)==true)
+		  	{
+		  		counter = counter +1;
+		  		htmlCode = htmlCode + i +'<br>';
+		  		console.log(i);
+		  		sum = sum + i;
+		  	}i = i +1;
+		  }
+		}
+		  function findPrime(n){
+		  	let flag = true;
+		  	for (let i =2;i<=n/2;i++)
+		  	{
+		  		if(n%i==0)
+		  			{flag =false;
+		  				break;
+		  		}
+		  	}
+		  	if(flag==true){
+		  		return true;
+		  	}
+		  	else{
+		  		return false;
+		  	}
+		  }		
+			document.getElementById("print").innerHTML = `The sum of first 10 prime numbers is ${sum}`;
+	</script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Length of javascript object</title>
+</head>
+<body>
+	<p>The Javascript object is: student = {name : "David Rayy", class : "VI", rollno : 12 };</p>
+	<div id="mydiv"></div>
+	<script>
+		var student = {name : "David Rayy",class : "VI",rollno : 12 };
+		let objectLength = Object.keys(student).length;
+		console.log(objectLength);
+		document.querySelector('#mydiv').innerHTML = `The length of javascript object is: ${objectLength}`;
+	</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting javascript object by name</title>
+</head>
+<body>
+	<script>
+		 var library = [ { title: 'The Road Ahead', author: 'Bill Gates', libraryID: 1254 },{ title: 'Walter Isaacson', author: 'Steve Jobs', libraryID: 4264 }, 
+		 	{ title: 'Mockingjay: The Final Book of The Hunger Games', author: 'Suzanne Collins', libraryID: 3245 }]; 
+		 	library.forEach(function ( val){
+		 		  let sorted =Object.keys(val).sort().reduce(function(ob , key){
+				 	ob[key] = val[key];
+				 	return ob;
+		 }, {});
+		 
+		 	});
+		 	console.log(sorted);
+		
+
+
+	</script>
+
+</body>
+</html> -->
+

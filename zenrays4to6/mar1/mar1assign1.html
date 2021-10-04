@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ecommerce website</title>
+</head>
+<body>
+	<input type="text" id="name" placeholder="Enter Product name"><br>
+	<input type="number" id="price" placeholder="Enter Product price"><br>
+	<label>Select a brand: </label><br><select id="brand">
+		<option></option>
+		<option>Puma</option>
+		<option>Adidas</option>
+		<option>Reebok</option>
+		<option>Gucci</option>
+		<option>Chanel</option>
+		<option>LV</option>
+	</select><br>
+	<textarea rows="15" cols="22" id="desc" placeholder="Enter Description"></textarea><br>
+	<button onclick="submit()">Submit</button>
+	<button onclick="products()">Products</button>
+	<table id="table" border="2"></table>
+</body>
+<script>
+	let array = [];
+	function submit(){
+		let arrayOb ={
+			productName : document.querySelector('#name').value,
+			productPrice : document.querySelector('#price').value,
+			productBrand : document.querySelector('#brand').value,
+			productDesc : document.querySelector('#desc').value,
+		};
+		array.push(arrayOb);
+		console.log(array);
+	}
+	function products(){
+		let divObj ='';
+		let result = array.forEach(function(val){
+			divObj = divObj + `<tr> <td> ${val.productName} </td> <td> ${val.productPrice} </td> <td> ${val.productBrand} </td> <td> ${val.productDesc} </td> </tr>`;
+
+		})
+		document.querySelector('#table').innerHTML = `<tr> <th> Product Name </th> <th> Product Price </th> <th> Brand </th> <th> Product Description </th> </tr> ${divObj}`;
+	}
+</script>
+</html>

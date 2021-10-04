@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books array object</title>
+	<style>
+		body{
+			text-align: center;
+			background-image: linear-gradient(to right, #00d2ff , #928DAB); 
+			font-family: Tahoma;
+			color: black;
+		}
+		input{
+			width: 20%;
+			height: 40px;
+			margin: 15px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		label{
+			font-weight: bold;
+		}
+		select{
+			width: 20%;
+			height: 40px;
+			margin: 15px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+			text-align: center;
+		}
+		button{
+			width: 15%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			color: white;
+			background-color: #001433;
+			border:2px solid #001433;
+			border-radius: 30px;
+			font-size: 18px;
+			outline: none;
+		}
+		div{
+			text-align: center;
+			padding-bottom: 10px;
+			color: black;
+			margin-top: 20px;
+			margin-left: 100px;
+			margin-right:100px;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		#mydiv{
+			border: 3px solid #001433;
+			border-radius: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Welcome to ZenBooks</h1>
+	<input type="text" id="isbn" placeholder="Enter ISBN number"><br>
+	<label>Select Type of Book:</label><br><select id="bktyp">
+		<option></option>
+		<option >Technical</option>
+		<option >Magazine</option>
+		<option >Comics</option>
+	</select><br>
+	<input type="number" id="bookcost" placeholder="Enter Cost of book"><br>
+	<input type="text" id="author" placeholder="Enter Author"><br>
+	<button onclick="add()">Add Book</button><br>
+	<button onclick="showResult()">Show Book details</button>
+	<div id="output"></div>
+	<script>
+		let book = [];
+		function add(){
+			let bookOb = {};
+			bookOb.ISBN = document.querySelector('#isbn').value;
+			bookOb.bookType = document.querySelector('#bktyp').value;
+			bookOb.bookCost = document.querySelector('#bookcost').value;
+			bookOb.bookAuthor = document.querySelector('#author').value;
+			book.push(bookOb);
+			console.log(book);
+		}
+		function showResult(){
+			let divObj = '';
+			book.forEach(function(bookOb){
+				divObj = divObj + "<div id = 'mydiv'> Book ISBN Number : "+ bookOb.ISBN + "<br> Book Type: " + bookOb.bookType + "<br> Book Cost: " + bookOb.bookCost + "<br> Book Author: " + bookOb.bookAuthor+"</div>";
+			})
+			document.querySelector('#output').innerHTML = divObj;
+		// 	for (let i =0; i<book.length;i++){
+		// 		divObj.innerHTML = divObj.innerHTML + "<div id = 'mydiv'> Book ISBN Number : "+ bookOb.ISBN + "<br> Book Type: " + bookOb.bookType + "<br> Book Cost: " + bookOb.bookCost + "<br> Book Author: " + bookOb.bookAuthor+"</div>";
+		// 	} 
+		}
+	</script>
+</body>
+</html>

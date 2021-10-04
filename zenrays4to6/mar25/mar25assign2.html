@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar 2 assignment 2 </title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <div id="mydiv2"></div>
+
+    <script>
+        class Customer{
+            name;
+            age;
+            birthday;
+            city;
+            phoneNo;
+            constructor(name, age, birthday, city, phoneNo){
+                this.name = name;
+                this.age = age;
+                this.birthday = birthday;
+                this.city = city;
+                this.phoneNo
+            }
+            changeCity(newCity){
+                this.city = newCity;
+            }
+            // age(){
+            //     return 
+            // }
+            set phoneNumMask(no){
+                let last4Digits = no.slice(0,6);
+                this.phoneNo = last4Digits.padEnd(10,"*");
+            }
+            get phoneNum(){
+                return this.phoneNo;
+            }
+            currentAge(){
+                let nowAge = new Date() - new Date(this.birthday);     
+                        let yearAge = Math.floor(nowAge/31536000000);
+                        let dayAge = Math.floor((nowAge % 31536000000)/86400000);
+                        return `Age is ${yearAge} years and ${dayAge} days`;
+            }
+        }
+        let userOb = new Customer("ashish", 23, "12/3/1997","delhi");
+        userOb.changeCity = "bangalore";
+        userOb.phoneNumMask = "8197212726";
+        document.querySelector('#mydiv').innerHTML = `The phone number is ${userOb.phoneNum}`;
+        document.querySelector('#mydiv1').innerHTML = `The changed city is "${userOb.changeCity}"`;
+        document.querySelector('#mydiv2').innerHTML = `The phone number is ${userOb.currentAge()}`;
+    </script>
+</body>
+</html>

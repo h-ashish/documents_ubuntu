@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating Object Assignment</title>
+</head>
+<body>
+	<input type="text" id="name" placeholder="Enter your name">
+	<input type="number" id="age" placeholder="Enter your age">
+	<button onclick="output()">Submit</button>
+	<script>
+		function output(){
+			let userOb ={};
+			userOb.name = document.getElementById('name').value;
+			userOb.age = document.getElementById('age').value;
+			console.log(userOb);
+		}
+	</script>
+
+</body>
+</html>

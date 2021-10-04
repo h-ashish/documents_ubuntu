@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Numbers Greater than 5</title>
+</head>
+<body>
+	<button onclick="result()">Show numbers greater than 5</button>
+	<div id="mydiv"></div>
+	<script>
+		function result(){
+		let array =[1,2,4,5,6,8,9,112];
+		let filteredArray = array.filter(function(val){
+			if(val > 5){
+				return true;
+			}
+		});
+		document.querySelector('#mydiv').innerHTML = filteredArray;
+	}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter</title>
+</head>
+<body>
+    <script>
+        class User {
+            username;
+            password;
+            phoneNo;
+            constructor(username,password,epochMilliseconds){
+                this.username= username;
+                this.password = password; 
+                this.epochMilliseconds = epochMilliseconds;
+            }
+            //getter returns the property name as the function name when u try to access the property.
+            get hobby(){
+                return "Reading";
+            }
+            set hobby(settingValue){
+                alert("setter function for hobby is called " + settingValue )
+            }
+            set phoneNum(no){
+                let last4Digits = no.slice(-4);
+                this.phoneNo = last4Digits.padStart(10,"*");
+            }
+            get phoneNum(){
+                return this.phoneNo;
+            }
+        }
+        let userOb = new User("user1", "user1",(new Date().getTime()));
+        userOb.hobby = "running";
+        userOb.phoneNum = "8197212726";
+        alert(userOb.phoneNum);
+    </script>
+</body>
+</html>

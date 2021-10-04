@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of first 20 numbers of Fibonacci Series</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv"></div>
+	<script>
+		let arr =[];
+		let htmlCode = '';
+		let sum = 0;
+		let n1 = 0, n2 = 1;
+		let counter =1;
+			
+			for(let i = 0; i < counter; i++){
+				while(counter<10){
+				htmlCode = htmlCode + n1 + ',';
+				sum = n1 + n2;
+				n1 = n2;
+				n2 = sum;
+				if(isPrime(n2) == true){
+					if(n2!==1)
+					arr.push(n2);
+					counter++;
+				}	
+		}
+	}
+		function isPrime(n){
+				
+		  	let flag = true;
+		  	for (let i =2;i<=n/2;i++)
+		  	{
+		  		if(n%i==0)
+		  			{flag =false;
+		  				break;
+		  		}
+		  	}
+		  	if(flag==true){
+		  		return true;
+		  	}
+		  	else{
+		  		return false;
+		  	}
+		  }	
+		console.log(arr);
+			document.querySelector('#mydiv1').innerHTML = `The first 20 even Fibonacci numbers are [${arr}]`;
+		document.querySelector('#mydiv').innerHTML = `The sum of first 20 even Fibonacci numbers is ${n2}`;
+	</script>
+
+</body>
+</html>

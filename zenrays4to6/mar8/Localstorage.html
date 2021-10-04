@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Local Storage</title>
+</head>
+<body>
+	<form onsubmit="storeValue(event)">
+		<input type="text" name="name" placeholder="Enter Name">
+		<input type="number" name="salary" placeholder="Enter salary">
+		<button>Store</button>
+	</form>
+	<button onclick="getValue()">get stored value</button>
+	<div id="output"></div>
+<script>
+	if(!window.localStorage){
+		alert("localStorage not available");
+	}
+	let divOb = document.getElementById('output');
+	function storeValue(event){
+		event.preventDefault();
+		let formOb = event.target;
+		localStorage.setItem('name',formOb.name.value);
+		localStorage.setItem('salary',formOb.salary.value);
+	}
+	function getValue(){
+		divOb.innerHTML = divOb.innerHTML + `<div> name: ${localStorage.getItem('name')}</div>`;
+		divOb.innerHTML = divOb.innerHTML + `<div> name: ${localStorage.getItem('salary')}</div>`;
+	}
+</script>
+</body>
+</html>

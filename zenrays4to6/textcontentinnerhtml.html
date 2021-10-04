@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>textcontentinnerhtml</title>
+</head>
+<body>
+		<div id= "mydiv">Hello</div>
+		<button onclick="changeDivContent()">change div content</button>
+	<script >
+		function changeDivContent(){
+			let divObject = document.getElementById("mydiv")
+			divObject.textContent = "<h1>This is the changed content<h1>";
+		}
+	</script>
+
+</body>
+</html>

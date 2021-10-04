@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March 22 Assignment 4</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="text" id="username" placeholder="Enter username">
+    <input type="password" id="password" placeholder="Enter password">
+    <input type="mail" id="email" placeholder="Enter email">
+    <button onclick="login()">submit</button><br>
+    <button onclick="showDetails.showEmail()">Show Email</button>
+    <button onclick="showDetails.showPassword()">show password</button>
+    <button onclick="showDetails.showName()">show name</button><br>
+    <input type="mail" id="newmail" placeholder="enter new email">
+    <button onclick="showNewMail()">change email</button>
+    <script>
+        let showDetails;
+        class Details{
+            constructor(name,username,password,email){
+                this.name = name;
+                this.username = username;
+                this.password = password;
+                this.email = email;
+            }
+            showEmail(){
+                alert(`${this.email}`);
+            }
+            showPassword(){
+                alert(`${this.password}`);
+            }
+            showName(){
+                alert(`${this.name}`);
+            }
+            showNewMail(mail){
+            this.email = mail;
+            }
+        }
+        function login(){
+            nameVal = document.querySelector('#name').value;
+            usernameVal = document.querySelector('#username').value;
+            passwordVal = document.querySelector('#password').value;
+            emailVal = document.querySelector('#email').value;
+            
+
+            showDetails = new Details(nameVal,usernameVal,passwordVal,emailVal);
+            console.log(showDetails);
+        }
+        function showNewMail(){
+            showDetails.showNewMail(document.querySelector('#newmail').value);
+        }
+    </script>
+</body>
+</html>

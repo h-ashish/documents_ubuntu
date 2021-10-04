@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change Padding</title>
+	<style >
+		body{
+			text-align: center;
+		}
+		input{
+			text-align: center;
+			padding: 10px;
+			margin: 20px;
+			border: 3px solid brown;
+			border-radius: 50px;
+			width: 20%;
+			outline: none;
+		}
+		button{
+			padding: 5px;
+			margin: 20px;
+			background-color: brown;
+			border: 3px solid brown;
+			border-radius: 50px;
+			width: 15%;
+			color: white;
+			outline: none;
+		}
+		#mydiv{
+			border: 3px solid aqua;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="padding" placeholder="Enter Padding value in px"><br>
+	<button onclick="change()">Change Padding</button>
+	<div id="mydiv">Hello</div>
+	<script >
+		function change(){
+			let divObj = document.getElementById("padding").value;
+			document.getElementById("mydiv").style.padding = divObj;
+		}
+	</script>
+</body>
+</html>

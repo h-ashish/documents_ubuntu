@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Property in ECAM 6</title>
+</head>
+<body>
+    <script>
+        class Fruit{
+            #secret
+            constructor(name,color,taste){
+                this.name = name;
+                this.color = color;
+                this.taste = taste;
+                this.#secret = 'secret variable';
+            }
+            showName(){
+                return this.name;
+            }
+            #secretMethod(){
+                return "Hello i am secret variable";
+            }
+            showSecret(){
+                return this.#secret;
+            }
+        }
+        let apple = new Fruit('Apple','red','sweet');
+        console.log(apple.secret)
+        console.log(apple.secretMethod)
+        console.log(apple.showSecret())
+    </script>
+</body>
+</html>

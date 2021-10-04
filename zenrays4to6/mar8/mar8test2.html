@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>finding longest word</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+	let str = "Welcome to zenrays. learn React fullstack and mern stack.";
+	document.querySelector('#mydiv').innerHTML = `The given string is "${str}"`;
+	let splitstr = str.split(' ').sort(function(a,b){ 
+	 	return b.length - a.length;
+	 });
+	document.querySelector('#mydiv1').innerHTML = `The longest word is "${splitstr[0]}"`;
+</script>
+</body>
+</html>

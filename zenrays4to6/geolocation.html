@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geolocation check</title>
+</head>
+<body>
+	<p id = "lat"></p>
+	<p id = "lon"></p>
+<script>
+	navigator.geolocation.getCurrentPosition(locationSuccess,locationFail)
+
+	function locationSuccess(position)
+	{
+		let latSoul = document.getElementById("lat"); 
+		let lonSoul = document.getElementById("lon");
+		latSoul.textContent = position.coords.latitude;
+		// latSoul.style.color ="green";
+		// latSoul.style.border = "4px solid green";
+		lonSoul.textContent = position.coords.longitude;
+		// lonSoul.style.color = "blue";
+		// lonSoul.style.border = "4px solid blue";
+	}
+	function locationFail(){
+		alert("sorry, cannot find users location");
+	}
+</script>
+</body>
+</html>

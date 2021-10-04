@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Converting Time based on time zones</title>
+	<style>
+		body{
+			text-align: center;
+			font-family: tahoma;
+			background-color: teal;
+		}
+		div{
+			width: 60%;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #090711;
+			border-radius: 20px;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		select, option{
+			text-align: center;
+			width: 20%;
+			height: 40px;
+			margin: 40px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #090711 ;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<select id= "city">
+	<option value="india">Local time</option>
+	<option value="srilanka">Sri Lanka</option> 
+	<option value="USA">USA</option>
+	<option value="UK">UK</option>
+	<option value="japan">Japan</option>
+	</select>
+	<div id="mydiv"></div>
+<script>
+		let selectId = document.querySelector('#city');
+		var dateOb = new Date();
+		var india = dateOb.toLocaleString("en-US", {timeZone:"IST"});
+			document.querySelector('#mydiv').innerHTML = `<h2> Timezone: Asia/India </h2> <br> <h2> City: Kolkata/ India </h2> <br> <h1> Date and time: ${india} </h1>`;		
+		selectId.addEventListener('change',function(){
+		if(selectId.value == "srilanka"){
+			var srilanka = dateOb.toLocaleString("en-US", {timeZone:"IST"});
+			document.querySelector('#mydiv').innerHTML = `<h2> Timezone: Asia/Srilanka </h2> <br> <h2> City: Colombo/Sri Lanka </h2> <br> <h1> Date and time: ${srilanka}</h1>`;
+		}
+		if(selectId.value == "USA"){
+			var USA = dateOb.toLocaleString("en-US", {timeZone:"EST"});
+			document.querySelector('#mydiv').innerHTML = `<h2> Timezone: USA/ NewYork </h2> <br> <h2> City: NewYork/ USA </h2> <br> <h1> Date and time: ${USA}</h1>`;
+		}
+		if(selectId.value == "UK"){
+			var UK = dateOb.toLocaleString("en-US", {timeZone:"GMT"});
+			document.querySelector('#mydiv').innerHTML = `<h2> Timezone: Europe/United Kingdom </h2> <br> <h2> City: London/ Europe </h2> <br> <h1> Date and time: ${UK}</h1>`;
+		}
+		if(selectId.value == "japan"){
+			var japan = dateOb.toLocaleString("en-US", {timeZone:"JST"});
+			document.querySelector('#mydiv').innerHTML = `<h2> Timezone: Asia/Japan </h2> <br> <h2> City: Tokyo/ Japan </h2> <br> <h1> Date and time: ${japan} </h1>`;
+		}
+		})
+</script>
+</body>
+</html>

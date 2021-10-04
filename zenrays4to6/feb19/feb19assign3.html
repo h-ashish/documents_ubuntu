@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pallindrome </title>
+</head>
+<body>
+	<input type="text" id="input" placeholder="Enter any word">
+	<button onclick="checkPalli()">Check for pallindrome</button>
+	<script>
+		function checkPalli(){
+		let word = document.querySelector('#input').value;
+		let res = word.split('').reverse().join('');	
+			if(word == res){
+				alert(word + " is a palindrome");
+			}else{
+				alert(word + " is not a palindrome");
+			}
+		}
+	</script>	
+</body>
+</html>

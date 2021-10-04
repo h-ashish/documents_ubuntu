@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March 22 Assignment 1</title>
+</head>
+<body>
+    <h1>Showing time using prototype</h1>
+    <p>Enter time zone in this format Eg:'IST','UTC','JST',etc  </p>
+    <input type="text" id="input" placeholder="Enter time zone ">
+    <button onclick="showTime()">get time</button><br>
+    <div id="mydiv"></div>
+    <script>
+        function showTime(){
+            let inputText = document.querySelector('#input').value;
+            Date.prototype.getCountryTime= function(){
+                let newTime = new Date().toLocaleTimeString('en-US',{timeZone: inputText});
+                document.querySelector('#mydiv').innerHTML = `The time is: ${newTime}`;
+            }
+            let date = new Date();
+            date.getCountryTime()
+        }
+    </script>
+</body>
+</html>

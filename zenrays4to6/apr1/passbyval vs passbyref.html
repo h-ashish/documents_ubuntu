@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pass by value vs pass by reference</title>
+</head>
+<body>
+    <script>
+        //pass by reference
+        function passOb(student){
+            student.name="Vaishali";
+        }
+        let student = {name:"ashish"};
+        passOb(student);
+        console.log(student.name);
+
+        //pass by value
+        function changeName(name){
+            name = "shasvathi";
+        }
+        let name = "pooja";
+        changeName(name);
+        console.log(name);
+
+        function modifyArr(nos){
+            nos.push(10);
+        }
+        let someNos = [1,2,3];
+        modifyArr(someNos);
+        console.log(someNos);
+    </script>
+</body>
+</html>

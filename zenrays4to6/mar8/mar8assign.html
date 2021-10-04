@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ecommerce website</title>
+	<style>
+		body{
+			text-align: center;
+			font-family: tahoma;
+			background-image: url(https://www.wallpapertip.com/wmimgs/23-236902_e-commerce.jpg);
+			background-repeat: no-repeat;
+  			background-size: cover;.
+		}
+		h1{
+			color: #090711;
+			font-size: 40px;
+			margin-bottom: 10px;
+		}
+		input, select{
+			width: 20%;
+			height: 40px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		textarea{
+			width: 20%;
+			height: 100px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		#submit, #products{
+			width: 20%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			color: white;
+			background-image: linear-gradient(to right, #2b5876, #090711);
+			border: 2px solid #090711;
+			border-radius: 20px;
+			font-size: 18px;
+			outline: none;         
+		}
+		#mybtn{
+			background-color: red;
+			text-align: center;
+			text-align: center;
+			border: 2px solid #090711;
+			outline: none; 
+			border-radius: 5px;
+		}
+		#deletefull{
+			width: 20%;
+			height: 40px;
+			margin: 20px;
+			background-color: red;
+			text-align: center;
+			border: 2px solid #090711;
+			border-radius: 20px;
+			font-size: 18px;
+			outline: none;  
+		}
+		table,th,td{
+			width: 20%;
+			border-radius: 5px;
+			color: #e6e6ff;
+			background-color: #2b5876;
+			border: 2px solid #e6e6ff;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to Zencart</h1>
+<form id="myForm" onsubmit="submits(event)">
+	<input type="text" id="name" placeholder="Enter Product name"><br>
+	<input type="number" id="price" placeholder="Enter Product price"><br>
+	<label>Select a brand: </label><br><select id="brand">
+		<option></option>
+		<option>Puma</option>
+		<option>Adidas</option>
+		<option>Reebok</option>
+		<option>Gucci</option>
+		<option>Chanel</option>
+		<option>LV</option>
+	</select><br>
+	<textarea rows="15" cols="22" id="desc" placeholder="Enter Description"></textarea><br>
+	<button id="submit">Submit</button><br>
+</form>
+<button onclick="products()" id="products">Show Products</button><br>
+<button onclick="deletefull()" id="deletefull">Delete Local storage</button>
+	<table id="table" border="2"></table><br>
+	<table id="table1" border="2"></table>
+	<div id="mydiv"></div>
+</body>
+<script>
+	let array = [];
+	let arrayOb;
+
+	function submits(event){
+		event.preventDefault();
+		arrayOb ={
+			productName : document.querySelector('#name').value,
+			productPrice : document.querySelector('#price').value,
+			productBrand : document.querySelector('#brand').value,
+			productDesc : document.querySelector('#desc').value,
+			
+		};
+		array.push(arrayOb);
+		localStorage.setItem('array',JSON.stringify(array));
+		console.log(array);
+	}
+
+	(function (){
+		
+		let retItem = localStorage.getItem('array');
+		let myObj = JSON.parse(retItem);
+		//console.log(myObj);
+
+		let divObj ='';
+		let result = myObj.forEach(function(val){
+			divObj = divObj + 
+			`<tr> <td> ${val.productName} </td> 
+			<td> ${val.productPrice} </td> 
+			<td> ${val.productBrand} </td> 
+			<td> ${val.productDesc} </td> 
+			</tr>`;
+
+		})
+		document.querySelector('#table').innerHTML = 
+		`<tr> <th colspan="4">  Local Storage Values </th> </tr>
+		<tr> <th> Product Name </th> 
+		<th> Product Price </th> 
+		<th> Brand </th> 
+		<th> Product Description </th> 
+		 </tr> ${divObj}`;
+	})();
+
+		function deleteRow(index){
+		delete array[index];
+		array.filter(function(val){
+			if (val == "")
+				return  false
+			return true;
+			
+		});
+		products();
+		// console.log(array);
+	}
+
+	function products(){
+		let divObj ='';
+		let result = array.forEach(function(val, index){
+			divObj = divObj + 
+			`<tr> <td> ${val.productName} </td> 
+			<td> ${val.productPrice} </td> 
+			<td> ${val.productBrand} </td> 
+			<td> ${val.productDesc} </td> 
+			<td> <button id ='mybtn' type ='button' value ='Delete' onclick='deleteRow(${index} )' > Delete </button>  </td> </tr>`;
+
+		})
+		document.querySelector('#table1').innerHTML = 
+		`<tr> <th> Product Name </th> 
+		<th> Product Price </th> 
+		<th> Brand </th> 
+		<th> Product Description </th> 
+		<th> Modify </th> </tr> ${divObj}`;
+	}
+	function deletefull(){
+		localStorage.clear();
+	}
+	
+</script>
+</html> 
+

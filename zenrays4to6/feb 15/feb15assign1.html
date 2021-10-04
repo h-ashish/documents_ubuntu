@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array form</title>
+</head>
+<body>
+	<input type="text" id="input" placeholder="Enter names to be added">
+	<button onclick="add()">Add Student</button><br>
+	<input type="search" id="search" placeholder="Search name">
+	<button onclick="display()">Show name</button>
+	<div id="mydiv"></div>
+	<script>
+		let array=[];
+		function add(){
+			let values = document.querySelector("input").value;
+			array.push(values);
+			console.log(array);
+		}
+		function display(){
+			let searchval = document.querySelector('#search').value;
+			let result = array.find(function(val){
+				if(val == searchval){
+					return true;
+				}})
+				if (result !== undefined){
+					alert("Student Found");
+				} else {
+					alert("Student Not Found");
+				}
+			}
+	</script>
+</body>
+</html>

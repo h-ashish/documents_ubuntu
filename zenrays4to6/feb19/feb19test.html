@@ -1,0 +1,140 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>button using dom listeners</title>
+</head>
+<body>
+	<button id="button" >click</button>
+	<script>
+		let mainDom =document.querySelector('#button');
+		function mouse(){
+			alert("Hello, you double clicked");
+		}
+		mainDom.ondblclick = mouse; 
+	</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Removing amit from the array</title>
+</head>
+<body>
+<script>
+	let names = ["sumit","amit","Tan"];
+	let poppedNames = names.filter(function ( val){
+		if(val == "amit")
+			return false;
+		return true;
+	})
+	alert("The array after removing amit is "+ "[" + poppedNames + "]");
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Concat function</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<div id="mydiv3"></div>
+	<script>
+		let array = [1, 2,5,3,58,7];
+		document.querySelector('#mydiv1').innerHTML = `The first Array is [${array}]`;
+		let array1 = [5,6,3,8,5,6,19];
+		document.querySelector('#mydiv2').innerHTML = `The second Array is [${array}]`;
+		let concatArray = array.concat(array1);
+		document.querySelector('#mydiv3').innerHTML = `The Array after concatination is [${concatArray}]`;
+		console.log(concatArray);
+	</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Find index function</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let names = ["sumit","amit","Tan", "ashish","munna"];
+		document.querySelector('#mydiv1').innerHTML = `The given array is [${names}]`;
+		let findIndexName = names.findIndex(function(val){
+			if(val == "ashish")
+				return true;
+			return false;
+		});
+		console.log(findIndexName);
+		document.querySelector('#mydiv2').innerHTML = `The Index of 'ashish' is ${findIndexName}`;
+	</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Removing all elements of the array</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let names = ["sumit","amit","Tan"];
+		document.querySelector('#mydiv1').innerHTML = `The given array is [${names}]`;
+		names.splice(0, 3);
+		console.log(names);
+		document.querySelector('#mydiv2').innerHTML = `The array after removing elements are [${names}]`;
+	</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>button using event listener</title>
+</head>
+<body>
+	<button id="button">Click</button>
+	<script>
+		let mainDom = document.querySelector('#button');
+		function callOne(){
+			alert("Hi");
+		}
+		function callTwo(){
+			alert("Hello");
+		}
+		mainDom.addEventListener('click',callOne);
+		mainDom.addEventListener('click',callTwo);
+	</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array in a table</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<table id="details" border = "2"></table> 
+	<script>
+		let names = ["sumit","Amit","Jay"];
+		document.querySelector('#mydiv1').innerHTML = `The given array is [${names}]`;
+		let divObj = '';
+		let tableNames = names.forEach(function(val){
+			divObj += ` <tr> <td> ${val} </td> <tr>`;
+		})
+		console.log(divObj);
+		document.querySelector('#details').innerHTML = `<tr> <th> Names </th> </tr> ${divObj} `;
+	</script>
+</body>
+</html>

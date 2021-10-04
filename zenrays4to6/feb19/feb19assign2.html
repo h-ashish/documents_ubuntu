@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reversing a word</title>
+</head>
+<body>
+	<input type="text" id="input" placeholder="Enter some text">
+	<button onclick = "reverseText()">reverse</button>
+	<div id="mydiv"></div>
+	<script>
+		function reverseText(){
+		let name = document.querySelector('#input').value;
+		let res = name.split('').reverse();
+		document.querySelector('#mydiv').innerHTML = `The reverse of the word is ${res}`;
+	}
+	</script>
+
+</body>
+</html>

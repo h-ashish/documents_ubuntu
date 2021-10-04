@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime Fsctors</title>
+</head>
+<body>
+	<input type="number" id="input" placeholder="Enter a number">
+	<button onclick="primeFactors()">check prime</button>
+	<div id="mydiv"></div>
+	<script>
+		function primeFactors(){
+			let n = document.querySelector('#input').value; 
+			let factors = [];
+			let divisor = 2;
+			while(n>2){
+				if(n%divisor == 0){
+					factors.push(divisor);
+					n = n/divisor;
+				}
+				else{
+					divisor ++;
+				}
+			}
+			document.querySelector('#mydiv').innerHTML = `The prime factors of given number is [${factors}]`;
+			return factors;
+		}
+	</script>
+</body>
+</html>

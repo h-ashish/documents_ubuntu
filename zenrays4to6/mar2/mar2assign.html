@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Strings</title>
+</head>
+<body>
+	<h1>The Results are in the console</h1>
+	<script>
+		//Quotes
+		let single = 'single-quoted';
+		let double = "double-quoted";
+		let backticks = `backticks`;
+
+		// /Backticks
+		function sum(a, b) {
+		  return a + b;
+		}
+
+		console.log((`1 + 2 = ${sum(1, 2)}.`));
+
+		//advantage of using backticks 
+		let guestList = `Guests:
+			 * John
+			 * Pete
+			 * Mary
+			`;
+			console.log(guestList);
+
+		//Special Characters
+		let guestList1 = "Guests:\n * John\n * Pete\n * Mary";
+
+			console.log(guestList1);
+
+		let str1 = "Hello\n World"; // two lines using a "newline symbol"
+
+			// two lines using a normal newline and backticks
+			let str2 = `Hello
+			World`;
+
+			console.log(str1 == str2);
+
+		// Examples with Unicode:
+
+		console.log( "\u00A9" ); // ©
+		console.log( "\u{20331}" ); // 佫, a rare Chinese hieroglyph (long Unicode)
+		console.log( "\u{1F60D}" ); // 😍, a smiling face symbol (another long Unicode)
+
+		//escape character
+		console.log( 'I\'m the Walrus!' ); 
+
+		// That’s possible, but we need to double it like \\:
+		console.log( `The backslash: \\` );
+
+		//String Length
+		console.log( `My\n`.length );
+
+		// Accessing Characters
+		let str = `Hello`;
+
+		// the first character
+		console.log( str[0] ); // H
+		console.log( str.charAt(0) ); // H
+
+		// the last character
+		console.log( str[str.length - 1] );
+
+		// difference between [] and charAt
+		let string = `Hello`;
+
+		console.log( string[1000] ); // undefined
+		console.log( string.charAt(1000) ); 
+
+		//iterating over characters using for..of:
+		for (let char of "Hello") {
+	  	console.log(char); // H,e,l,l,o (char becomes "H", then "e", then "l" etc)
+		}
+
+		// Strings are immutable
+		let strng = 'Hi';
+
+		strng[0] = 'h'; // error
+		console.log( strng[0] );
+
+		let st = 'Hi';
+
+		st = 'h' + st[1]; // replace the string
+
+		console.log( st ); // hi
+
+		//changing case
+		console.log( 'Interface'.toUpperCase() ); 
+		console.log( 'Interface'.toLowerCase() );
+
+		//a single character lowercased:
+		console.log( 'Interface'[0].toLowerCase() ); 
+
+		//Searching for a substring
+		let a = 'Widget with id';
+
+		console.log( a.indexOf('Widget') ); // 0, because 'Widget' is found at the beginning
+		console.log( a.indexOf('widget') ); // -1, not found, the search is case-sensitive
+		console.log( a.indexOf("id") ); // 1, "id" is found at the position 1 (..idget with id)
+		
+		let b = 'Widget with id';
+		console.log( b.indexOf('id', 2) )
+
+		let string1 = 'As sly as a fox, as strong as an ox';
+		let target = 'as'; // let's look for it
+
+		let pos = 0;
+		while (true) {
+		  let foundPos = string1.indexOf(target, pos);
+		  if (foundPos == -1) break;
+
+		  console.log( `Found at ${foundPos}` );
+		  pos = foundPos + 1; // continue the search from the next position
+		}
+
+		let x = "Widget with id";
+		if (x.indexOf("Widget") != -1) {
+		    console.log("We found it"); // works now!
+		}
+		
+		//bitwise not operator
+		console.log( ~2 ); // -3, the same as -(2+1)
+		console.log( ~1 ); // -2, the same as -(1+1)
+		console.log( ~0 ); // -1, the same as -(0+1)
+		console.log( ~-1 ); // 0, the same as -(-1+
+
+		//using ~ in sting indexOf
+		let stng = "Widget";
+		if (~stng.indexOf("Widget")) {
+		  console.log( 'Found it!' ); // works
+		} 
+
+		//includes method
+		console.log( "Widget with id".includes("Widget") ); // true
+		console.log( "Hello".includes("Bye") ); // false
+
+		// includes method with position
+		console.log( "Widget".includes("id") ); // true
+		console.log( "Widget".includes("id", 3) ); // false, from position 3 there is no "id"
+
+		//startswith and endswith method
+		console.log( "Widget".startsWith("Wid") ); // true, "Widget" starts with "Wid"
+		console.log( "Widget".endsWith("get") ); // true, "Widget" ends with "get"
+
+		//getting a substring
+		//slice
+		let strn = "stringify";
+		console.log( strn.slice(0, 5) ); // 'strin', the substring from 0 to 5 (not including 5)
+		console.log( strn.slice(0, 1) ); // 's', from 0 to 1, but not including 1, so only character at 0
+
+		let q = "stringify";
+		console.log( q.slice(2) );
+
+		let w = "stringify";
+		// start at the 4th position from the right, end at the 1st from the right
+		console.log( w.slice(-4, -1) );
+
+		//substring
+		let z = "stringify";
+		// these are same for substring
+		console.log( z.substring(2, 6) ); // "ring"
+		console.log( z.substring(6, 2) ); // "ring"
+
+		//substr
+		let r = "stringify";
+		console.log( r.substr(2, 4) );
+
+		// comparing strings
+		//str.codePointAt(pos)
+		console.log( "z".codePointAt(0) ); // 122
+		console.log( "Z".codePointAt(0) ); // 90
+
+		//checking for unicode characters between 65 and 220
+		let y = '';
+		for (let i = 65; i <= 220; i++) {
+		y += String.fromCodePoint(i);
+		}
+		console.log( y );
+
+
+	</script>
+
+</body>
+</html>

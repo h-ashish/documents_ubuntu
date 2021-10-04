@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of first 20 numbers of Fibonacci Series</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv"></div>
+	<script>
+		let arr =[];
+		let n1 = 0, n2 = 1, nextTerm;
+		let htmlCode = '';
+		let sum = 0;
+		for(let i = 1; i <= 20; i++){
+			sum = sum + n1;
+			htmlCode = htmlCode + n1 + ',';
+			nextTerm = n1 + n2;
+			n1 = n2;
+			n2 = nextTerm;
+			arr.push(htmlCode);
+		}
+			document.querySelector('#mydiv1').innerHTML = `The first 20 Fibonacci numbers are [${htmlCode}]`;
+		document.querySelector('#mydiv').innerHTML = `The sum of first 20 Fibonacci numbers is ${sum}`;
+	</script>
+
+</body>
+</html>

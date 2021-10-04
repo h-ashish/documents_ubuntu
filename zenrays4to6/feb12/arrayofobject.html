@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array of Objects</title>
+</head>
+<body>
+	<input type="text" id="name">
+	<input type="text" id="hobby">
+	<button onclick="addStudent()">Add Student</button>
+	<button onclick="showStudent()">Show Studen in console</button>
+	<div id="output"></div>
+	<button onclick="showStudents()">Show Students</button>
+	<script>
+		let students=[];
+		function addStudent(){
+		let studentOb = {};
+		studentOb.name = document.querySelector('#name').value;
+		studentOb.hobby = document.querySelector('#hobby').value;
+		students.push(studentOb);
+	}
+		function showStudent(){
+			alert(students);
+	}
+	function showStudents(){
+		let divHtml ='';
+		students.forEach(function(studentOb){
+			divHtml = divHtml + "<div> Name: " + studentOb.name + " And Hobby: " + studentOb.hobby + "</div>";
+		})
+		document.querySelector("#output").innerHTML = divHtml;
+	}
+	</script>
+
+</body>
+</html>

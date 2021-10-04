@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adding "From Zenrays" to every element of array </title>
+</head>
+<body>
+	<button onclick="result()">Add "From Zenrays" to array values</button>
+	<div id="mydiv"></div>
+	<script>
+		let array1 =[];
+		let array =["amit","vaishali","saswati"];
+		function result(){		
+		let filteredArray = array.filter(function(val){
+			val = val + " from Zenrays";
+			array1.push(val);
+			
+		});
+		console.log(array1);
+		document.querySelector('#mydiv').innerHTML = "[" + array1 + "]";
+	}
+	</script>
+
+</body>
+</html>

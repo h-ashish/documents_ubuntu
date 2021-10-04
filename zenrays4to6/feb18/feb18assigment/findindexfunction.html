@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find Index function</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let array1 = [1,15,5,32,26,9];
+		document.querySelector('#mydiv1').innerHTML = `The  Array is [ ${array1} ]`;
+		function callBack(val){
+			 return val > 25;
+		}
+		let findInx = array1.findIndex(callBack);
+		document.querySelector("#mydiv2").innerHTML =`The Array after find Index function is [ ${findInx} ]`;
+	</script>
+</body>
+</html>

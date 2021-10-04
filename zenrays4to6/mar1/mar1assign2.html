@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ecommerce website</title>
+	<style>
+		body{
+			text-align: center;
+			font-family: tahoma;
+			background-image: url(https://www.wallpapertip.com/wmimgs/23-236902_e-commerce.jpg);
+			background-repeat: no-repeat;
+  			background-size: cover;.
+		}
+		h1{
+			color: #090711;
+			font-size: 40px;
+			margin-bottom: 10px;
+		}
+		input, select{
+			width: 20%;
+			height: 40px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		textarea{
+			width: 20%;
+			height: 100px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		button{
+			width: 17%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			color: white;
+			background-image: linear-gradient(to right, #2b5876, #090711);
+			border: 2px solid #090711;
+			border-radius: 20px;
+			font-size: 18px;
+			outline: none;         
+		}
+		table,th,td{
+			width: 20%;
+			border-radius: 5px;
+			color: #e6e6ff;
+			background-color: #2b5876;
+			border: 2px solid #e6e6ff;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to Zencart</h1>
+	<input type="text" id="name" placeholder="Enter Product name"><br>
+	<input type="number" id="price" placeholder="Enter Product price"><br>
+	<label>Select a brand: </label><br><select id="brand">
+		<option></option>
+		<option>Puma</option>
+		<option>Adidas</option>
+		<option>Reebok</option>
+		<option>Gucci</option>
+		<option>Chanel</option>
+		<option>LV</option>
+	</select><br>
+	<textarea rows="15" cols="22" id="desc" placeholder="Enter Description"></textarea><br>
+	<button onclick="submit()">Submit</button>
+	<button onclick="products()">Products</button><br>
+	<label>Is the Product available?</label><br>
+	<input type="radio" id="yes"  name="available" checked >"Yes"
+	<input type="radio" id="no"  name="available"  >"No"<br>
+	<button onclick="availableProducts()">Show available products</button>
+	<table id="table" border="2"></table>
+	<div id="mydiv"></div>
+</body>
+<script>
+	let array = [];
+	function submit(){
+		let arrayOb ={
+			productName : document.querySelector('#name').value,
+			productPrice : document.querySelector('#price').value,
+			productBrand : document.querySelector('#brand').value,
+			productDesc : document.querySelector('#desc').value,
+			productAvailability: document.querySelector('#no').checked,
+			productAvailability: document.querySelector('#yes').checked,
+			
+		};
+		array.push(arrayOb);
+		console.log(array);
+	}
+	
+	function products(){
+		let divObj ='';
+		let result = array.forEach(function(val){
+			divObj = divObj + `<tr> <td> ${val.productName} </td> <td> ${val.productPrice} </td> <td> ${val.productBrand} </td> <td> ${val.productDesc} </td> <td> ${val.productAvailability} </td> </tr>`;
+
+		})
+		document.querySelector('#table').innerHTML = 
+		`<tr> <th> Product Name </th> 
+		<th> Product Price </th> 
+		<th> Brand </th> 
+		<th> Product Description </th> 
+		<th> Availability </th> </tr> ${divObj}`;
+	}
+
+	function availableProducts(){
+		let divObj ='';
+		let result = array.forEach(function(val,index){
+			if(val.productAvailability == true){
+			divObj = divObj + `<tr>  <td> ${val.productName} </td> <td> ${val.productPrice} </td> <td> ${val.productBrand} </td> <td> ${val.productDesc} </td> <td> ${val.productAvailability} </td> </tr>`;
+		}
+		})
+		document.querySelector('#table').innerHTML = 
+		`<tr> <th> Product Name </th> 
+		<th> Product Price </th> 
+		<th> Brand </th> 
+		<th> Product Description </th> 
+		<th> Availability </th> </tr> ${divObj}`;
+	}
+</script>
+</html> 

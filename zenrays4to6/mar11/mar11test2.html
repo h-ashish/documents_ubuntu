@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Replacing o with j </title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+	let str = "Hello, how are you doing.";
+		document.querySelector('#mydiv').innerHTML = `The given string is "${str}"`;
+	let res = str.replace(/o/g,"j");
+		document.querySelector('#mydiv1').innerHTML = `The after replacing charater "o" is "${res}"`;
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Replacing vowels with j </title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+	let str = "Hello, how are you doing.";
+		document.querySelector('#mydiv').innerHTML = `The given string is "${str}"`;
+	let res = str.replace(/a|e|i|o|u/g,"j");
+		document.querySelector('#mydiv1').innerHTML = `The after replacing vowels with "j" is "${res}"`;
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Finding longest and shortest word</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+<script>
+	let str = "Hello, how are you doing.";
+	document.querySelector('#mydiv').innerHTML = `The given string is "${str}"`;
+	let res = str.split(" ");
+	console.log(res);
+	let shortest = res.reduce(function(shortestWord, current){
+		return current.length < shortestWord.length ? current : shortestWord;
+	}, res[0])
+	document.querySelector('#mydiv1').innerHTML = `The shortest word is "${shortest}"`;
+
+	let longest = res.reduce(function(longestWord, current){
+		return current.length > longestWord.length ? current : longestWord;
+	}, res[0])
+	document.querySelector('#mydiv2').innerHTML = `The longest word is "${longest}"`;
+
+</script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counting number of times "o" is appearing </title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<script>
+		let str = "Hello, how are you doing.";
+		document.querySelector('#mydiv').innerHTML = `The given string is "${str}"`;
+		let res = str.replace(/[^o]/g,"").length;
+		document.querySelector('#mydiv1').innerHTML = `The number of time the charater "o" appears in the string is ${res}`;
+	</script>
+</body>
+</html>

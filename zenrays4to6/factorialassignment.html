@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Factorial of a number</title>
+</head>
+<body>
+	<input type="number" id="num" placeholder="Enter a number">
+	<button onclick="fact()">Find Factorial</button>
+	<div id="mydiv"></div>
+	<script>
+		function fact(){
+			let i,num;
+			num = document.getElementById("num").value;
+			let factDiv = document.getElementById("mydiv");
+			let fact = 1;
+			for(i=1;i<=num;i++){
+				factDiv.textContent = (fact = fact * i);
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Every Function</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let array1 =[1,30,12,3,9,15,14];
+		document.querySelector('#mydiv1').innerHTML = `The  Array is [ ${array1} ]`;
+		function showFunc(val){
+			return val < 40;
+		}
+		let everyArray = array1.every(showFunc);
+		document.querySelector("#mydiv2").innerHTML =`The condition is satisfied ?  ${everyArray}` ;
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Splice</title>
+</head>
+<body>
+	<script >
+		let nos = [1,2,3,5,8,4,7,12,45,71];
+		console.log(nos);
+		//splice removes elements from the count, second parameter is no of elements to remove. the return value;
+		//is the array of deleted elements
+		let returnValue = nos.splice(3,3);
+		console.log(nos);
+		console.log(returnValue);
+
+		let nosOne = [12,45,13,8,12,2,5];
+		//i am removing the elements from 3rd position anf then inserting the values that i provide aslast parameters.
+		nosOne.splice(3,3, 100, 200, 500);
+		console.log(nosOne);
+	</script>
+
+</body>
+</html>

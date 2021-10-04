@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Escape in Javascript</title>
+</head>
+<body>
+	<div id = "output"></div>
+	<script >
+		/*let thoughts = 'Life is great for ppl who "fool" themselves';
+		let randomThoughts = "The greatest happiness in eating \"good\" & tasty food";
+		alert(randomThoughts);
+		let HtmlCode = '<div> <a href ="http://www.zenrays.com" > Home </a> </div>';
+		document.getElementById("output").innerHTML = HtmlCode;*/
+		/*function add(a,b){
+			let sum = 0;
+			sum = a +b;
+			return sum;
+			alert("Hello ");
+		}
+		let result = add(4,5);
+		alert("The Result is "+result);*/
+		// let sum = 0;
+		// 	for(i=0;i<=5;i++){		
+		// 	sum = sum + i;
+		// }		
+		// alert("The sum = "+sum);
+		function factByRecursive(n){
+			if(n==1){
+				return 1;
+			}else{
+				return n* factByRecursive(n-1);
+			}
+		}	
+		let result = factByRecursive(5);
+		alert (result);
+	</script>
+
+</body>
+</html>

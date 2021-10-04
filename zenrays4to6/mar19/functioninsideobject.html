@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function inside an object</title>
+</head>
+<body>
+<script>
+	let student ={
+		name: "Ryan",
+		age: 22
+	};
+	
+	student.sayName = function(){
+		alert(`student name = ${this.name}`)
+	}
+	student.sayAge = function(){
+		alert(`your age is ${this.age}`)
+	}
+	alert(student.age);
+	student.sayName();
+	student.sayAge();
+	student.afraidOf = "snake";
+	student.ryanFavDish = function(){
+		alert(`${this.name} fav dish is biryani` );
+	}
+	student.ryanFavDish();
+
+	alert(`${student.name} is afraid of ${student.afraidOf}`);
+</script>
+</body>
+</html>

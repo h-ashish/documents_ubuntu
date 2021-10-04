@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar 23 assignment 1</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="enter name"><br>
+    <input type="text" id="lastname" placeholder="enter last name"><br>
+    <input type="email" id="email" placeholder="enter email id"><br>
+    <input type="password" id="password" placeholder="enter password"><br>
+    <label for="dob">Select date of birth:</label><br>
+    <input type="date" name="dob" id="dob" ><br>
+    <button onclick="createArr()">Store</button>
+    <button onclick="showInfo()">show info</button>
+    <table id="mytable" border="2"></table>
+    <script>
+        let array = [];
+        function createArr(){
+            let arrayOb = {
+                name: document.getElementById('name').value,
+                lastname : document.getElementById('lastname').value,
+                email : document.getElementById('email').value,
+                password : document.getElementById('password').value,
+                dob : document.getElementById('dob').value
+            }
+        array.push(arrayOb);
+        console.log(array);
+
+        let convertedVal = localStorage.setItem('details',JSON.stringify(array));   
+        }
+
+        function showInfo(){
+            let extractedVal = JSON.parse(localStorage.getItem('details'));
+            console.log(extractedVal);
+
+            let divHtml = ``;
+            let result = extractedVal.forEach(function(val){
+                divHtml += `<tr> <td> ${val.name} </td>
+                    <td> ${val.lastname} </td> 
+                    <td> ${val.email} </td>
+                    <td> ${val.password} </td>
+                    <td> ${val.dob} </td> </tr>`;
+            })
+            document.getElementById('mytable').innerHTML = `<tr> <th> Name </th> 
+                <th> Lastname </th> 
+                <th> Email </th> 
+                <th> password </th>
+                <th> Date of birth </th> </tr> ${divHtml}`;
+        }
+    </script>
+</body>
+</html>

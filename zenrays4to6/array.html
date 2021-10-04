@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays Example</title>
+</head>
+<body>
+	<div id="output"></div>
+	<script>
+		//method 1
+		let students = [];
+		students[0]="Ashish";
+		students[1]="Vaishali";
+		students[2]="Prajwal";
+		console.log(students);
+
+	//method 2
+		let studentsOne = ["Ashish","Vaishali","Prajwal"];
+		console.log(studentsOne);
+
+	//method 2
+		let studentsTwo = Array("Ashish","Vaishali","Prajwal",12,14);
+		console.log(studentsTwo);
+		alert(students[1]);
+
+		let i;
+		let divObj = document.querySelector('#output');
+		for(i = 0; i <students.length; i++)
+		divObj.innerHTML = divObj.innerHTML + students[i]+"<br>";
+
+	//forEach loop.
+	//this function is called by forEach function 3 times. 1 for each value in the array. the parameter to the function is the value of the element which is passed by forEach. 
+	function runForEveryElement(val){
+		console.log("running forEach function " + val);
+	}students.forEach(runForEveryElement);
+
+	studentsTwo.forEach(function(val){
+		console.log("Running forEach iniside forEach with Value = " + val)
+	});
+	</script>
+</body>
+</html>

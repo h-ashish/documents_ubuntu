@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Search box app</title>
+	<style>
+		#searchbox{
+			width: 50%;
+			height: 40px;
+			border: 3px solid teal;
+			border-radius: 50px;
+			text-align: center;
+			box-shadow: 3px 5px #D8D8D8;
+		}
+		body{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<input type="search" id="searchbox" onkeypress="doSearch(event)" placeholder="Search">
+	<div id="output"></div>
+	<script>
+		function doSearch(event){
+			/*event variable that is passed from the inputbox doSearch function contains information about the keypress event. this variable is inbuilt in javascript. through this we can get a lot of information.
+			event.key will give you thwe value entered.
+			When we press the Enter key we can print in console
+			Event.target will give the dom object of the element on which event happened*/
+			let searchResult = ''
+			let searchText = '';
+			let outputDivObject = document.getElementById("output");
+			if(event.key == "Enter"){
+			searchText = event.target.value;
+			searchText = searchText.toLowerCase();
+				if(searchText=='zenrays'){
+				searchResult = "Zenrays is a  year company in training and consulting";				
+			}
+				if(searchText == 'react'){
+				searchResult = "React is a javascript framework to create awesome web applications";
+			}	
+				outputDivObject.textContent = searchResult;
+			}
+		}
+	</script>
+
+</body>
+</html>

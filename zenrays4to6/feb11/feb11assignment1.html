@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating Array Assignment</title>
+</head>
+<body>
+	<label>Enter 3 names:</label><br>
+	<input type="text" id="name1" placeholder="Enter your name"><br>
+	<input type="text" id="name2" placeholder="Enter your name"><br>
+	<input type="text" id="name3" placeholder="Enter your name"><br>
+	<button onclick="output()">Submit</button>
+	<div id="mydiv"></div>
+	<script>
+		function output(){
+			
+			let name1 = document.querySelector('#name1').value;
+			let name2 = document.querySelector('#name2').value;
+			let name3 = document.querySelector('#name3').value;
+			let userArr =[name1,name2,name3];
+			console.log(userArr);
+			let divObj = document.querySelector('#mydiv');
+			for( let i = 0; i<userArr.length; i++){
+				divObj.innerHTML = divObj.innerHTML +  userArr[i] + "<br>";
+			}
+		}
+	</script>
+</body>
+</html>

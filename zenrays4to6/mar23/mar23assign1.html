@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar 23 assignment 1</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="enter name"><br>
+    <input type="text" id="lastname" placeholder="enter last name"><br>
+    <input type="email" id="email" placeholder="enter email id"><br>
+    <input type="password" id="password" placeholder="enter password"><br>
+    <label for="dob">Select date of birth:</label><br>
+    <input type="date" name="dob" id="dob" ><br>
+    <button onclick="createArr()">Create array</button>
+    <p>check created string in console</p>
+    <script>
+        let array = [];
+        function createArr(){
+            let name = document.getElementById('name').value;
+            let lastname = document.getElementById('lastname').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let dob = document.getElementById('dob').value;
+        array.push(name,lastname,email,password,dob);
+        console.log(array);
+        let str = array.toString();
+        console.log(str);
+        localStorage.setItem("details",str);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+<input type="text" id="name" placeholder="Enter Name"><br>
+<input type="number" id="age" placeholder="Enter Age"><br>
+<input type="number" id="per" placeholder="Enter Percentage"><br>
+<input type="text"  id="position" placeholder="Enter Position"><br>
+<button onclick="onLogin()">Submit</button>
+<hr>
+<button onclick="showName()">Get Name</button><br>
+<button onclick="showTime()">Get Time</button><br>
+<button onclick="showPer()">Get Percentage</button><br>
+<button onclick="showAll()">Show all properties</button>
+<hr>
+<div id="op"></div>
+
+<script>
+    class Student{
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        get getName(){
+            return this.name
+        }
+        get getAge(){
+            return this.age
+        }
+        get currTime(){
+            return (new Date()).toLocaleTimeString([], {timeStyle: 'short'})
+        }
+    }
+
+    class BestStudent extends Student{
+        constructor(name,age,collegePercentage,classPosition){
+            super(name,age);
+            this.collegePercentage = collegePercentage;
+            this.classPosition = classPosition;
+        }
+
+        get getpercentage(){
+            return this.collegePercentage
+        }
+        get getPosition(){
+            return this.classPosition
+        }
+    }
+    let yog;
+    function onLogin() {
+        let nameId = document.getElementById("name").value
+        let ageId = document.getElementById("age").value
+        let perId = document.getElementById("per").value
+        let positionId = document.getElementById("position").value
+
+        yog = new BestStudent(nameId,ageId,perId,positionId)
+    }
+
+    function showName() {
+        document.getElementById('op').innerHTML = `Name of the student is <strong>${yog.getName}`
+    }
+    function showTime() {
+        document.getElementById('op').innerHTML =`Current time  <strong>${yog.currTime}` 
+    }
+    function showPer() {
+        document.getElementById('op').innerHTML =`Percentage of the students <strong>${yog.getpercentage}` 
+    }
+
+    function showAll() {
+        let htmlcode='';
+        htmlcode += `<table border="1">
+                        <tr><th>Name</th><th>Age</th><th>College Percentage</th><th>Class Position</th></tr>`
+
+        htmlcode += `<tr><td>${yog.getName}</td><td>${yog.getAge}</td><td>${yog.getpercentage}</td><td>${yog.getPosition}</td></tr>`
+
+        document.getElementById('op').innerHTML = htmlcode;
+    }
+</script>
+</body>
+</html>

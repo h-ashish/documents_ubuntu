@@ -1,0 +1,145 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding sum of elements using reduce function</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        let no =  [1,4,5,7,12,11,21];
+        document.querySelector('#mydiv').innerHTML = `The given array is [${no}]`;
+        let res = no.reduce(function(prev, next){
+            return prev + next;
+        })
+        document.querySelector('#mydiv1').innerHTML = `The sum of elements of array is ${res}`;
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding sum of alternate numbers</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        let no =  [1,4,5,7,12,11,21];
+        document.querySelector('#mydiv').innerHTML = `The given array is [${no}]`;
+        let arr = [];
+        no.forEach(function(val,index){
+            if(index%2==0){
+                arr.push(val);
+            }
+        })
+        console.log(arr);
+        let res = arr.reduce(function(prev, next){
+               return prev + next;
+        })
+        document.querySelector('#mydiv1').innerHTML = `The sum of alternate elements of array is ${res}`;
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding sum of squares of alternate numbers</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        let no =  [1,4,5,7,12,11,21];
+        let sum = 0;
+        document.querySelector('#mydiv').innerHTML = `The given array is [${no}]`;
+        let arr = [];
+        no.forEach(function(val,index){
+           
+            if(index%2==0){
+                sum =val*val;
+                 console.log(sum)
+                arr.push(sum);
+            }
+        })
+        console.log(arr);
+        let res = arr.reduce(function(prev, next){
+               return prev + next;
+        })
+        document.querySelector('#mydiv1').innerHTML = `The sum of alternate elements of array is ${res}`;
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>hero object function approach</title>
+</head>
+<body>
+<script>
+    function Hero(name, age, planet){
+        this.name = name;
+        this.age = age;
+        this.planet = planet;
+        this.displayName = function(){
+            alert(`name = ${this.name}`);
+        }
+        this.displayAge = function(){
+            alert(`age = ${this.age}`);
+        }
+        this.displayPlanet = function(){
+            alert(`planet = ${this.planet}`)
+        }
+    }
+    Hero('hulk','50','earth');
+    displayName();
+    displayAge();
+    displayPlanet();
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hero object function approach</title>
+</head>
+<body>
+    <button onclick="displayName()">show name</button>
+    <button onclick="displayAge()">show age</button>
+    <button onclick="displayPlanet()">show planet</button><br>
+    <p id="mydiv"></p>
+
+<script>
+    function Hero(name, age, planet){
+        this.name = name;
+        this.age = age;
+        this.planet = planet;
+        this.displayName = function(){
+            document.querySelector('#mydiv').innerHTML = `name = ${this.name}`;
+        }
+        this.displayAge = function(){
+            document.querySelector('#mydiv').innerHTML = `age = ${this.age}`;
+        }
+        this.displayPlanet = function(){
+            document.querySelector('#mydiv').innerHTML = `planet = ${this.planet}`;
+        }
+        return alert("Hero has been created");
+    }
+    Hero('hulk','50','earth');
+</script>
+</body>
+</html>

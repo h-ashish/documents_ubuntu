@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Find</title>
+</head>
+<body>
+	<script>
+	let nos =[1,2,5,2,5,4];
+	let result  = nos.find(function(val){
+		
+		if(val > 2){
+			return true;
+		}
+	})
+	console.log(result);
+	let students =["Ashish","Prajwal","Munna","Vignesh"];
+	let resultOne = students.find(function(val){
+		if(val == "Prajwal"){
+			return true;
+		}
+	})
+	console.log(resultOne);
+	</script>
+	
+
+</body>
+</html>

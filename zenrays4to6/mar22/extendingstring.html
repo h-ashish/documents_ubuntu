@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extending string using prototype</title>
+</head>
+<body>
+    <script>
+        String.prototype.firstCharCapital = function (){
+            let stringVal = this.valueOf();
+            alert(stringVal);
+            let newString = stringVal[0].toUpperCase()+stringVal.slice(1);
+            return newString;
+        }
+        let str = new String("welcome to zenrays");
+        let returnVal = str.firstCharCapital();
+        alert(returnVal);
+
+        let name = "ashish is late";
+        let convString = name.firstCharCapital();
+        alert(convString);
+    </script>
+</body>
+</html>

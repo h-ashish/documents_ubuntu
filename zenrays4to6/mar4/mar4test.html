@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Fibonacci number</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+<script>
+	let val;
+	let arr =[];
+		function fibonacci(num) {
+		    if(num < 2) {
+		        return num;
+		    }
+		    else {
+		        val = fibonacci(num-1) + fibonacci(num - 2);
+		         return val;
+		    }
+		}	
+		    for(let i = 0; i < 20; i++) {
+		    	arr.push(fibonacci(i)); 
+		    }
+		    document.querySelector('#mydiv').innerHTML = `The first 20 Fibonacci Numbers are [${arr}]`;
+		    let sum = arr.reduce(function(prev, next){
+		    	return prev + next;
+		    })
+		    document.querySelector('#mydiv1').innerHTML = `The sum first 20 Fibonacci Numbers are [${sum}]`;
+</script>
+</body>
+</html>
+
+ -->
+
+<!--  <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Greatest Divisor of 2 numbers</title>
+ </head>
+ <body>
+ 	<input type="number" id="input1" placeholder="Enter first number">
+	<input type="number" id="input2" placeholder="Enter second number">
+	<button onclick="gcd()">get gcd</button>
+	<div id="mydiv"></div>
+ 	<script>
+ 		function gcd(){
+ 			let a = document.querySelector('#input1').value;
+ 			let b = document.querySelector('#input2').value;
+ 			let divisor = 2;
+ 			let greatestDivisor = 1;
+ 			if(a<2 || b<2)
+ 				return 1;
+ 			while(a>=divisor && b >= divisor){
+ 				if(a%divisor ==0 && b%divisor ==0){
+ 					greatestDivisor = divisor;
+ 				}
+ 				divisor++;
+ 			}
+ 			document.querySelector('#mydiv').innerHTML = `The Greatest Divisor of [${a}, ${b}] is ${greatestDivisor}`;
+ 			return greatestDivisor;
+ 		}
+ 	</script>
+ </body>
+ </html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GCD using Recursive</title>
+</head>
+<body>	
+	<input type="number" id="input1" placeholder="Enter first number">
+	<input type="number" id="input2" placeholder="Enter second number">
+	<button onclick="show()">get gcd</button>
+	<div id="mydiv"></div>
+	<script>
+		var val;
+		function show(){
+			let a = document.querySelector('#input1').value;
+			let b = document.querySelector('#input2').value;
+			document.querySelector('#mydiv').innerHTML = `The Greatest Common Divisor of ${a} and ${b} is ${gcd(a,b)}`;
+		function gcd(a,b) {
+			
+	    	if ( b==0) {
+	        	return a;
+	   	 	}
+	   	 		return gcd(b, a % b);      		    		 
+			}
+		}
+	</script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Palindrome</title>
+</head>
+<body>
+	<input type="text" id="input" placeholder="Enter word to check palindrome">
+	<button onclick="palindrome()">Check Palindrome</button>
+	<div id="mydiv"></div>
+	<script>
+		function palindrome(){
+			let str = document.querySelector('#input').value;
+			let val = str.split('').reverse().join('');
+			if(val == str){
+				document.querySelector('#mydiv').innerHTML = `${str} is a Palindrome`;
+			} else{
+				document.querySelector('#mydiv').innerHTML = `${str} is not a Palindrome`;
+			}
+		}
+		
+	</script>
+</body>
+</html> -->

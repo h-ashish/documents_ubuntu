@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select Age</title>
+</head>
+<body>
+	<label> Select your Age </label>
+	<select id="age"></select>
+	<button onclick="showAge()">Show Age</button>
+	<!-- <option value="volvo">Volvo</option> -->
+	<script>
+		// // var age = 0;
+		// document.write("<select >");
+		// // document.write("<label>" + "age" +"</label>")
+
+		// for (var i=1; i <=80; i++)
+		// {
+		// 	document.write("<option>" + i + "</option>");
+		// }
+		function showAge(){
+			alert(document.getElementById("age").value);
+		}
+		let i;
+		function makeAgeSelect(){
+			let selectAgeObject = document.getElementById("age");
+			for(i=0;i<=120;i++){
+				selectAgeObject.innerHTML = selectAgeObject.innerHTML + "<option>" + i + "</option>";
+			}
+		}
+		makeAgeSelect();
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar20 Assignment 1</title>
+</head>
+<body>
+    <p>Check inheritance in console</p>
+    <button onclick="humanObj.showDetails()"> show human properties</button>
+	<button onclick="developerObj.showName()"> show developer name</button>
+	<button onclick="developerObj.showWorkingHours()"> show working hours</button>
+    <div id="mydiv"></div>
+    <script>
+        let humanObj = {
+            planet: "earth",
+            breathes: "air",
+            eyes: 2,
+            showDetails: function(){
+                document.querySelector('#mydiv').innerHTML = `The human properties are: <br>
+                planet: ${this.planet}<br>
+                breathes: ${this.breathes}<br>
+                eyes: ${this.eyes}`;
+            }
+        }
+        
+        let developerObj = {
+            name:"Ashish H",
+            workinghours: 9, 
+            drinks: "cola", 
+            sleeps:'rarely', 
+            showWorkingHours :  function(){
+                document.querySelector('#mydiv').innerHTML =`The working hours are: ${this.workinghours}`;
+            },
+            showName: function(){
+                document.querySelector('#mydiv').innerHTML =`The developer name is ${this.name}`;
+            }
+        }
+        console.log(humanObj)
+        console.log(developerObj)
+        developerObj.prototype = humanObj;
+        console.log(developerObj);
+    </script>
+</body>
+</html>

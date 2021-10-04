@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count of elements in array</title>
+</head>
+<body>
+    <p> <strong> Numbers repeating twice</strong> </p>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        let array = [1,2,3,4,6,7,9,10,34,1,4,1,2,3,6];
+        document.getElementById('mydiv').innerHTML = `The given array is [${array}]`
+        let countObj = {};
+        let newArray =[];
+
+        // for(let i=0;i<array.length; i++){
+        //     let num = array[i]; //2
+        //     countObj[num] = countObj[num] ? countObj[num] + 1 : 1;
+        // }
+        // array.forEach(function(val){
+        //     if(countObj[val] = countObj[val]){
+        //         countObj[val] = countObj[val] +1;
+        //     }
+        //     else {
+        //         countObj[val] = 1;
+        //     }
+        // })
+        // console.log(countObj);
+        // for(let i in countObj){
+        //     if(countObj[i]>=2){
+        //         newArray.push(i);
+        //     }
+        // }
+        array.forEach(function(val,index){
+            let searchIndex = array.indexOf(val, index + 1);
+            if(searchIndex != -1){
+                if(array.indexOf(val,searchIndex + 1) !=-1){
+                    console.log(`${val} found more than twice`)
+                } else {
+                    newArray.push(val);
+                }
+
+            }
+        })
+        document.getElementById('mydiv1').innerHTML = `The numbers that are repeated twice are [${newArray}]`
+    </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>difference between getter and setter</title>
+</head>
+<body>
+    <script>
+        class User{
+        name;
+        age;
+        constructor(name,age){
+            this.name =name;
+            this.age = age;
+        }
+        get nameOf(){
+            return this.name;
+        }
+        set newName(n){
+            alert(`The new name by using setter is ${n}`)
+        }
+    }
+    let myObj = new User("ashish",23);
+    alert(`The name by using getter is "${myObj.nameOf}"`);
+    myObj.name = "prajwal";
+    
+    alert(`The new name by using setter is "${myObj.name}"`)
+    </script>
+    
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding age</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</head>
+<body>
+    <p> <strong> Age of sam  in 6 years</strong> </p>
+    <div id="mydiv"></div>
+<script>
+	let date = moment('12-04-1999', 'DD-MM-YYYY');
+	let year = date.add(6, 'years');
+	let age = year.format('dddd Do MMMM, YYYY');
+    document.getElementById("mydiv").innerHTML = `The age of sam in 6 years is ${age}`
+</script>
+</body>
+</html> -->

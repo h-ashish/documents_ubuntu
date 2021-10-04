@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>creating object through function</title>
+</head>
+<body>
+<script>
+	let ob = {
+		strength: "Very High",
+		showStrength: function(){
+			alert(this.strength);
+		}
+	}
+	function Hero(name,planet,behaviour){
+		this.name = name;
+		this.planet = planet;
+		this.behaviour = behaviour;
+		this.showDetails = function(){
+			alert(`name = ${this.name} and planet = ${this.planet} and behaviour = ${this.behaviour}`)
+		}
+		return "hero created";
+	}
+	Hero.prototype = ob;
+	let result = Hero("Hulk","earth","Very angry");
+	alert(result);
+	let hulkObject = new Hero("Hulk","earth","Very angry");
+	console.log(hulkObject);
+	hulkObject.showDetails();
+	hulkObject.showStrength();
+</script>
+</body>
+</html>

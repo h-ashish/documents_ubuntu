@@ -1,0 +1,26 @@
+<!=DOCTYPE html>
+<html>
+<head>
+	<title>Largest number in the given four arrays</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<script>
+		let arr1 =  [1,2,3,4];
+		let arr2 = [5,18,0,12];
+		let arr3 = [3,5,12,5];
+		let arr4 = [28,9,2,34];
+		document.querySelector('#mydiv').innerHTML = `The 4 arrays are:<br>
+		1) [${arr1}] <br>
+		2) [${arr2}]<br>
+		3) [${arr3}]<br>
+		4) [${arr4}]`;
+
+		let concatArr = arr1.concat(arr2,arr3,arr4).sort(function(a,b){
+			return b - a;
+		});
+		document.querySelector('#mydiv1').innerHTML = `The largest number of all the arrays is "${concatArr[0]}".`;
+	</script>
+</body>
+</html>

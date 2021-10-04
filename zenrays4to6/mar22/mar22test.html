@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Property in ECMA 6</title>
+</head>
+<body>
+    <script>
+        class Details{
+            #secret
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+                this.#secret = 'Secret Password';
+            }
+            showName(){
+                console.log(this.name);
+            }
+            #secretMethod(){
+                return 'I am secret password';
+            }
+            showSecret(){
+                return this.#secret;
+            }
+        }
+        let givenDetails = new Details("Ashish",23);
+        console.log(givenDetails.secret);
+        console.log(givenDetails.secretMethod)
+        console.log(givenDetails.showSecret());
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding "s" in string</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        
+        String.prototype.isPresent = function(){
+        document.querySelector('#mydiv').innerHTML = `The given string is "${str}"`;
+            if(str.includes("s")){
+                document.querySelector('#mydiv1').innerHTML = `The letter "s" is present in the given string`;
+            }else{
+                document.querySelector('#mydiv1').innerHTML = `The letter "s" is not present in the given string`;
+            }  
+        }
+        let str = new String("streets are having lights");
+        let returnVal = str.isPresent();
+    </script>
+</body>
+</html>
+
+

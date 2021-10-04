@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding age using moment.js</title>
+    <script src="moment.js"></script>
+</head>
+<body>
+    <input type ="date" id = "dateid">
+    <button onclick="ShowDate()">Show Date</button>
+    <div id="mydiv"></div>
+    <script>
+        function ShowDate(){
+            let dateVal = document.querySelector('#dateid').value;
+            let a = moment().diff(dateVal, 'days');
+            console.log(a);
+
+            var start = moment();
+            var end = moment().add(a, 'days');
+            console.log(start);
+            console.log(end);
+
+            var years = end.diff(start, 'year');
+            console.log(start.add(years, 'years'));
+            console.log(years);
+
+            var days = end.diff(start, 'days');
+            console.log(days)
+            document.querySelector('#mydiv').innerHTML = `The age is ${years} years and ${days} days`;
+        }
+    </script>
+</body>
+</html>

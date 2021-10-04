@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 1</title>
+</head>
+<body>
+	<button onclick="showDetails()">show human properties</button>
+	<button onclick="developerName()">show developer name</button>
+	<button onclick="developerWorking()">show developer working hours</button>
+	<button onclick="developerProperties()">show developer properties</button>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+<script>
+	let divHtml = ''
+	let human = {
+		planet: "earth", 
+		breathes: "air", 
+		eyes:2,
+		mouth: 1,
+	}
+
+	let showDetails = function(){
+		
+			document.querySelector('#mydiv1').innerHTML = ` The human properties are: <br> 
+			Planet: ${human.planet} <br> Breathes: ${human.breathes} <br> Eyes: ${human.eyes} <br> Mouth: ${human.mouth}`;
+		
+	}
+	let developer = {
+		name:"Ashish H",
+		workinghours: 9, 
+		drinks: 'cola', 
+		sleeps:'rarely',
+	}
+	let developerName = function(){
+		document.querySelector('#mydiv1').innerHTML = ` The developer name is ${developer.name}`;
+	}
+	let developerWorking = function(){
+		document.querySelector('#mydiv1').innerHTML = ` The developer name is ${developer.workinghours}`;
+	}
+
+	let developerProperties = function(){
+		for(i in developer){
+			console.log(i + " : " + developer[i]);
+			document.querySelector('#mydiv1').innerHTML = `The developer properties are:`
+			document.querySelector('#mydiv2').innerHTML += ` ${i} : ${developer[i]} <br> `;
+		}
+	}
+</script>
+</body>
+</html>

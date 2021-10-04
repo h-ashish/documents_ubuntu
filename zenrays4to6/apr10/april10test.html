@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>destructuring a function </title>
+</head>
+<body>
+	<script type="text/javascript">
+		function f() {
+  return [1, 2];
+}
+let x, y;
+[x, y] = f();
+console.log(x); 
+console.log(y);
+	</script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructuring an array</title>
+</head>
+<body>
+    <script>
+        const myObject = {props: {match:{params:'A new value'}}}; 
+        let { props: { match: { params:params1="hello"} } } = myObject;
+
+        console.log(params1); 
+    </script>
+</body>
+</html> -->

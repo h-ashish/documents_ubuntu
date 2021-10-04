@@ -1,0 +1,211 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Json printing</title>
+</head>
+<body>
+    <button onclick="showDetails()" > Show Details</button>
+    <div id="mydiv"></div>
+    <script>
+        let jsonData = `[{"id":97162,"assessment":79,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Test Feature Assessment","category":"test category","created_at":"2020-11-02T04:56:24.757907Z","max_marks":2.0},{"id":80300,"assessment":75,"user_exam_sections":[],"no_attempts":1,"assessment_name":"MTLR Minor Two","category":"Aptitude","created_at":"2020-07-04T10:51:04.242177Z","max_marks":15.0},{"id":78546,"assessment":74,"user_exam_sections":[],"no_attempts":1,"assessment_name":"MTLR Assignment 2","category":"Aptitude","created_at":"2020-07-02T10:32:10.829794Z","max_marks":10.0},{"id":76787,"assessment":73,"user_exam_sections":[],"no_attempts":1,"assessment_name":"MTLR Minor One","category":"Aptitude","created_at":"2020-06-30T11:01:35.280321Z","max_marks":15.0},{"id":73346,"assessment":70,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi dummy 3","category":"test category","created_at":"2020-06-22T02:55:36.294412Z","max_marks":11.0},{"id":73345,"assessment":70,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi dummy 3","category":"test category","created_at":"2020-06-22T02:55:31.563607Z","max_marks":11.0},{"id":73344,"assessment":70,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi dummy 3","category":"test category","created_at":"2020-06-22T02:55:25.001113Z","max_marks":11.0},{"id":72751,"assessment":32,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Demo Assess","category":"test category","created_at":"2020-06-10T11:26:05.208767Z","max_marks":36.0},{"id":67588,"assessment":65,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Dummy 2","category":"Aptitude","created_at":"2020-06-04T14:22:11.705821Z","max_marks":11.0},{"id":65884,"assessment":65,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Dummy 2","category":"Aptitude","created_at":"2020-06-04T14:13:03.964014Z","max_marks":11.0},{"id":63015,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:42:58.669795Z","max_marks":8.0},{"id":63011,"assessment":64,"user_exam_sections":[],"no_attempts":10,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:19:19.372717Z","max_marks":8.0},{"id":62453,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:08:05.633961Z","max_marks":8.0},{"id":60751,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:05:41.608678Z","max_marks":8.0},{"id":59043,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T10:55:50.370747Z","max_marks":8.0},{"id":48118,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:15.026448Z","max_marks":10.0},{"id":47886,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:14.453536Z","max_marks":10.0},{"id":47269,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:13.147130Z","max_marks":10.0},{"id":47001,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:12.520097Z","max_marks":10.0},{"id":45313,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:08.765578Z","max_marks":10.0},{"id":36290,"assessment":50,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR CIE: 01-June","category":"Aptitude","created_at":"2020-06-02T06:41:13.576437Z","max_marks":10.0}]`;
+        let data = JSON.parse(jsonData);
+        console.log(data);
+        function showDetails(){
+            let divObj ='';
+            data.forEach(function(dataOb){
+                divObj += `assessment_name: ${dataOb.assessment_name} <br>`;
+            })
+            document.querySelector("#mydiv").innerHTML = `<p>  ${divObj}</p>`;
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Json printing</title>
+</head>
+<body>
+    <button onclick="showDetails()" > Show Details</button>
+    <div id="mydiv"></div>
+    <script>
+        let jsonData = `[{"id":97162,"assessment":79,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Test Feature Assessment","category":"test category","created_at":"2020-11-02T04:56:24.757907Z","max_marks":2.0},{"id":80300,"assessment":75,"user_exam_sections":[],"no_attempts":1,"assessment_name":"MTLR Minor Two","category":"Aptitude","created_at":"2020-07-04T10:51:04.242177Z","max_marks":15.0},{"id":78546,"assessment":74,"user_exam_sections":[],"no_attempts":1,"assessment_name":"MTLR Assignment 2","category":"Aptitude","created_at":"2020-07-02T10:32:10.829794Z","max_marks":10.0},{"id":76787,"assessment":73,"user_exam_sections":[],"no_attempts":1,"assessment_name":"MTLR Minor One","category":"Aptitude","created_at":"2020-06-30T11:01:35.280321Z","max_marks":15.0},{"id":73346,"assessment":70,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi dummy 3","category":"test category","created_at":"2020-06-22T02:55:36.294412Z","max_marks":11.0},{"id":73345,"assessment":70,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi dummy 3","category":"test category","created_at":"2020-06-22T02:55:31.563607Z","max_marks":11.0},{"id":73344,"assessment":70,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi dummy 3","category":"test category","created_at":"2020-06-22T02:55:25.001113Z","max_marks":11.0},{"id":72751,"assessment":32,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Demo Assess","category":"test category","created_at":"2020-06-10T11:26:05.208767Z","max_marks":36.0},{"id":67588,"assessment":65,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Dummy 2","category":"Aptitude","created_at":"2020-06-04T14:22:11.705821Z","max_marks":11.0},{"id":65884,"assessment":65,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Dummy 2","category":"Aptitude","created_at":"2020-06-04T14:13:03.964014Z","max_marks":11.0},{"id":63015,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:42:58.669795Z","max_marks":8.0},{"id":63011,"assessment":64,"user_exam_sections":[],"no_attempts":10,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:19:19.372717Z","max_marks":8.0},{"id":62453,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:08:05.633961Z","max_marks":8.0},{"id":60751,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:05:41.608678Z","max_marks":8.0},{"id":59043,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T10:55:50.370747Z","max_marks":8.0},{"id":48118,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:15.026448Z","max_marks":10.0},{"id":47886,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:14.453536Z","max_marks":10.0},{"id":47269,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:13.147130Z","max_marks":10.0},{"id":47001,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:12.520097Z","max_marks":10.0},{"id":45313,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:08.765578Z","max_marks":10.0},{"id":36290,"assessment":50,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR CIE: 01-June","category":"Aptitude","created_at":"2020-06-02T06:41:13.576437Z","max_marks":10.0}]`;
+        let data = JSON.parse(jsonData);
+        console.log(data);
+        function showDetails(){
+            let divObj ='';
+            data.forEach(function(dataOb){
+                divObj += `assessment_name: ${dataOb.assessment_name} <br> Date: ${dataOb.created_at} <br> Category: ${dataOb.category} <br>`;
+            })
+            document.querySelector("#mydiv").innerHTML = `<p>  ${divObj} </p>`;
+        }
+    </script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Json printing</title>
+</head>
+<body>
+    <button onclick="showDetails()" > Show Details</button>
+    <div id="mydiv"></div>
+    <script>
+        let jsonData = `[{"id":97162,"assessment":79,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Test Feature Assessment","category":"test category","created_at":"2020-11-02T04:56:24.757907Z","max_marks":2.0},{"id":80300,"assessment":75,"user_exam_sections":[],"no_attempts":1,"assessment_name":"MTLR Minor Two","category":"Aptitude","created_at":"2020-07-04T10:51:04.242177Z","max_marks":15.0},{"id":78546,"assessment":74,"user_exam_sections":[],"no_attempts":1,"assessment_name":"MTLR Assignment 2","category":"Aptitude","created_at":"2020-07-02T10:32:10.829794Z","max_marks":10.0},{"id":76787,"assessment":73,"user_exam_sections":[],"no_attempts":1,"assessment_name":"MTLR Minor One","category":"Aptitude","created_at":"2020-06-30T11:01:35.280321Z","max_marks":15.0},{"id":73346,"assessment":70,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi dummy 3","category":"test category","created_at":"2020-06-22T02:55:36.294412Z","max_marks":11.0},{"id":73345,"assessment":70,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi dummy 3","category":"test category","created_at":"2020-06-22T02:55:31.563607Z","max_marks":11.0},{"id":73344,"assessment":70,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi dummy 3","category":"test category","created_at":"2020-06-22T02:55:25.001113Z","max_marks":11.0},{"id":72751,"assessment":32,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Demo Assess","category":"test category","created_at":"2020-06-10T11:26:05.208767Z","max_marks":36.0},{"id":67588,"assessment":65,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Dummy 2","category":"Aptitude","created_at":"2020-06-04T14:22:11.705821Z","max_marks":11.0},{"id":65884,"assessment":65,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Dummy 2","category":"Aptitude","created_at":"2020-06-04T14:13:03.964014Z","max_marks":11.0},{"id":63015,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:42:58.669795Z","max_marks":8.0},{"id":63011,"assessment":64,"user_exam_sections":[],"no_attempts":10,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:19:19.372717Z","max_marks":8.0},{"id":62453,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:08:05.633961Z","max_marks":8.0},{"id":60751,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T11:05:41.608678Z","max_marks":8.0},{"id":59043,"assessment":64,"user_exam_sections":[],"no_attempts":1,"assessment_name":"Multi section  dummy","category":"test category","created_at":"2020-06-04T10:55:50.370747Z","max_marks":8.0},{"id":48118,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:15.026448Z","max_marks":10.0},{"id":47886,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:14.453536Z","max_marks":10.0},{"id":47269,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:13.147130Z","max_marks":10.0},{"id":47001,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:12.520097Z","max_marks":10.0},{"id":45313,"assessment":56,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR-EEE+A&R-02-Jun","category":"Aptitude","created_at":"2020-06-02T10:46:08.765578Z","max_marks":10.0},{"id":36290,"assessment":50,"user_exam_sections":[],"no_attempts":1,"assessment_name":"PALR CIE: 01-June","category":"Aptitude","created_at":"2020-06-02T06:41:13.576437Z","max_marks":10.0}]`;
+        let data = JSON.parse(jsonData);
+        console.log(data);
+        function showDetails(){
+            let divObj ='';
+            data.forEach(function(dataOb){
+                divObj += `assessment_name: ${dataOb.assessment_name} <br> Max Marks : ${dataOb.max_marks} <br> `;
+            })
+            document.querySelector("#mydiv").innerHTML = `<p>  ${divObj} </p>`;
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>find number prime number or not</title>
+</head>
+<body>
+    <input type="number" id="no">
+    <button onclick="findPrime()">Find Prime</button>
+    <div id="mydiv"></div>
+    <script>
+        function findPrime(){
+           let n; 
+           n = document.getElementById("no").value;
+           let i;
+           let flag = true;
+           for(i=2; i<=n/2; i++)
+           {
+            console.log(i);
+            if(n%1 == 0)
+            {
+                flag = false;
+                break;
+                console.log(flag);
+            }
+        }
+        if(flag == true)
+        {
+            document.querySelector('#mydiv').textContent ="The number is a prime number";
+        }else
+        {
+            document.querySelector('#mydiv').textContent ="The number is not a prime number";
+        }
+    }
+</script>    
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Using math.random ()</title>
+</head>
+<body>
+    <button onclick="calc()">show random number between 1 and 10</button>
+    <div id="mydiv"></div>
+    <script>
+        
+        function calc(){
+            document.querySelector('#mydiv').innerHTML = Math.floor(Math.random()*11);
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Using Math.pow() function </title>
+</head>
+<body>
+    <button onclick="showRes()">Calculate 12 to the power of 8</button>
+    <div id="mydiv"></div>
+    <script>
+        function showRes(){
+            document.querySelector('#mydiv').innerHTML = Math.pow(12, 8);
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Removing duplicates from the array</title>
+</head>
+<body>
+    <script>
+        let array = [1, 2, 3, 4, 5, 1,2,19,18,12,122,18];
+        let arry1 = [];
+        let arry2 = [];
+        console.log(array);
+        array.forEach(function(val){
+            if(!arry1.includes(val)){
+                arry1.push(val);
+            }
+            else{
+                arry2.push(val);
+            }
+        })
+        console.log(arry2);
+    </script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>creating array from 0 to 100</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <script type="text/javascript">
+        let array =[];
+        for(let i = 1; i <= 100 ; i++){
+             array.push(i);
+
+        }
+        document.querySelector('#mydiv').innerHTML = `The Array is : [ ${array} ]`;
+    </script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>creating squares of array from 0 to 100</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <script type="text/javascript">
+        let array =[];
+        let sum  = 0;
+        for(let i = 1; i <= 100 ; i++){
+            sum = i * i;
+             array.push(sum);
+        }
+        document.querySelector('#mydiv').innerHTML = `The Array is : [ ${array} ]`;
+    </script>
+
+</body>
+</html> -->

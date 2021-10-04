@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Library App</title>
+	<style >
+		body{
+			text-align: center;
+			background-image: linear-gradient(to right, #333333 , #dd1818); 
+			font-family: Tahoma;
+			color: black;
+		}
+		h1{
+			color: #e6e6ff;
+			font-size: 45px;
+			margin-bottom: 10px;
+		}
+		p{
+			text-align: center;
+			margin-bottom: 7px;
+			color: #e6e6ff;
+			margin-left: 100px;
+			margin-right:100px;
+			font-size: 30px;
+		}
+		button{
+			width: 17%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			color: white;
+			background-color:#090711;
+			border:2px solid #090711;
+			border-radius: 10px;
+			font-size: 18px;
+			outline: none;
+		}
+		input{
+			width: 20%;
+			height: 40px;
+			margin-top: 20px;
+			margin: 20px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		table,th,td{
+			width: 20%;
+			border-radius: 5px;
+			color: #e6e6ff;
+			background-color: #29282D;
+			border: 2px solid #e6e6ff;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1> Welcome to Zen Library</h1><br>
+	
+	<button onclick="register()"> Register</button>
+	<button onclick="showBooks()"> Show Books</button>
+	<button onclick="addBooks()"> Add Books</button>
+	<button onclick="showUsers()"> Show Users</button>
+	<div id="mydiv">	</div>
+	<table id="table" border="2"></table>
+	<script>
+		
+		function register(){
+			document.querySelector('#mydiv').innerHTML  = `<p> Please Register Below </p> <input type="email" id="email" placeholder="Enter Email ID"><br>
+				<input type="password" id="password" placeholder="Enter password"><br> <button onclick="registerButton()"> Register </button>`;
+			}			
+			var registerArr= [];
+		function registerButton(val){
+			let registerOb = {
+				email: document.querySelector('#email').value,
+				password:  document.querySelector('#password').value,
+			};
+			registerArr.push(registerOb);
+			console.log(registerArr);
+		}
+		function showUsers(){
+			let divObj = '';
+			registerArr.forEach(function(val){
+				divObj = divObj + ` <tr> <td> ${val.email} </td> </tr>`;
+			})
+			document.querySelector('#mydiv').innerHTML = ` <table> <tr> <th> Name </th>  </tr> ${divObj} </table>`;
+		}
+
+		function addBooks(){
+			document.querySelector('#mydiv').innerHTML = `<p> Please Add Books</p><input type="text" id="nameofbook" placeholder="Enter Name of the Book"><br>
+				<input type="text" id="author" placeholder="Enter author name"><br> <button onclick = 'addBooksButton()' > Add Books </button>`;
+		}
+		var addBooksArr = [];
+		function addBooksButton(){
+			let addBooksOb = {
+				nameofbook: document.querySelector('#nameofbook').value,
+				author:  document.querySelector('#author').value,
+			};
+			addBooksArr.push(addBooksOb);
+			console.log(addBooksArr);
+		}
+		function showBooks(){
+			let divObj = '';
+			addBooksArr.forEach(function(val){
+				divObj = divObj + ` <tr> <td> ${val.nameofbook} </td> <td> ${val.author} </td> </tr>  `
+			})
+			document.querySelector('#mydiv').innerHTML = ` <table> <tr> <th> Name of Book </th> <th> Author Name </th> </tr> ${divObj} </table> `;
+		}
+
+	</script>
+
+
+</body>
+</html>

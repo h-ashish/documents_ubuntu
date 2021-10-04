@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Reverse</title>
+</head>
+<body>
+	<input type="text" id="input" placeholder="Enter text">
+	<button onclick="reverse()">reverse</button>
+	<div id="mydiv"></div>
+<script>
+	function reverse(){
+		let str = document.querySelector('#input').value;
+		var rtnStr = '';
+		for(var i = str.length -1; i>=0; i--){
+			rtnStr += str[i]; 
+		}
+		document.querySelector('#mydiv').innerHTML = `The reverse of the string is '${rtnStr}'`
+		return rtnStr;
+	}
+</script>
+</body>
+</html>

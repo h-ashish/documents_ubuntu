@@ -1,0 +1,37 @@
+NOte: all functions that create objects normally should have first letter also capital.
+
+1)create a human object. human object has 4 properties: planet: earth, breathes: air, eyes:2, showDetails function property. 
+This will show all properties of human.
+create using normal object way we learned before.No need to create using function.
+Then create a developer object with properties name:"some developer",workinghours: 9, drinks: cola, sleeps:'rarely', 
+showWorkingHours which will print the working hours.
+You will create it using a function approach.
+Next you will inherit the human object using prototype. 
+create a button named "show human properties". ths will call showDetails function. 
+one more button "show developer name": this will show the developer name in a div. 
+one button "working hours". this will show working hours in a div box.
+
+2) create a function calculator. 
+this will add 2 variables a and b defined as properties of object. 
+you will create 4 functions add, divide,multiply,subtract. 
+so the function should be like 
+function Calculator(a,b){
+	this.a = a;
+	this.b = b;
+	//add functions below
+}
+now create an object with a = 4, b = 5;
+whenever you want to do a calculation you will create an object and pass the values a and b. then you can do add, divide,multiply later on. 
+create button add, subtract,multiply,divide .on clicking button, show result in a div.
+
+3)create object same like above. just one difference. this time create 2 input boxes that will take the value of a and b. 
+then you will click the button "Create object". this will create object with values of a and b that you entered in the input boxes. 
+then you will have same 4 buttons like above to add, subtract, multiply and divide. 
+
+4)create a function ScientificCalculator.
+again you input degree value to the function. 
+you can input the degree value 0.6( this is radian not degrees)
+but this time i want you to find sin,cost,tan,cot  which are funcitons inside the ScientificCalculator funciton.
+create 4 buttons sin,cos,tan,cot. when you click on buttons, alert the result
+
+5) for same example above create a input box that will take the degree value and repeat same example as above.

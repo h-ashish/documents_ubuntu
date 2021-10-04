@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Html5 Templates</title>
+</head>
+<body>
+	<script>
+		let name = "Ashish ";
+		let hobby = "Sketching";
+		let htmlCode = `<div> ${name} </div> <div> ${hobby} </div>`;
+		document.write(htmlCode);
+
+		let tableHtml = '<table border = "2">';
+		students =[{name: "Ashish", hobby: "Sketching"},{name: "Prajwal", hobby: "Cricket"}];
+		students.forEach(function(studentsOb){
+			tableHtml = tableHtml + `<tr><td> ${studentsOb.name} </td> <td> ${studentsOb.hobby}</td></tr>`;
+		})
+		tableHtml = tableHtml + "</table>";
+		document.write(tableHtml);
+	</script>
+
+</body>
+</html>

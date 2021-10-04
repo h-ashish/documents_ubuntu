@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Printing first 10 prime numbers</title>
+</head>
+<body>
+	<div id = "print"></div>
+	<script>
+		let i=2,counter =1;
+		let htmlCode = '';
+		for (i=2;i<=10;i++){
+		  while(counter<=10)
+		  {
+		  	if(findPrime(i)==true)
+		  	{
+		  		counter = counter +1;
+		  		htmlCode = htmlCode + i +'<br>';
+		  		console.log(i);
+		  	}i = i +1;
+		  }
+		}
+		  function findPrime(n){
+		  	let flag = true;
+		  	for (let i =2;i<=n/2;i++)
+		  	{
+		  		if(n%i==0)
+		  			{flag =false;
+		  				break;
+		  		}
+		  	}
+		  	if(flag==true){
+		  		return true;
+		  	}
+		  	else{
+		  		return false;
+		  	}
+		  }		
+document.getElementById("print").innerHTML = htmlCode;
+	</script>
+</body>
+</html>

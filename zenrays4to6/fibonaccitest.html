@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First 5 fibonacci numbers</title>
+</head>
+<body>
+	<div id="result"></div>
+<script>
+let n1 = 0, n2 = 1, nextTerm;
+let htmlCode = '';
+let sum = 0;
+for (let i = 1; i <= 5; i++) { 
+ 	sum = sum + n1;   
+    htmlCode = htmlCode + n1 + '<br>';
+    nextTerm = n1 + n2;
+    n1 = n2;
+    n2 = nextTerm;   
+}
+document.getElementById("result").innerHTML = htmlCode;
+alert(sum);
+</script>
+</body>
+</html>

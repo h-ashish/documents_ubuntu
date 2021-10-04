@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom Event Listener</title>
+	<style >
+		div{
+			text-align: center;	
+			border: 2px solid teal;
+			padding: 10px;
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="output"></div>
+	<div id = "maindiv" > keep mouse here </div>
+<script type="text/javascript">
+	let mainObjectDomObject = document.querySelector("#maindiv");
+
+	function mouseEnter(){
+		document.querySelector('#output').textContent = "Mouse has entered";
+	}
+
+	function mouseLeave(){
+		document.querySelector('#output').textContent = "Mouse has left";
+	}
+	function mouseLeaveOne(){
+		document.querySelector('#output').textContent = document.querySelector('#output').textContent + " The cat is upset!";
+	}
+
+	mainObjectDomObject.addEventListener('mouseenter',mouseEnter);
+	mainObjectDomObject.addEventListener('mouseleave',mouseLeave);
+	mainObjectDomObject.addEventListener('mouseleave',mouseLeaveOne);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Converting to uppercase</title>
+</head>
+<body>
+	<button onclick="toCaps()"> Convert to caps</button>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let str = "At Zenrays, you learn full handson coding with live project in mern stack";
+		let res = str.split(" ");
+		document.querySelector('#mydiv1').innerHTML = `The String is "${str}"`;
+		function toCaps(){
+			res = res.map(function(val){
+				return val[0].toUpperCase() + val.slice(1);
+			})
+			res = res.join(" ");
+			document.querySelector('#mydiv2').innerHTML = `The String after converting to Capital letters is "${res}" `;
+		}	
+	</script>
+</body>
+</html>

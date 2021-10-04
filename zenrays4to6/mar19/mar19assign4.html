@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 4</title>
+</head>
+<body>
+	<h1>See the details in console</h1>
+<script>
+	let student = {
+		name: "Ashish H",
+		age: 23,
+		showDetails: function(){
+			alert(`The name of the student is ${this.name} and age is ${this.age}`);
+		}
+	};
+
+	let zenraysStudent = Object.create(student);
+	zenraysStudent.gender ="male";
+	zenraysStudent.genderOfStudent = function(){
+		alert(`The gender of student is ${this.age}`);
+	}
+	zenraysStudent.showDetails();
+	// zenraysStudent.genderOfStudent();
+	// console.log(zenraysStudent);
+
+	let studentLocation = Object.create(zenraysStudent);
+	zenraysStudent.location = "Bangalore";
+	zenraysStudent.locationOfStudent = function(){
+		alert(`The student location is ${this.location}`);
+	}
+	// console.log(studentLocation);
+
+	let studentPlacement = Object.create(studentLocation);
+	studentLocation.placementStats = "not placed";
+	studentLocation.placementOfStudent = function(){
+		alert(`The student is ${this.placementStats}`)
+	};
+	console.log(studentPlacement);
+
+</script>
+</body>
+</html>

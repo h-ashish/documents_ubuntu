@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar 24 assignment 6</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        let str = "The lazy brown fox jumped from the cliff";
+        document.querySelector('#mydiv').innerHTML = `The given string is "${str}"`;
+        let str1 = str.split(' ');
+        console.log(str1);
+        let ot = '';
+        let res = str1.forEach(function(val){
+            ot = ot + " " +  val[0].toUpperCase() + val.slice(1, -1 ) + val[val.length - 1].toUpperCase() + val.slice(val.length);
+        })
+        
+        document.querySelector('#mydiv1').innerHTML = `The string after captitalizing first and last word is "${ot}"`;
+    </script>
+</body>
+</html>

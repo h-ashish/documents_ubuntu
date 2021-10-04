@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inner html vs Value</title>
+</head>
+<body>
+	<div id="mydiv"> Hello! how are you </div>
+	<input type="text" id="mindstate">
+	<button onclick="getMindstate()">Get Mind State</button>
+	<script>
+		let divDomObject = document.getElementById("mydiv");
+		alert(divDomObject.innerHTML);
+		alert(divDomObject.textContent);
+		function getMindstate(){
+			let inputDomObject = document.getElementById("mindstate");
+			alert(inputDomObject.value);
+			inputDomObject.value = "Keep Calm and Code On..."
+		}
+	</script>
+</body>
+</html>

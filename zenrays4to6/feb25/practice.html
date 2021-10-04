@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript + DOM </title>
+</head>
+<body>
+	<h1>Shopping List</h1>
+	<p id="first">Get it done today!</p>
+	<input type="text" id="userinput" placeholder="Enter Items">
+	<button id="enter">Enter</button>
+	<ol>
+		<li class ="bold red" random='23'>Notebook</li>
+		<li>Jello</li>
+		<li>Spinach</li>
+		<li>Rice</li>
+		<li>Birthday</li>
+		<li>Candles</li>
+	</ol>
+	<script>
+		var button = document.querySelector('#enter');
+		var input = document.querySelector('#userinput');
+		var ol = document.querySelector('ol');
+
+		function inputLength(){
+			return input.value.length; 
+		}
+
+		function createListElements(){
+			var li = document.createElement('li');
+				li.appendChild(document.createTextNode(input.value));
+				ol.appendChild(li);	
+				input.value = '';
+				var button =document.createElement("button");
+				button.appendChild(document.createTextNode("Done!"));
+				li.appendChild(button);
+				button.onclick=underlineParent;
+			// CREATE AN ELEMENT
+				var button =document.createElement("button"); 
+			// APPEND TEXT TO BUTTON
+				button.appendChild(document.createTextNode("Delete!"));
+			// APPEND BUTTON TO LIST
+				li.appendChild(button);
+
+				button.onclick=removeParent;
+		}
+
+		function underlineParent(event){
+			event.target.parentNode.classList.toggle("done");
+		}
+
+
+		function removeParent(evt){
+			evt.target.parentNode.remove();
+		} 
+		function addListAfterClick(){
+			if(inputLength()> 0){
+				createListElements();
+			}
+		}
+
+		function addListAfterKeypress(event){
+			if(inputLength() > 0 && event.keyCode === 13){
+				createListElements();
+			}
+		}
+		button.addEventListener('click',addListAfterClick  )
+		input.addEventListener('keypress',addListAfterKeypress)
+	</script>
+
+</body>
+</html>

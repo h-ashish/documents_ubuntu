@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sum of highest numbers</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+<script>
+	let i;
+	let sum = 0;
+	let array = [45,33,22,56,77,98,101,202,45];
+	document.querySelector('#mydiv').innerHTML = `The given array is [${array}]`;
+	let sortedarr = array.sort(function(a,b){
+		return b - a;
+	})
+	document.querySelector('#mydiv1').innerHTML = `The array after sorting is [${sortedarr}]`;
+
+	for(i = 0; i < 3; i++){
+		sum  = sum + sortedarr[i];
+		console.log(sortedarr[i]);	
+	}
+	document.querySelector('#mydiv2').innerHTML = `The the sum of highest, second highest, third highest and fifth highest number is [${sum + sortedarr[4]}]`;
+</script>
+</body>
+</html>
+
+
+

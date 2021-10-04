@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ecommerce registration form</title>
+</head>
+<script src="addingtolocal.js"></script>
+<body>
+<h1>Welcome to Zencart</h1>
+<form id="myform" action="add.js" onsubmit="addtoLocal(event)">
+	<input type="text" id="name" placeholder="Enter Product name"><br>
+	<input type="number" id="price" placeholder="Enter Product price"><br>
+	<label>Select a brand: </label><br><select id="brand">
+		<option></option>
+		<option>Puma</option>
+		<option>Adidas</option>
+		<option>Reebok</option>
+		<option>Gucci</option>
+		<option>Chanel</option>
+		<option>LV</option>
+	</select><br>
+	<textarea rows="15" cols="22" id="desc" placeholder="Enter Description"></textarea><br>
+	<label>Is the Product available?</label><br>
+	<input type="radio" id="yes"  name="available" checked >"Yes"
+	<input type="radio" id="no"  name="available"  >"No"<br>
+	<button>Submit</button>
+<!-- 	<table id="table" border="2"></table> -->
+	<div id="mydiv"></div>
+</form>
+</body>
+</html>

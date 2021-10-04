@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding word in string using input box</title>
+</head>
+<body>
+    <textarea id="textinput" cols="20" rows="10" placeholder="Enter some text"></textarea><br>
+    <input type="search" id="input" placeholder="Enter word to search">
+    <button onclick="searchWord()">search</button>
+    <div id="mydiv"></div>
+    <script>
+        function searchWord(){
+            let str = document.querySelector("#textinput").value ;
+        let val = document.querySelector('#input').value;
+        let res = str.search(val);
+        if(res>0)
+            document.querySelector("#mydiv").innerHTML = `"${val}" is present in the string`;
+        else 
+        document.querySelector("#mydiv").innerHTML = `"${val}" is not present in the string`;
+        }
+    </script>
+</body>
+</html>

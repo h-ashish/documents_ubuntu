@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration form</title>
+	<style>
+		body{
+			text-align: center;
+			background-image: linear-gradient(to right, #F7971E , #FFD200); 
+			font-family: Trebuchet MS;
+			color: black;
+			margin: 20px;
+		}
+		h1{
+			font-size: 35px;
+			margin: 30px;
+		}
+		button{
+			width: 15%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			color: white;
+			background-image: linear-gradient(to right, #EB5750 , #000000); 
+			border:2px solid #001433;
+			border-radius: 5px;
+			font-size: 18px;
+			outline: none;
+		}
+		#username,#userage,#phone, #colstartdate, #colenddate, #hobby {
+			width: 20%;
+			height: 30px;
+			margin: 15px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		#usereducation{
+			width: 20%;
+			height: 70px;
+			margin: 15px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+		#gender{
+			margin: 20px;
+		}
+		div{
+			background-image: linear-gradient(to right, #E44D30, #F16500);
+			border: 2px solid #001433;
+			border-radius: 20px;
+			margin: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 70%;
+
+		}
+		table,th,td{
+			border: 3px solid black;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+		label{
+			text-align: center;
+			padding-bottom: 10px;
+			color: black;
+			font-weight: bold;
+			font-size: 20px;
+		}
+		
+	</style>
+</head>
+<body>
+	
+		<h1>Student Registration</h1>
+		<div>
+	<form name="myForm" onsubmit="validate(event)">
+		<label>Name:</label>
+		<input type="name" name="username" placeholder="Enter Name" id="username" required="" ><br>
+		<label>Age:</label>
+		<input type="number" name="userage" placeholder="Enter age" id="userage"><br>
+
+		<label id="gender" for="usergender">Select your Gender:</label>
+		<input  type="radio" name="usergender" id="male" value="Male">
+		<label for="male">Male</label>
+		<input  type="radio" name="usergender" id="female" value="Female">
+		<label for="female">Female</label>
+		<input  type="radio" name="usergender" id="others" value="Others">
+		<label for="others">Others</label><br>
+
+		<label for="hobby">Choose your hobbies:</label><br>
+		<input list="hobbies" name="hobby" id="hobby" multiple=""> 
+		<datalist>
+			<option value="Reading">Reading</option>
+			<option value="Swimming">Swimming</option>
+			<option value="Hiking">Hiking</option>
+			<option value="Running">Running</option>
+		</datalist><br>
+
+		<label>Select minimun 2 Technologies:</label><br>
+		<input type="checkbox" name="tech" id="tech1" value="C" >
+		<label for="tech1">C</label>
+		<input type="checkbox" name="tech" id="tech2" value="C++" >
+		<label for="tech2">C++</label><
+		<input type="checkbox" name="tech" id="tech3" value="Java" >
+		<label for="tech3">Java</label>
+		<input type="checkbox" name="tech" id="tech4" value="Python" >
+		<label for="tech4">Python</label>
+		<input type="checkbox" name="tech" id="tech5" value="JavaScript" >
+		<label for="tech5">JavaScript</label>
+		<input type="checkbox" name="tech" id="tech6" value="C#" >
+		<label for="tech6">C#</label><br>
+
+		<label>Select your Education:</label><br>
+		<select name="usereducation" id= "usereducation" multiple>
+			<option value="B.E">B.E</option>
+			<option value="B.Com">B.Com</option>
+			<option value="B.Tech">B.Tech</option>
+			<option value="MBBS">MBBS</option>
+			<option value="PU">PU</option>
+			<option value="SSLC">SSLC</option>
+		</select><br>
+		<label>Favourite Colour:</label>
+		<input type="color" name="usercolor" id="color"><br>
+		<label>Phone Number:</label>
+		<input type="tel" name="userphone" id="phone" pattern="[0-9]{10}"><br>
+		<label for="colstartdate">College start date:</label>
+		<input type="date" name="userstart" id="colstartdate"><br>
+		<label for="colenddate">College end date:</label>
+		<input type="date" name="userend" id="colenddate"><br>
+		<label for="gradper">Graduation percentage</label>
+		<input type="range" id="gradper" name="userpercentage" min="0" max="100"><br>
+		<p id="scale"></p>
+		<button>Submit</button>
+	</form>
+</div>
+	<table id="mytable"></table>
+<script>
+	let mainArray = [];
+	function validate(e) {
+		e.preventDefault();
+		let formObj = e.target;
+
+		let techArr = [];
+        techArr.push(document.getElementById("tech1"));
+        techArr.push(document.getElementById("tech2"));
+        techArr.push(document.getElementById("tech3"));
+        techArr.push(document.getElementById("tech4"));
+        techArr.push(document.getElementById("tech5"));
+        techArr.push(document.getElementById("tech6"));
+
+        // technologies
+        let tArr = techArr.filter((t) => t.checked === true);
+        if (tArr.length < 2) {
+          alert("Please select minimum two technologies");
+          return; 
+        }
+
+         // education
+        let eduArr = [];
+        for(let option of document.getElementById("usereducation").options){
+          if(option.selected){
+            eduArr.push(option.value);
+          }
+        }
+        if(eduArr.length === 0){
+          alert("Please select education");
+          return;
+        }
+
+        // college start and end
+        let startDate = document.getElementById("colstartdate").value;
+        let endDate = document.getElementById("colenddate").value;
+
+        if (startDate === "" || endDate === "") {
+          alert("Both start and end dates are required");
+          return;
+        }
+
+        if (startDate > endDate) {
+          alert("Start date cannot be later than end date");
+          return;
+        }
+
+        if (endDate >= new Date().toISOString().split("T")[0]) {
+          alert("End date should be before today");
+          return;
+        }
+
+        //for hobbies
+        // let hobbyArr = [];
+        // for (let option of document.getElementById("hobby").options) {
+        //   if (option.selected) {
+        //     hobbyArr.push(option.value);
+        //   }
+        // }
+        // console.log(hobbyArr);
+		
+		 //for graduation percentage
+        let perScaleId = document.getElementById('scale')
+		let perId = document.getElementById('gradper')
+
+		perId.addEventListener('input',function () {
+		    perScaleId.innerHTML = `Percentage:  <strong>${gradper.value}</strong>`;
+		})
+		let userObj = {
+          Name: formObj.username.value,
+          Age: formObj.userage.value,
+          Gender: formObj.usergender.value,
+          Hobbies: formObj.hobby.value,
+          Technologies: tArr.map((t) => t.value),
+          Education: eduArr,
+          Percentage: formObj.gradper.value,
+          FavouriteColor:formObj.usercolor.value,
+          Phone: formObj.userphone.value,
+          StartDate: formObj.userstart.value,
+          EndDate: formObj.userend.value  
+        };
+        mainArray.push(userObj);
+        console.log(mainArray);
+        let table=`<tr>
+        			<th>Name</th>
+        			<th>Age</th>
+        			<th>Gender</th>
+        			<th>Hobbies</th>
+        			<th>Technologies</th>
+        			<th>Education</th>
+        			<th>Percentage</th>
+        			<th>Fav Color</th>
+        			<th>Phone</th>
+        			<th>College start</th>
+        			<th>College end</th>
+        			</tr>`;
+		mainArray.forEach(function(val){
+			table+=`<tr>
+					<td>${val.Name}</td>
+					<td>${val.Age}</td>
+					<td>${val.Gender}</td>
+					<td>${val.Hobbies}</td>
+					<td>${val.Technologies}</td>
+					<td>${val.Education}</td>
+					<td>${val.Percentage}</td>
+					<td>${val.FavouriteColor}</td>
+					<td>${val.Phone}</td>
+					<td>${val.StartDate}</td>
+					<td>${val.EndDate}</td>
+					</tr>`
+			let output=document.getElementById('mytable');
+			output.innerHTML=table;
+		})
+}
+
+</script>
+</body>
+</html>

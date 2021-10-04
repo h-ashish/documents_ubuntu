@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video form</title>
+</head>
+<style>
+	body{
+			text-align: center;
+			font-family: tahoma;
+			background-image: linear-gradient(to right, #D38312, #A83279);
+			background-repeat: no-repeat;
+  			background-size: cover;.
+		}
+	h1{
+			color: #090711;
+			font-size: 40px;
+			margin-bottom: 10px;
+		}
+	input, select{
+			width: 20%;
+			height: 40px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+	select{
+			width: 20%;
+			height: 80px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 5px;
+		}
+	button{
+			width: 20%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			color: white;
+			background-image: linear-gradient(to right, #2b5876, #090711);
+			border: 2px solid #090711;
+			border-radius: 20px;
+			font-size: 18px;
+			outline: none;         
+		
+	}
+	video{
+		width: 100%;
+		outline: none;
+	}
+	table{
+			width: 70%;
+			text-align: center;
+			border-radius: 5px;
+			color: #e6e6ff;
+			background-image: linear-gradient(to right, #948E99, #2E1437);
+			background-repeat: no-repeat;
+			border: 2px solid #e6e6ff;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+		th,td{
+			width: 50%;
+			text-align: center;
+			border-radius: 5px;
+			color: #e6e6ff;
+			border: 2px solid #e6e6ff;
+			margin-top: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+</style>
+<body>
+	<h1>Welcome to Zenprofiles</h1>
+<form id="myForm" onsubmit="submits(event)">
+	<input type="email" name="email" id="usermail" placeholder="Enter your email"><br>
+	<input type="text" name="firstname" id="userfname" placeholder="Enter First name"><br>
+	<input type="text" name="lastname" id="userlname" placeholder="Enter Last name"><br>
+	<input type="date" name="dateofbirth" id="userdob" ><br>
+	<label for="userhobby">Select your hobbies:</label><br>
+	<select name="userhobby" id="userhobby" multiple>
+		<option value="swimming"> Swimming</option>
+		<option value="reading"> Reading</option>
+		<option value="writing"> Writing</option>
+		<option value="hiking"> Hiking</option>
+		<option value="riding"> Riding</option>
+	</select><br>
+	<button>Submit</button>
+</form>
+<button onclick="menu()">Menu</button>
+<table id="mytable" border="2"></table>
+<script>
+	let array = [];
+	function submits(event){
+		event.preventDefault();
+		let arrayOb = {
+			email: document.querySelector('#usermail').value,
+			firstname : document.querySelector('#userfname').value,
+			lastname : document.querySelector('#userlname').value,
+			dateofbirth : document.querySelector('#userdob').value,
+		};
+		
+		let selectOb = document.querySelector('#userhobby');
+		let selectedArr = [];
+		for(let i =0;i<selectOb.options.length; i++){
+			if(selectOb.options[i].selected)
+				selectedArr.push(selectOb.options[i].value);
+		}
+
+		arrayOb.hobbies = selectedArr;
+		array.push(arrayOb);
+		console.log(array);
+		localStorage.setItem('array',JSON.stringify(array));
+
+	}
+
+	function menu(){
+		let divObj = '';
+		let result = array.forEach(function(val){
+			divObj = divObj + 
+			`<tr> <td> ${val.firstname} </td> 
+			<td> ${val.lastname} </td> </tr> 
+			<tr> <td colspan = '2' > <video controls poster="image.jpg">
+			<source src="video.mp4" type="video/mp4">
+			<track kind="subtitles" src="zenrays-en.vtt" default>
+			</video> </td> </tr> `
+		})
+		document.querySelector('#mytable').innerHTML = 
+		`<tr> <th colspan = "2"> Profiles </th> </tr>
+		<tr> <th> First Name </th>
+		<th> Last Name </th> </tr> ${divObj}`;
+	}
+</script>
+</body>
+</html>

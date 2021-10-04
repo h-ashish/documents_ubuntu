@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time in Japan</title>
+</head>
+<body>
+	<input type="number" id="hours" placeholder="Enter hours">
+	<input type="number" id="minutes" placeholder="Enter minutes">
+	<button onclick="calc()">Calculate time in Japan</button>
+	<script>
+		function calc(){
+			let i = document.getElementById("hours").value;
+			let j = document.getElementById("minutes").value;
+			let h = 4;
+			let k = 30;
+			for (let x=i;x<24;x++){
+				for(let y=j;y<60;y++){
+					i = i + h;
+					j = j-k;
+				}
+			}alert(`${i} : ${j}`)
+
+			}
+	</script>
+</body>
+</html>

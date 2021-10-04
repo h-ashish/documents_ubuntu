@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Last index of function</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let array1 = ['a', 'b', 'c', 'a' , 'd' , 'c'];
+		document.querySelector('#mydiv1').innerHTML = `The  Array is [ ${array1} ]`;
+		let lastIndexOfArray = array1.indexOf('c');
+		console.log(lastIndexOfArray);
+		document.querySelector("#mydiv2").innerHTML =`The Last index of 'c' in Array is [ ${lastIndexOfArray} ]`;
+	</script>
+
+</body>
+</html>

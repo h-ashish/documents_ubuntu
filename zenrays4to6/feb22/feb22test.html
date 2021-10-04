@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Emptying array</title>
+</head>
+<body>
+	<script>
+		let array = [1,2,3,5,8,9,7,4];
+		console.log(array);
+		for( let i = 0; i<array.length; i++){
+			delete array[i];
+		}
+		console.log(array);
+	</script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Crete an array repeated more than once</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>.
+
+	<script>
+		let students = ["sumit","amit","vijay","sumit","vijay","neha","pooja"];
+		document.querySelector('#mydiv').innerHTML =`The array is [${students}]`;
+		let students1 =[];
+		let students2 =[];
+		students.forEach(function(val){
+			if(!students1.includes(val)){
+				students1.push(val);
+			}else{
+				students2.push(val);
+			}
+		})
+		document.querySelector('#mydiv1').innerHTML =`The new array created from duplicate items are [${students2}]`
+	</script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Crete duplicate array and turn first letter to caps</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>.
+
+	<script>
+		let students = ["sumit","amit","vijay","sumit","vijay","neha","pooja"];
+		document.querySelector('#mydiv').innerHTML =`The array is [${students}]`;
+		let students1 =[];
+		let students2 =[];
+		students.forEach(function(val){
+			if(!students1.includes(val)){
+				students1.push(val);
+			}
+		})
+		students1 = students1.map(function(val){
+			return val[0].toUpperCase() + val.slice(1);
+		})
+		console.log(students1);
+		document.querySelector('#mydiv1').innerHTML =`The new array created from duplicate items are [${students1}]`
+	</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Difference between map and flat map</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<script>
+		let array = [1,2,3,6,5,8,7];
+		document.querySelector('#mydiv').innerHTML =`The array is [${array}]`;
+		array = array.map(function(val){
+			return val = [val * 10];
+		})
+		console.log(array);
+		document.querySelector('#mydiv1').innerHTML =`The array created from map function is [${array}]`;
+
+		let array1 = [1,2,3,6,5,8,7];
+		array1 = array1.flatMap(function(val){
+			return val = [val * 10];
+		})
+		console.log(array1);
+		document.querySelector('#mydiv2').textContent ='The flat map function is shown in the console'
+	</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>reduce Right function</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<script>
+		let array = [1,2,[3,5],8,[9,6,7]];
+		document.querySelector('#mydiv').innerHTML =`The array is [${array}]`;
+		array = array.reduceRight(function(val, i){
+			return val = val.concat(i);
+		});
+		document.querySelector('#mydiv1').innerHTML =`The array created from map function is [${array}]`;
+	</script>
+</body>
+</html> -->

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar 23 assignment 3</title>
+</head>
+<body>
+    <p>enter email and password as entered in the mar 23 assignment 2 to login succesfully</p>
+    <input type="email" id="email" placeholder="enter email">
+    <input type="password" id="password" placeholder="enter password">
+    <button onclick="login()">Login</button>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <table id="mytable" border="2"></table>
+    <script>
+        
+        function login(){
+            let email = document.querySelector('#email').value;
+            let password = document.querySelector('#password').value;
+            let extractedVal = JSON.parse(localStorage.getItem('details'));
+            console.log(extractedVal);
+
+            extractedVal.forEach(function(val){
+                if(email == val.email && password == val.password){
+                    // alert("Welcome to your login page");
+                    document.querySelector('#mydiv').innerHTML = 
+                    `<img src="https://image.freepik.com/free-vector/welcome-back-neon-sign_118419-646.jpg" 
+                    style="width:300px;height:200px;">`
+
+                    Date.prototype.extractTime = function(){
+                        let today= new Date();
+                        let todayDate = `${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`;
+                        console.log(todayDate);   
+
+                        let todayTime = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+                        console.log(todayTime);
+
+                        let australiaTime = today.toLocaleString('en-US',{timeZone:"Australia/Sydney"});
+                        console.log(australiaTime);
+
+                        let age = new Date() - new Date(val.dob);     
+                        console.log(age);
+
+                        let yearAge = Math.floor(age/31536000000);
+                        let dayAge = Math.floor((age % 31536000000)/86400000);  
+                        
+                        let divHtml = `<tr> <th> Today Date </th> 
+                            <th> Today Time </th> 
+                            <th> Time in Australia </th> 
+                            <th> Age </th> </tr>
+                            <tr> <td> ${todayDate} </td>
+                            <td> ${todayTime} </td> 
+                            <td> ${australiaTime} </td>
+                            <td> ${yearAge} years and ${dayAge} days </td> </tr>`;
+                        document.getElementById('mytable').innerHTML = divHtml;
+                    }
+                    let date = new Date();
+                    date.extractTime();
+                }else{
+                    document.querySelector('#mydiv').innerHTML = `Sorry! Login incorrect`;
+                }
+            })
+        }
+    </script>
+</body>
+</html>

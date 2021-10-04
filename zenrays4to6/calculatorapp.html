@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator App</title>
+	<style>
+		body{
+			color: #000428;
+			background-image: url(https://previews.123rf.com/images/wavebreakmediamicro/wavebreakmediamicro1608/wavebreakmediamicro160802851/61747421-maths-against-blue-vignette-background.jpg);
+			background-size: cover;
+			padding: 20px;
+			font-family: Tahoma;
+			font-size: 20px;
+			text-align: center;
+			background-color: #bf80ff;
+		}
+		input{
+			width: 30%;
+			height: 40px;
+			margin: 10px;
+			font-family: Tahoma;
+			text-align: center;
+			background-color: #f3e6ff;
+			border:2px solid #000428 ;
+			border-radius: 30px;
+		}
+		button{
+			color: #f3e6ff;
+			width: 10%;
+			height: 40px;
+			margin: 10px;
+			font-family: Tahoma;
+			background-color: #000428;
+			border:2px solid #000428;
+			border-radius: 30px;
+			font-size: 18px;
+		}
+		div{
+			margin:auto;
+			border: 3px solid #000428;
+			border-radius: 20px;
+			height: 30px;
+			width: 15%;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>THE CALCULATOR APP </h1>
+	<input type="number" id="no1" placeholder="Enter first value"><br>
+	<input type="number" id="no2" placeholder="Enter second value"><br>
+	<button onclick="add()">+</button><br>
+	<button onclick="subtract()">-</button><br>
+	<button onclick="multiply()">x</button><br>
+	<button onclick="divide()">/</button><br>
+	<button onclick="remainder()">%</button><br>
+	<div id= "output"></div>
+	<script>
+			let input1 = document.getElementById("no1");
+			let input2 = document.getElementById("no2");
+			let divObject = document.getElementById("output")
+		function add(){		
+			divObject.textContent = Number(no1.value) + Number(no2.value);
+		}
+		function subtract(){
+			divObject.textContent = Number(no1.value) - Number(no2.value);
+		}
+		function multiply(){
+			divObject.textContent = Number(no1.value) * Number(no2.value);
+		}
+		function divide(){
+			divObject.textContent = Number(no1.value) / Number(no2.value);
+		}
+		function remainder(){
+			divObject.textContent = Number(no1.value) % Number(no2.value);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closures Example</title>
+</head>
+<body>
+<script>
+	function main(hobby){
+		
+		alert('inside main');
+		function insideFunc(name){
+			let str = `name = ${name} and hobby = ${hobby}`;
+			alert(str);
+		}
+		function printA(num){
+			
+			alert(num);
+		}
+		return {pgn: insideFunc, pa:printA} ;
+	}
+
+	let closureFunc = main("Swimming");
+	closureFunc.pgn("sumit");
+	closureFunc.pgn("amit");
+	closureFunc.pa(10); 	
+</script>
+</body>
+</html>

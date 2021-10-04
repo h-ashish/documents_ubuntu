@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Feb 16 Assignment 1</title>
+</head>
+<body>
+	<input type="number" id="input" placeholder="Enter values to add into Array">
+	<button onclick="add()">Add</button>
+	<button onclick="sortArry()">Sort Array</button>
+	<button onclick="average()">Find Average</button>
+	<button onclick="median()">Find Median</button>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<div id="mydiv3"></div>
+	<script>
+		let array =[];
+		let sortedRes;
+		function add(){
+			let values = Number(document.querySelector("#input").value);
+			array.push(values);
+			document.querySelector('#mydiv').innerHTML = "<p> The Added values are [" + array +"] </p>";
+		}
+		function sortArry(){
+			sortedRes = array.sort(function(a, b){return a - b})
+			document.querySelector('#mydiv1').innerHTML = "<p> The Sorted Array is [" + sortedRes +"] </p>";
+			return sortedRes;
+
+		}
+		function average(){
+			let sum = 0;
+			let avgArry = array.map(function(val){
+				return sum = sum + val;
+			})
+			// array.forEach(function(val){
+			// 	 sum = sum + val;
+			// 	 console.log(sum);
+			// })
+			let avg = sum / array.length; 
+			document.querySelector('#mydiv2').innerHTML = "<p> The Average of Array Elements is " + avg +" </p>";
+		}
+		function median(){
+			array = sortArry();
+			var half = Math.floor(array.length / 2);
+			if (array.length % 2 !== 0 ){
+				document.querySelector('#mydiv3').innerHTML = "<p> The Median is " + array[half] +" </p>";
+				return array[half];
+			} 
+			document.querySelector('#mydiv3').innerHTML = "<p> The Median is " + (array[half - 1] + array[half]) / 2.0 +" </p>";
+			return (array[half - 1] + array[half]) / 2.0;
+		}
+	</script>
+</body>
+</html>

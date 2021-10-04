@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March 22 Assignment 3</title>
+</head>
+<body>
+</body>
+<h1>palindrome checker</h1>
+    <input type="text" id="input" placeholder="enter string">
+    <button onclick="res.giveLength()">check palindrome</button>
+    <div id="mydiv"></div>
+    <script>
+        String.prototype.giveLength = function(){
+            let str = document.querySelector('#input').value;   
+            let strrevs= str.split('').reverse().join('');
+            console.log(strrevs);
+           if(str == strrevs){
+               document.querySelector('#mydiv').innerHTML = `${str} is a palindrome`;
+           } else {
+            document.querySelector('#mydiv').innerHTML = `${str} is not a palindrome`;
+           }
+        }
+        let res = new String();
+    </script>
+</body>
+</html>

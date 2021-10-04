@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced functions 2</title>
+</head>
+<body>
+<script>
+	(function(msg){
+		alert(msg)
+	})("hello");
+	//alternative syntax for immediate function
+	(function(msg){
+		alert(msg)
+	}("hello"));
+
+	//inner function
+	//innerFunc is an inner function because it is declared inside a function.
+	function outerFunc(param){
+		function innerFunc(input){
+			return input * 4;
+		}
+		return "The result is " + innerFunc(param);
+	}
+	console.log(outerFunc(12));
+
+	//the test function has inner function called innerFunc. innerFunc is returned to the outside world
+	function test(){
+		alert("inside test");
+
+		function innerFunc(){
+			alert('inside returned function');
+		}
+		return innerFunc;
+	}test();
+	// var newFunc = test();
+	// newFunc();
+</script>
+</body>
+</html>

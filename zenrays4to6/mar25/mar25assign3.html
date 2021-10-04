@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mar 25 assignment 3</title>
+</head>
+<body>
+    <h1>refresh page to get random numbers</h1>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <div id="mydiv2"></div>
+    <script>
+        class RandomNo{
+            get randomNo(){
+                return Math.random();
+            }
+            get randomNoOne(){
+                return Math.floor(Math.random()*10+1)
+            }
+            get randomNoTwo(){
+                return Math.floor(Math.random()*1000+1)
+            }
+        }
+
+        let myOb = new RandomNo();
+        document.querySelector('#mydiv').innerHTML = `The random number between 0 and 1 is ${myOb.randomNo}`;
+        document.querySelector('#mydiv1').innerHTML = `The random number between 1 and 10 is ${myOb.randomNoOne}`;
+        document.querySelector('#mydiv2').innerHTML = `The random number between 1 and 1000 is ${myOb.randomNoTwo}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select value from multiple select</title>
+</head>
+<body>
+	<select name="tech" id="technologies" multiple>
+		<option value="C"> C Technology</option>
+		<option value="Java"> Java Technology</option>
+		<option value="Python">Python Technology</option>
+		<option value="React"> React Technology</option>
+	</select>
+	<button onclick="showTech()">Show tech</button>
+<script>
+	let selectOb = document.getElementById('technologies');
+	function showTech(){
+		let selectedArr = [];
+		console.log(selectOb.options);
+		for(let i =0;i<selectOb.options.length; i++){
+			if(selectOb.options[i].selected)
+				selectedArr.push(selectOb.options[i].value);
+		}
+		console.log(selectedArr);
+	}
+</script>
+</body>
+</html>

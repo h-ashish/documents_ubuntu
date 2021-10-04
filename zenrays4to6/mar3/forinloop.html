@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For in loop</title>
+</head>
+<body>
+<script>
+	let student = {
+		name: "Ashish",
+		hobby: ["hiking","sketching"],
+		location: "Bangalore"
+	};
+	//student['name'] === student.name
+	for(let index in student){
+		alert(index);
+		//this is the way to print object value when key is dynamic
+		alert(student.hobby[index]);
+	}
+</script>
+</body>
+</html>

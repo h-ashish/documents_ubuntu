@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Array</title>
+</head>
+<body>
+    <script>
+        // let nos = [1,2,3,5,4,8,9,6,12,58,74,10];
+        // let array = [];
+        // let filteredArray = nos.forEach(function(val){
+        //     array.push(val);
+        // }); console.log(array);
+        let nos = [1,2,3,5,4,8,9,6,12,58,74,10];
+        let filteredArray = nos.filter(function(val){
+            if(val% 2 == 0){
+            return true;
+            }else {
+                return false;
+            }
+            // if(val% 2 == 1){
+            // return true;
+            // }else {
+            //     return false;
+            // };
+        });
+        console.log(filteredArray);
+    </script>
+</body>
+</html>

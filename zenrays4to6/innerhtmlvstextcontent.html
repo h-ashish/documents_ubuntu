@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>innerhtml vs textcontent</title>
+	<style >
+		div{
+			border: 4px solid teal;
+			padding: 10px;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="textcontent"></div>
+	<div id="innerhtml"></div>
+<script>
+	let contentoutput = "hello, Its me Ashish. <h1> This is the heading tag</h> <p> This is the paragraph tag</p>";
+	let textcontentDiv = document.getElementById("textcontent");
+	let innerhtmlDiv = document.getElementById("innerhtml");
+	textcontentDiv.textContent = contentoutput;
+	innerhtmlDiv.innerHTML = contentoutput;
+</script>
+
+</body>
+</html>

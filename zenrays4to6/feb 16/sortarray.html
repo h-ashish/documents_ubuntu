@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting in Javasript</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let names = ["sumit", "Ashish", "Vaishali", "Pooja"];
+		let sortedArray = names.sort();
+		console.log(sortedArray);
+
+		let nos = [1,4,100,0,2000,5,6];
+		let resultAsc = nos.sort(function(nextVal , prevVal){
+			if(nextVal < prevVal)
+				return -1;
+			if(nextVal > prevVal)
+				return 1;
+			return 0;
+		})
+		console.log(resultAsc);
+
+		let resultDesc = nos.sort(function(nextVal , prevVal){
+			if(nextVal < prevVal)
+				return 1;
+			if(nextVal > prevVal)
+				return -1;
+			return 0;
+		})
+		console.log(resultDesc);
+
+		let resultShortCutAsc = nos.sort(function(nextVal, prevVal){
+			return nextVal - prevVal;
+		})
+		console.log(resultShortCutAsc);
+
+		let resultShortCutDesc = nos.sort(function(nextVal, prevVal){
+			return prevVal - nextVal;
+		})
+		console.log(resultShortCutDesc);
+	</script>
+
+</body>
+</html>

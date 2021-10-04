@@ -1,0 +1,115 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of array </title>
+</head>
+<body>
+	<button onclick="showArray()">Show Sum</button>
+	<div id="mydiv"></div>
+	<script>
+		let array = [12,13,14,15,18,19] ;
+		let sum = 0;
+		function showArray(){
+		for(let i = 0; i < array.length; i++){
+			sum = sum + array[i];
+		}document.querySelector('#mydiv').innerHTML = sum;
+	} 
+	</script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Highest Number in Array</title>
+</head>
+<body>
+	<button onclick="showArray()">Show greatest number</button>
+	<div id="mydiv"></div>
+	<script>
+		function showArray(){
+		let array =[12,4,5,6,7,24,12,1222,1];
+		let high = 0;
+		for(i = 0; i <array.length; i++){
+			if(high<array[i]){
+				high = array[i];
+			}
+		};document.querySelector('#mydiv').innerHTML = high;
+}
+	</script>
+</body>
+</html>
+
+ -->
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Lowest Number in Array</title>
+</head>
+<body>
+	<button onclick="showArray()">Show lowest number</button>
+	<div id="mydiv"></div>
+	<script>
+		function showArray(){
+		let array =[12,4,5,6,7,24,12,1222,0];
+		let low = 1;
+		for(i = 0; i <array.length; i++){
+			if(low>array[i]){
+				low = array[i];
+			// }else if(array[i] = 0 ){
+			// 	low = 0;
+			}
+		};document.querySelector('#mydiv').innerHTML = low;
+}
+	</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Average of array </title>
+</head>
+<body>
+	<button onclick="showArray()">Show Average</button>
+	<div id="mydiv"></div>
+	<script>
+		let array = [12,4,5,6,7,24,12,1222,1] ;
+		let sum = 0;
+		function showArray(){
+		for(let i = 0; i < array.length; i++){
+			sum = sum + array[i];
+		}
+		sum = sum/array.length;
+		document.querySelector('#mydiv').innerHTML = sum;
+	} 
+	</script>
+
+</body>
+</html>  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Showing values of array</title>
+</head>
+<body>
+	<input type="number" id="input" placeholder="Enter a number">;
+	<button onclick="add()">Submit</button>
+	<button onclick="showArray()">Show All</button>
+	<div id="mydiv"></div>
+	<script>
+		let array = [];
+		function add(){
+		array.push(Number(document.querySelector('#input').value));
+		console.log(array);
+	}
+	function showArray(){
+		document.querySelector('#mydiv').innerHTML = "<p> The values added are: [" + array+ "] </p>";
+	}
+	</script>
+
+</body>
+</html>

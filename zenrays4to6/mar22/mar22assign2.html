@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March 22 Assignment 2</title>
+</head>
+<body>
+    <h1>string length finder</h1>
+    <input type="text" id="input" placeholder="enter string">
+    <button onclick="res.giveLength()">get length</button>
+    <div id="mydiv"></div>
+    <script>
+        String.prototype.giveLength = function(){
+            let str = document.querySelector('#input').value;   
+            let strlen = str.length;
+            document.querySelector('#mydiv').innerHTML = `The length of given string is ${strlen}`;
+        }
+        let res = new String();
+    </script>
+</body>
+</html>

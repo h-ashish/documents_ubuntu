@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread operator</title>
+</head>
+<body>
+    <input type="text" id="firstname" placeholder="enter first name" >
+    <input type="text" id="middlename" placeholder="enter middle name" >
+    <input type="text" id="lastname" placeholder="enter lastname" >
+    <button onclick="showDetails(document.getElementById('firstname').value, document.getElementById('middlename').value, document.getElementById('lastname').value)">show</button>
+    <div id="mydiv"></div>
+    <script>
+        function showDetails(firstname,middlename, lastname){
+            document.getElementById('mydiv').innerHTML = arguments[0] + " " + arguments[1] + " " + arguments[2];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zenrays Cars</title>
+	<style>
+		body{
+			background-image: url(https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Y2Fyc3xlbnwwfHwwfA%3D%3D&w=1000&q=80);
+			background-size: cover;
+			padding-left: 40px;
+			color: white;
+			font-family: Tahoma;
+			font-size: 25px;
+			background-color: #bf80ff;
+		}
+		h1{
+			padding-top: 20px;
+			padding-left: 50px;
+		}
+		h2{
+			padding-top: 20px;
+			padding-left: 50px;
+		}		
+		input{
+			width: 20%;
+			height: 40px;
+			margin: 15px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 30px;
+		}
+		textarea{
+			width: 20%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid #001433 ;
+			border-radius: 30px;
+		}
+		button{
+			width: 15%;
+			height: 40px;
+			margin: 20px;
+			text-align: center;
+			background-color: #001433;
+			border:2px solid #001433;
+			border-radius: 30px;
+			font-size: 18px;
+		}
+		div{
+			text-align: center;
+			margin:auto;
+			border: 3px solid #000428;
+			border-radius: 20px;
+			height: auto;
+			width: auto;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome to Zenrays Cars</h1>
+	<h2>Please register below</h2>
+	<input type="name" id="username" placeholder="Enter Name"><br>
+	<input type="text" id="userpanid" placeholder="Enter PAN ID"><br>
+	<input type="number" id="usernumber" placeholder="Enter Phone Number"><br>
+	<textarea rows="4" cols="22" id = "userpermadd" placeholder="Enter Permanent Address"></textarea><br>
+	<textarea rows="4" cols="22" id = "usertempadd" placeholder="Enter Temporary Address"></textarea><br>	
+	<input type="date" id="userdate"><br>
+	<input type="text" id="usercarmodel" placeholder="Enter car model number"><br>
+	<input type="text" id="userchassisnum" placeholder="Enter car chassis number"><br>
+	<input type="text" id="usercarcolor" placeholder="Enter car colour"><br>
+	<button onclick="display()"> Add Customer </button>
+	<div id ="output"></div>
+	<script>
+		function display(){
+		let name = document.getElementById("username").value;
+		let PANID = document.getElementById("userpanid").value;
+		let number = document.getElementById("usernumber").value;
+		let permaddress = document.getElementById("userpermadd").value;
+		let tempaddress = document.getElementById("usertempadd").value;
+		let date = document.getElementById("userdate").value;
+		let carmodel = document.getElementById("usercarmodel").value;
+		let chassisnum = document.getElementById("userchassisnum").value;
+		let carcolour = document.getElementById("usercarcolor").value;
+		let divDomObject = document.getElementById("output")
+		let htmlCode = " <div> Details are given below : <br>" + name + "<br>" + PANID +"<br>" +number + "<br>" + permaddress + "<br>" + tempaddress + "<br>" +date + "<br>" + carmodel + "<br>" + chassisnum + "<br>" + carcolour +"</div>";
+		divDomObject.innerHTML = htmlCode; 
+	}
+</script>
+</body>
+</html>

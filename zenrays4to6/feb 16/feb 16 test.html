@@ -1,0 +1,130 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of First 20 numbers</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script>
+		let array = [];
+		for (let i = 1; i <= 20 ; i++){
+			array.push(i);
+			console.log(array);
+		}
+		let reducedArray = array.reduce(function(pre, post, index){
+			return pre + post;
+		},0)
+		document.querySelector('#mydiv').innerHTML = "<p> The sum of first 20 numbers is " + reducedArray + "</p>";
+	</script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Removing Elements in the range 10 and 50</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script>
+		let array = [1,4,6,12,43,55,100,34,5];
+		let filteredArray = array.filter(function(val){
+			if(val < 10 || val > 50){
+				return true;
+			}	
+		})
+		document.querySelector('#mydiv').innerHTML = "<p> The array after Removing numbers betwwen 10 and 50 are [" + filteredArray + "] </p>";
+	</script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of squares of numbers</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script>
+		let array = [1,4,6,12,43,55,100,34,5];
+		let squares = [];
+		for (let i = 0 ; i<array.length ; i ++){
+			squares.push(array[i] * array[i]);
+		}
+
+		console.log(squares);
+		let reducedArray = squares.reduce(function(pre, post, index){
+			return pre + post;
+		},0)
+		document.querySelector('#mydiv').innerHTML = "<p> The sum of squares of numbers are " + reducedArray + "</p>";
+	</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Square of the numbers in array</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script type="text/javascript">
+		let nos =  [1,4,6,12,43,55,100,34,5];
+		let arrayMap = nos.map(function(val){
+			return val * val ;
+		});
+		document.querySelector('#mydiv').innerHTML = "<p> The array with square of numbers is [" + arrayMap + "] </p>";
+	</script>
+
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Numbers between 10 and 60</title>
+</head>
+<body>
+	<div id="mydiv"> </div>
+	<script type="text/javascript">
+		let nos =  [1,4,6,12,43,55,100,34,5];
+		let filteredArray = nos.filter(function(val){
+			if(val > 10 && val < 60){
+				return true;
+			}	
+		})
+		document.querySelector('#mydiv').innerHTML = "<p> The array after Removing numbers betwwen 10 and 50 are [" + filteredArray + "] </p>";
+	</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>finding median of array</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<script type="text/javascript">
+		let nos = [1,4,6,12,43,55,100,34,5,133,145,99];
+		let med;
+		let sortedArray = nos.sort(function(a, b){return a-b});
+		console.log(sortedArray);
+		// var half = Math.floor(sortedArray.length / 2);
+
+ 	// 	 if (sortedArray.length % 2){
+  //  			 return sortedArray[half];
+  //  			}
+
+  // 			return (sortedArray[half - 1] + sortedArray[half]) / 2.0;
+
+
+		if(sortedArray.length % 2 == 0){
+			med =( ((sortedArray[5] /2) + (sortedArray[6]/2) )/2);			 
+		}
+		document.querySelector('#mydiv').innerHTML = "<p> The median of given array is " + med + "</p>";
+	</script>
+</body>
+</html>

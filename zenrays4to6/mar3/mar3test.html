@@ -1,0 +1,154 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Adding two arrays</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+<script>
+	let arr1 =[1,2,4,6];
+	document.querySelector('#mydiv').innerHTML = `The first array is [${arr1}]`;
+	let arr2 = [4,6,3,7];
+	document.querySelector('#mydiv1').innerHTML = `The second array is [${arr2}]`;
+	let arr3 = arr1.concat(arr2);
+	document.querySelector('#mydiv2').innerHTML = `The added array is [${arr3}]`;
+	console.log(arr3);
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Intersection of a and b</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+<script>
+	let a= [4,5,6,1,8,10,11];
+	document.querySelector('#mydiv').innerHTML = `The first array is [${a}]`;
+	let b = [5,3,4,2,10,55,77];
+	document.querySelector('#mydiv1').innerHTML = `The second array is [${b}]`;
+	let intersectionArr = a.filter(function(val){
+		return b.includes(val);
+	})
+	document.querySelector('#mydiv2').innerHTML = `The intersection of the two arrays is [${intersectionArr}]`;
+</script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Intersection of a and b</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+<script>
+	let a= [4,5,6,1,8,10,11];
+	document.querySelector('#mydiv').innerHTML = `The first array is [${a}]`;
+	let b = [5,3,4,2,10,55,77];
+	document.querySelector('#mydiv1').innerHTML = `The second array is [${b}]`;
+	let intersectionArr = b.filter(function(val){
+		return a.includes(val);
+	})
+	document.querySelector('#mydiv2').innerHTML = `The intersection of the two arrays is [${intersectionArr}]`;
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Difference between splice and slice</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<div id="mydiv3"></div>
+	<div id="mydiv4"></div>
+<script>
+	let array = ["Welcome","to","Zenrays","for","Javascript"];
+	document.querySelector('#mydiv').innerHTML = `The array is [${array}]`;
+	let spliceArr = array.slice(1,2);
+	document.querySelector('#mydiv1').innerHTML = `The result array after splice is [${spliceArr}]`;
+	document.querySelector('#mydiv2').innerHTML = `The main array after slice is [${array}]`;
+
+	let spliceArr1 = array.splice(1,2);
+	document.querySelector('#mydiv3').innerHTML = `The result array after slice is [${spliceArr1}]`;
+	document.querySelector('#mydiv4').innerHTML = `The main array after splice is [${array}]`;
+
+</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Substring</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<script>
+		let a = 'Widget With id';
+		document.querySelector('#mydiv').innerHTML = `The string is "${a}"`;
+		let b = a.substr(0,5);
+		document.querySelector('#mydiv1').innerHTML = `The string after substr is "${b}"`;
+	</script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Strings are immutable</title>
+</head>
+<body>
+	<div id="mydiv"></div>
+	<div id="mydiv1"></div>
+	<script>
+		let str = "Hi";
+		document.querySelector('#mydiv').innerHTML = `The string is "${str}"`;
+		str = 'h' + str[1];
+		document.querySelector('#mydiv1').innerHTML = `The string after immuting is "${str}"`;
+	</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variable Hoisting</title>
+</head>
+<body>
+<div id="op"></div>
+
+<script>
+    let opId = document.getElementById('op')
+
+    //x = 50;   //Cannot use 'x' before initialization
+    // let x;
+
+    let x= 50;  //use 'x' after initialization
+    x;
+    
+    opId.innerHTML = `access 'x' after initialization output + ${x}`
+
+    
+</script>
+
+</body>
+</html>

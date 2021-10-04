@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storing location in local storage</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <div id="mydiv1"></div>
+    <script>
+        navigator.geolocation.getCurrentPosition(locationSuccess, locationFail);
+
+        function locationSuccess(position){
+            let latVal = position.coords.latitude;
+            let lonVal = position.coords.longitude;
+
+            localStorage.setItem("latitude",latVal);
+            localStorage.setItem("longitude",lonVal);
+
+            document.querySelector('#mydiv').innerHTML = `The latitude is ${localStorage.getItem("latitude")}`;
+            document.querySelector('#mydiv1').innerHTML = `The longitude is ${localStorage.getItem("longitude")}`;
+        }
+        function locationFail(){
+            alert("no location available");
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finding age</title>
+</head>
+<body>
+    <input type="month" placeholder="Enter DOB" id="input">
+    <button onclick="showAge()">calculate age</button>
+    <script>
+        function showAge(){
+            
+            Date.prototype.showCurrentAge = function(){
+                let year = new Date(document.querySelector('#input').value).getFullYear();
+                console.log(year);
+                let currYear = new Date().getFullYear();
+                console.log(currYear);
+
+                console.log(currYear - year);
+            }
+            let date = new Date();
+            date.showCurrentAge();
+        }
+    </script>
+</body>
+</html>

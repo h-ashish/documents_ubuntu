@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reverse in place</title>
+</head>
+<body>
+	<input type="text" id="input" placeholder="Enter text">
+	<button onclick="reverseInPlace()">reverse</button>
+	<div id="mydiv"></div>
+<script>
+	function reverseInPlace(){
+
+		let str = document.querySelector('#input').value;
+  		let reverseStr = str.split(' ').reverse().join(' ').split('').reverse().join('');
+  		document.querySelector('#mydiv').innerHTML = `The reverse of the string is '${reverseStr}'`
+		return reverseStr;
+}
+</script>
+</body>
+</html>

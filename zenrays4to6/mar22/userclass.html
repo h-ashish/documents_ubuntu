@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUser class </title>
+</head>
+<body>
+    <script>
+        class User{
+            name;
+            age;
+            password;
+            constructor(name,age,password){
+                this.name = name;
+                this.age = age;
+                this.password = password;
+            }
+            showName(){
+                alert(this.name);
+            }
+            givePassword(){
+                alert(this.password);
+            }
+            changeName(newName){
+                this.name = newName;
+            }
+        }
+
+        let nameOb = new User("Ashish",'23','ashish123');
+        nameOb.showName();
+        let password = nameOb.givePassword();
+        alert(`The password is ${nameOb.password}`);
+        nameOb.changeName("Munna");
+        nameOb.showName();
+    </script>
+</body>
+</html>

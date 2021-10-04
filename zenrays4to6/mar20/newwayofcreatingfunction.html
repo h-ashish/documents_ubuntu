@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>new way of creating function</title>
+</head>
+<body>
+<script>
+	//new function returns a new function. first values passed to function
+	//are parameters and last value is the body of function. this way of creating a function
+	//is a dynamic function because we can put variables in the function body.
+	let add = new Function('a','b','c','let sum; sum = a+ b+ c; return sum;');
+	alert(add);
+
+	let result = add(3,4,19);
+	alert(result);
+
+	let initialValue = 10;
+	let addDynamic =  new Function('a','b','c',` let sum =${initialValue}; sum = sum +a+b+c; return sum;`)
+	alert(addDynamic);
+
+	let resultDynamic = addDynamic(3,4,19);
+	alert(resultDynamic);
+</script>
+</body>
+</html>

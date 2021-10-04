@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of square of first 10 prime numbers</title>
+</head>
+<body>
+	<div id="mydiv1"></div>
+	<div id="mydiv2"></div>
+	<div id="mydiv3"></div>
+	<script>
+		function main(){
+			function isPrime(n){
+				
+		  	let flag = true;
+		  	for (let i =2;i<=n/2;i++)
+		  	{
+		  		if(n%i==0)
+		  			{flag =false;
+		  				break;
+		  		}
+		  	}
+		  	if(flag==true){
+		  		return true;
+		  	}
+		  	else{
+		  		return false;
+		  	}
+		  }	
+		  function first10Prime(){
+		  let i=2,counter =1;
+			let arr =[];
+		  for (i=2;i<=10;i++){
+		  while(counter<=10)
+		  {
+		  	if(isPrime(i)==true)
+		  	{
+		  		counter = counter +1;
+		  		arr.push(i);
+		  		// console.log(i);
+		  	}i = i +1;
+
+		  }
+		  document.querySelector('#mydiv1').innerHTML = `The first 10 prime numbers are ${arr}`;
+		  // console.log(arr);
+		  return arr;
+		}
+		
+	}
+	function getSquares(){
+		let arr = [];
+		let square = first10Prime();
+		square.forEach(function(val){
+			res = val**2;
+			arr.push(res);
+		})
+		// console.log(arr);
+		document.querySelector('#mydiv2').innerHTML = `The squares of first 10 prime numbers are ${arr}`;
+		return arr;
+	}
+	function arraySum(){
+		let arr =[];
+		let getSum = getSquares();
+		res = getSum.reduce(function(prev, next){
+			return prev + next;
+		})
+		// console.log(res);
+		document.querySelector('#mydiv3').innerHTML = `The sum of squares of first 10 prime numbers is ${res}`;
+	}arraySum();	
+}main();
+	</script>
+
+</body>
+</html>

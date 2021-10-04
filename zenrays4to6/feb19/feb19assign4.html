@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hobbies table</title>
+</head>
+<body>
+	<input type="text" id="name" placeholder="Enter Name">
+	<input type="number" id="age" placeholder="Enter age">
+	<input type="text" id="hobby" placeholder="Enter Hobby">
+	<button onclick="add()">Add</button>
+	<button onclick="display()">Display Table</button>
+	<table id="table" border="2"></table>
+	<script>
+		let array =[];
+		function add(){
+			let arrayOb ={};
+			arrayOb.name = document.querySelector('#name').value;
+			arrayOb.age = document.querySelector('#age').value;
+			arrayOb.hobby = [document.querySelector('#hobby').value];
+			array.push(arrayOb);
+			console.log(array);
+		}
+		function display(){
+			let divObj = '';
+			array.forEach(function(val){
+				divObj = divObj + `<tabel> <tr> <td> ${val.name} </td> <td> ${val.age} </td> <td> ${val.hobby} </td> </tr>  </table>`
+			})
+			document.querySelector('#table').innerHTML = `<tr> <th> Name </th> <th> Age </th> <th> Hobbies </th>  ${divObj}`;
+		}
+	</script>
+</body>
+</html>

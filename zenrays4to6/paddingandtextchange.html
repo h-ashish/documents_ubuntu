@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Changing Text and Padding</title>
+	<style >
+		body{
+			text-align: center;
+		}
+		textarea{
+			text-align: center;
+			padding: 10px;
+			margin: 20px;
+			border: 3px solid brown;
+			border-radius: 10px;
+			width: 20%;
+		}
+		input{
+			text-align: center;
+			padding: 10px;
+			margin: 20px;
+			border: 3px solid brown;
+			border-radius: 50px;
+			width: 20%;
+		}
+		button{
+			padding: 5px;
+			margin: 20px;
+			background-color: brown;
+			border: 3px solid brown;
+			border-radius: 50px;
+			width: 15%;
+			color: white;
+		}
+		#mydiv{
+			margin: auto;
+			width: 10%;
+			border: 3px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<textarea rows="4" cols="22"id="input" >Enter Some text</textarea><br>
+	<button onclick="showText()">Add Text</button><br>
+	<input type="text" id="padding" placeholder="Enter Padding in px"><br>
+	<button onclick="change()">Change Padding</button><br>
+	<div id="mydiv">Hello</div>
+	<script>
+
+		function showText(){
+			let text = document.getElementById("input").value;
+			document.getElementById("mydiv").innerHTML = "<h1>" + text + "</h1>";
+		}
+		function change(){
+			let divObj = document.getElementById("padding").value;
+			document.getElementById("mydiv").style.padding = divObj;
+		}
+	</script>
+
+</body>
+</html>

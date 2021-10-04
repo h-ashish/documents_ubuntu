@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mar20 Assignment 4</title>
+</head>
+<body>
+    <h1>Scientific calculator</h1>
+    <button onclick="result.sin()"> Sin</button>
+	<button onclick="result.cos()"> Cos</button>
+	<button onclick="result.tan()"> Tan</button>
+    <button onclick="result.cot()"> Cos </button>
+    <div id="mydiv"></div>
+    <script>
+        
+       function ScientificCalculator(rad){
+            this.rad = rad;
+            this.sin = function(){
+                document.querySelector('#mydiv').innerHTML = `The Sine of ${rad} = ${Math.sin(this.rad)}`;
+            },
+            this.cos = function(){
+                document.querySelector('#mydiv').innerHTML = `The Cos of ${rad} = ${Math.cos(this.rad)}`;
+            }
+            this.tan = function(){
+                document.querySelector('#mydiv').innerHTML = `The Tan of ${rad} = ${Math.tan(this.rad)}`;
+            }
+            this.cot = function(){
+                document.querySelector('#mydiv').innerHTML = `The Cot of ${rad} = ${1/(Math.tan(this.rad))}`;
+            }
+        }
+        let result = new ScientificCalculator(0.6);
+    </script>
+</body>
+</html>

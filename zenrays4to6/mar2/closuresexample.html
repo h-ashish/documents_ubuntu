@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Closures Example</title>
+</head>
+<body>
+<script>
+	function main(hobby){
+		let a = 2;
+		alert('inside main');
+		function insideFunc(name){
+			let str = `name = ${name} and hobby = ${hobby}`;
+			alert(str);
+		}
+		return insideFunc;
+	}
+
+	let closureFunc = main("Swimming");
+	closureFunc("sumit");
+	closureFunc("amit");
+
+	// function main(hobby, name){
+	// 	let a = 2;
+	// 	let result;
+	// 	for( var i =0; i<1000000; i++){
+	// 		result = "we need to fullow basics";
+	// 	}
+	// 	alert('inside main');
+	// 		let str = `name = ${name} and hobby = ${hobby} = ${result} result`;
+	// 		alert(str);
+		
+	// }
+
+	// main("sumit", "jogging");
+	// main("amit", "jogging")
+</script>
+</body>
+</html>

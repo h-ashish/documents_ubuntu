@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Json Html Project</title>
+	<style>
+		body{
+			text-align: center;
+			background-image: linear-gradient(to right, #333333 , #dd1818); 
+			font-family: Tahoma;
+			color: black;
+		}
+		h1{
+			color: #e6e6ff;
+		}
+		#mydiv{
+			color: #e6e6ff;
+			margin left:  auto;
+			margin-right: auto;
+			width: auto;
+			overflow-x:auto;
+		}
+		input{
+			width: 20%;
+			height: 40px;
+			margin: 10px;
+			text-align: center;
+			background-color: #e6e6ff;
+			border:2px solid black ;
+			border-radius: 5px;
+		}
+		button {
+			width: 20%;
+			height: 40px;
+			margin: 10px;
+			text-align: center;
+			color: white;
+			background-color:#090711;
+			border:2px solid #090711;
+			border-radius: 10px;
+			font-size: 18px;
+			outline: none;
+		}
+		table,th,td{
+			border-radius: 5px;
+			color: #e6e6ff;
+			background-color: #29282D;
+			border: 2px solid #e6e6ff;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+			padding: 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Welcome to DataBase</h1>
+	<input type="search" id="search" onkeypress="search(event)" placeholder="Search by name"><br>
+	<button onclick="searchDetails()">Search</button><br>
+	<button onclick="showTable()" > Show Table</button>
+	<div id="mydiv"></div>
+	<table id="details" ></table>
+	<script>
+		
+		let jsonData = `[
+  {
+    "city": "Bangalore", 
+    "id": 1, 
+    "industry": "IT", 
+    "name": "testclient", 
+    "state": "Karnataka", 
+    "street": "abc123", 
+    "website": "www.zenrays.com", 
+    "zip": "560045"
+  }, 
+  {
+    "city": "bangalore", 
+    "id": 2, 
+    "industry": "Information technology", 
+    "name": "zenrays", 
+    "state": "karnataka", 
+    "street": "somes street", 
+    "website": "https://zenrays.com", 
+    "zip": "560096"
+  }, 
+  {
+    "city": "asdfa", 
+    "id": 3, 
+    "industry": "asdfas", 
+    "name": "zenlabs", 
+    "state": "asdf", 
+    "street": "asdfas", 
+    "website": "www.zenidealabs.comasdf", 
+    "zip": "asdfas"
+  }, 
+  {
+    "city": "testclient1", 
+    "id": 4, 
+    "industry": "testclient1", 
+    "name": "testclient1", 
+    "state": "testclient1", 
+    "street": "testclient1", 
+    "website": "testclient1", 
+    "zip": "12312312"
+  }, 
+  {
+    "city": "testclient2", 
+    "id": 5, 
+    "industry": "testclient2", 
+    "name": "testclient2", 
+    "state": "testclient2", 
+    "street": "testclient2", 
+    "website": "testclient2", 
+    "zip": "123123"
+  }, 
+  {
+    "city": "testclient3", 
+    "id": 6, 
+    "industry": "testclient3", 
+    "name": "testclient3testclient3", 
+    "state": "testclient3", 
+    "street": "testclient3", 
+    "website": "testclient3", 
+    "zip": "456456"
+  }, 
+  {
+    "city": "testclient5", 
+    "id": 7, 
+    "industry": "testclient5", 
+    "name": "testclient5", 
+    "state": "testclient5", 
+    "street": "testclient5", 
+    "website": "testclient5", 
+    "zip": "12312"
+  }
+]`;
+ 	function search(event){
+			if(event.key == "Enter"){
+				input = document.getElementById("search").value;
+				return searchDetails();
+			}
+		}
+	let data = JSON.parse(jsonData);
+	// let dataOb = {};
+	console.log(data);
+	function showTable(){
+		let divObj = '';
+		data.forEach(function (dataOb){
+			// console.log(dataOb);
+			divObj = divObj + `<tr> <td> ${dataOb.id} </td> <td> ${dataOb.name} </td> <td> ${dataOb.city} </td>  <td> ${dataOb.industry} </td> <td> ${dataOb.state} </td>  <td> ${dataOb.street} </td>  <td> ${dataOb.website} </td>  <td> ${dataOb.zip} </td> </tr> `;
+		})
+			document.querySelector('#mydiv').innerHTML = `<table> <tr> <th> id </th> <th> name </th> <th> city </th> <th> industry </th>    <th> state </th>  <th> street </th>  <th> website </th>  <th> zip </th> </tr> ${divObj} </table> `;
+		}
+		let result;
+		let input;
+		function searchDetails(){
+			input = document.querySelector('#search').value;
+			input = input.toLowerCase();
+			result  = data.find(function(dataOb){				
+				if(dataOb.name == input ){					
+					document.querySelector('#mydiv').innerHTML = `<table><tr> <th> id </th> <th> name </th> <th> city </th>  <th> industry </th>    <th> state </th>  <th> street </th>  <th> website </th>  <th> zip </th> </tr> <tr> <td> ${dataOb.id} </td> <td> ${dataOb.name} </td> <td> ${dataOb.city} </td>  <td> ${dataOb.industry} </td>    <td> ${dataOb.state} </td>  <td> ${dataOb.street} </td>  <td> ${dataOb.website} </td>  <td> ${dataOb.zip} </td> </tr> </table>`;
+					return true;
+				}  
+			})
+			if(result == undefined){
+					document.querySelector('#mydiv').innerHTML = "Name not found";
+				}
+		}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>local global one</title>
+</head>
+<body>
+	<script >
+		//this line will force the browser not to allow old javascript practices which are no longer in practice in new javascript
+		'use strict';
+		// if we do not use var or let, then the variable will automatically become global. Note: do not use it as its wrong practice.
+		var hobby = "Coding";
+		 function localGlobal(){
+		 	var hobby = "hiking";
+		 	alert(hobby);
+		}
+		localGlobal();
+		alert(hobby);
+		console.log(window);
+	</script>
+
+</body>
+</html>
